@@ -72,7 +72,7 @@ export default function Sites999() {
             </>
           )}
 
-          {/* Back button */}
+          {/* Enquiry Button */}
           <Link
             to="/pricing"
             className="bg-white text-gray-900 font-semibold font-outfit py-3 px-6 rounded-lg text-center hover:bg-gray-200 transition"
