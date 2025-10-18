@@ -88,7 +88,7 @@ export default function Index() {
               "@type": "Organization",
               "name": "Brainlink Softwares",
               "url": "https://www.brainlink.in",
-              "logo": "https://www.brainlink.in/logo.png",
+              "logo": "https://www.brainlink.in/static/media/logo.108e9a76cf1de1403f47.png",
               "contactPoint": [{
                 "@type": "ContactPoint",
                 "telephone": "+91-9412330177",
