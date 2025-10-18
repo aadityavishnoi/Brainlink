@@ -19,7 +19,7 @@ export default function Contacts(){
              </div>
              <div className="flex flex-row justify-center items-center">
                <i className="fas fa-message text-white m-4"></i>
-               <h2 className="font-outfit text-white"><a href="mailto:info@brainlink.com" className="hover:text-blue-500 font-outfit">team.brainlink@gmail.com</a></h2>
+               <h2 className="font-outfit text-white"><a href="mailto:team.brainlink@gmail.com" className="hover:text-blue-500 font-outfit">team.brainlink@gmail.com</a></h2>
              </div>
              <div className="flex flex-row justify-center items-center">
                <i className="fab fa-instagram text-white m-4"></i>
