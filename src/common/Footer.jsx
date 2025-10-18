@@ -27,7 +27,7 @@ export default function Footer() {
           {/* Contact Info */}
           <div className="flex flex-col space-y-2">
             <h3 className="font-semibold text-white mb-2 font-outfit">Contact Us</h3>
-            <p className="font-outfit">Email: <a href="mailto:info@brainlink.com" className="hover:text-blue-500 font-outfit">info@brainlink.com</a><br />
+            <p className="font-outfit">Email: <a href="mailto:team.brainlink@gmail.com" className="hover:text-blue-500 font-outfit">team.brainlink@gmail.com</a><br />
             Knowledge Park 2, Greater Noida (201306)<br />
             </p>
             <div className="flex space-x-4 mt-2">
