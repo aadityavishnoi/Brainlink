@@ -15,7 +15,7 @@ export default function Contacts(){
              </div>
              <div className="flex flex-row justify-center items-center">
                <i className="fas fa-phone text-white m-4"></i>
-               <h2 className="font-outfit text-white">+91-94123-30177</h2>
+               <h2 className="font-outfit text-white"><a href="tel:+919412330177" className="hover:text-blue-500 font-outfit">+91-94123-30177</a></h2>
              </div>
              <div className="flex flex-row justify-center items-center">
                <i className="fas fa-message text-white m-4"></i>
