@@ -15,8 +15,7 @@ export default function Sites999() {
       "Basic SEO Setup",
       "Responsive on all devices",
       "Fast loading speed optimization",
-      "Free contact form integration",
-      "Basic analytics setup",
+      "Free contact form integration"
     ],
     description: `The Sites@999 plan is perfect for startups and individuals who want a quick online presence.
       We create a professional single-page website tailored to your brand, optimized for search engines,
@@ -24,8 +23,7 @@ export default function Sites999() {
       and a free contact form to engage your visitors.`,
     extra: [
       "1 free round of revisions",
-      "Optional image gallery",
-      "Social media links integration",
+      "Social media links integration"
     ],
     color: "from-blue-900 to-gray-800",
   };
