@@ -13,7 +13,7 @@ export default function Sites999() {
     email: '',
     phone: '',
     company: '',
-    message: `I'm interested in the Sites@999 plan (₹999).\n\n`
+    message: `I'm interested in the Ignite* plan (₹1,999).\n\n`
   });
   const [errors, setErrors] = useState({});
 
