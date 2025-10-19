@@ -13,7 +13,7 @@ export default function Sites999() {
     email: '',
     phone: '',
     company: '',
-    message: `I'm interested in the Ignite* plan (₹1,999).\n\n`
+    message: `I'm interested in the Ignite plan (₹1,999).\n\n`
   });
   const [errors, setErrors] = useState({});
 
@@ -87,7 +87,7 @@ export default function Sites999() {
         event.target.reset();
         setFormData({
           name: '', email: '', phone: '', company: '',
-          message: `I'm interested in the Sites@999 plan (₹999).\n\n`
+          message: `I'm interested in the Ignite plan (₹1,999).\n\n`
         });
       } else {
         setResult("✗ Something went wrong. Please try again or call us directly.");
