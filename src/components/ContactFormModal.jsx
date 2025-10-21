@@ -1,10 +1,6 @@
-import React, { useState } from "react";
-import Header from "../common/Header";
-import Footer from "../common/Footer";
-import Contacts from "../common/Contacts";
-import "../css/index.css";
+import { useState, useEffect } from 'react';
 
-export default function Contact() {
+export default function ContactFormModal({ isOpen, onClose, selectedPlan }) {
   const [result, setResult] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -15,6 +11,39 @@ export default function Contact() {
     message: ''
   });
   const [errors, setErrors] = useState({});
+
+  // Pre-fill message with selected plan
+  useEffect(() => {
+    if (selectedPlan && isOpen) {
+      setFormData(prev => ({
+        ...prev,
+        message: `I'm interested in the ${selectedPlan.title} plan (${selectedPlan.price}).\n\n`
+      }));
+    }
+  }, [selectedPlan, isOpen]);
+
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
+  // Close modal on Escape key
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isOpen, onClose]);
 
   const validateForm = () => {
     const newErrors = {};
@@ -69,8 +98,13 @@ export default function Contact() {
     
     const formDataObj = new FormData(event.target);
     
+    // Add the selected plan to the form data
+    if (selectedPlan) {
+      formDataObj.append("plan", `${selectedPlan.title} - ${selectedPlan.price}`);
+    }
+    
     // Replace with your actual Web3Forms access key
-    formDataObj.append("access_key", "bc3db678-d885-4c74-837a-6ddb3b246599");
+    formDataObj.append("access_key", "795dd06f-a4f1-42cf-b7e9-e534375b53dc");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -90,6 +124,11 @@ export default function Contact() {
           company: '',
           message: ''
         });
+        
+        setTimeout(() => {
+          onClose();
+          setResult("");
+        }, 3000);
       } else {
         console.error('Form submission error:', data);
         setResult("✗ Something went wrong. Please try again or call us directly.");
@@ -102,146 +141,139 @@ export default function Contact() {
     }
   };
 
+  if (!isOpen) return null;
+
   return (
-    <>
-      <Header />
-      <Contacts />
-      
-      {/* Contact Form Section */}
-      <div className="flex flex-col items-center justify-center bg-gray-50 py-12 px-4">
-        <div className="w-full max-w-2xl bg-white rounded-2xl shadow-lg p-8">
-          <h2 className="text-3xl font-outfit font-bold text-gray-900 mb-6 text-center">
-            Send Us a Message
-          </h2>
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <div 
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white dark:bg-gray-800 rounded-2xl shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition z-10"
+          aria-label="Close modal"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <div className="p-8">
+          <div className="text-center mb-6">
+            <h2 className="text-3xl font-outfit font-bold text-gray-900 dark:text-white mb-2">
+              Get Started Today
+            </h2>
+            {selectedPlan && (
+              <div className="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-lg mt-2">
+                <p className="text-sm font-medium">Selected Plan: {selectedPlan.title}</p>
+                <p className="text-xs">{selectedPlan.price}</p>
+              </div>
+            )}
+          </div>
           
           <form onSubmit={onSubmit} className="space-y-4">
-            {/* Name Field */}
             <div>
-              <label 
-                htmlFor="name" 
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
+              <label htmlFor="modal-name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Full Name <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
-                id="name"
+                id="modal-name"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
                 disabled={isSubmitting}
-                className={`w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition ${
-                  errors.name ? 'border-red-500' : 'border-gray-300'
+                className={`w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition dark:bg-gray-700 dark:text-white ${
+                  errors.name ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
                 } ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
                 placeholder="John Doe"
                 required
               />
-              {errors.name && (
-                <p className="mt-1 text-sm text-red-500">{errors.name}</p>
-              )}
+              {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
             </div>
 
-            {/* Email Field */}
             <div>
-              <label 
-                htmlFor="email" 
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
+              <label htmlFor="modal-email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Email Address <span className="text-red-500">*</span>
               </label>
               <input
                 type="email"
-                id="email"
+                id="modal-email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
                 disabled={isSubmitting}
-                className={`w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition ${
-                  errors.email ? 'border-red-500' : 'border-gray-300'
+                className={`w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition dark:bg-gray-700 dark:text-white ${
+                  errors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
                 } ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
                 placeholder="john@example.com"
                 required
               />
-              {errors.email && (
-                <p className="mt-1 text-sm text-red-500">{errors.email}</p>
-              )}
+              {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
             </div>
 
-            {/* Phone Field */}
             <div>
-              <label 
-                htmlFor="phone" 
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
+              <label htmlFor="modal-phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Phone Number <span className="text-red-500">*</span>
               </label>
               <input
                 type="tel"
-                id="phone"
+                id="modal-phone"
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
                 disabled={isSubmitting}
-                className={`w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition ${
-                  errors.phone ? 'border-red-500' : 'border-gray-300'
+                className={`w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition dark:bg-gray-700 dark:text-white ${
+                  errors.phone ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
                 } ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
                 placeholder="+91 98765 43210"
                 required
               />
-              {errors.phone && (
-                <p className="mt-1 text-sm text-red-500">{errors.phone}</p>
-              )}
+              {errors.phone && <p className="mt-1 text-sm text-red-500">{errors.phone}</p>}
             </div>
 
-            {/* Company Field (Optional) */}
             <div>
-              <label 
-                htmlFor="company" 
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
+              <label htmlFor="modal-company" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Company Name <span className="text-gray-400 text-xs">(Optional)</span>
               </label>
               <input
                 type="text"
-                id="company"
+                id="modal-company"
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
                 disabled={isSubmitting}
-                className={`w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition ${
+                className={`w-full px-4 py-2.5 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition dark:bg-gray-700 dark:text-white ${
                   isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
                 }`}
                 placeholder="Your Company"
               />
             </div>
 
-            {/* Message Field */}
             <div>
-              <label 
-                htmlFor="message" 
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                Message <span className="text-red-500">*</span>
+              <label htmlFor="modal-message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                Project Details <span className="text-red-500">*</span>
               </label>
               <textarea
-                id="message"
+                id="modal-message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
                 disabled={isSubmitting}
-                rows="5"
-                className={`w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition resize-none ${
-                  errors.message ? 'border-red-500' : 'border-gray-300'
+                rows="4"
+                className={`w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition resize-none dark:bg-gray-700 dark:text-white ${
+                  errors.message ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
                 } ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
-                placeholder="Tell us about your project or inquiry..."
+                placeholder="Tell us about your project requirements..."
                 required
               ></textarea>
-              {errors.message && (
-                <p className="mt-1 text-sm text-red-500">{errors.message}</p>
-              )}
+              {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message}</p>}
             </div>
 
-            {/* Submit Button */}
             <button
               type="submit"
               disabled={isSubmitting}
@@ -260,20 +292,19 @@ export default function Contact() {
                   Sending...
                 </span>
               ) : (
-                'Send Message'
+                'Submit Inquiry'
               )}
             </button>
 
-            {/* Result Message */}
             {result && (
               <div
                 role="alert"
                 className={`mt-4 p-3 rounded-lg text-center font-medium text-sm ${
                   result.includes('✓') 
-                    ? 'bg-green-100 text-green-800' 
+                    ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' 
                     : result.includes('✗')
-                    ? 'bg-red-100 text-red-800'
-                    : 'bg-blue-100 text-blue-800'
+                    ? 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200'
+                    : 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200'
                 }`}
               >
                 {result}
@@ -281,13 +312,11 @@ export default function Contact() {
             )}
           </form>
 
-          <p className="text-xs text-gray-500 text-center mt-6">
+          <p className="text-xs text-gray-500 dark:text-gray-400 text-center mt-4">
             By submitting this form, you agree to our Terms of Service and Privacy Policy.
           </p>
         </div>
       </div>
-      
-      <Footer />
-    </>
+    </div>
   );
 }
