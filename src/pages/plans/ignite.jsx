@@ -73,7 +73,7 @@ export default function Sites999() {
     
     const formDataObj = new FormData(event.target);
     formDataObj.append("plan", `${plan.title} - ${plan.price}`);
-    formDataObj.append("access_key", "795dd06f-a4f1-42cf-b7e9-e534375b53dc");
+    formDataObj.append("access_key", "bc3db678-d885-4c74-837a-6ddb3b246599");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
