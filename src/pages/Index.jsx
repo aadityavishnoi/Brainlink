@@ -68,7 +68,7 @@ export default function Index() {
     };
 
     setMeta("description", "Brainlink Softwares builds SEO-friendly websites, custom web apps, and digital marketing solutions to help your business grow.");
-    setMeta("keywords", "Brainlink Softwares, web development, UI UX design, SEO, digital marketing, responsive websites, software company India");
+    setMeta("keywords", "Brainlink, Brainlink Softwares, web development, UI UX design, SEO, digital marketing, responsive websites, software company India");
 
     // Open Graph
     const setOg = (property, content) => {
