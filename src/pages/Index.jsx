@@ -143,7 +143,7 @@ export default function Index() {
       </main>
       <div className="flex fixed bottom-2 right-0">
         <Link to="https://wa.me/919412330177?text=Hi,%20BrainLink%20Softwares">
-        <img src={whatsapp} className="w-16 h-16 rounded-xl"></img>
+        <img src={whatsapp} className="w-16 h-16 m-4 rounded-xl"></img>
         </Link>
       </div>
       <Footer />
