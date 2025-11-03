@@ -27,7 +27,7 @@ export default function Contacts(){
              </div>
              <div className="flex flex-row justify-center items-center">
                <i className="fab fa-linkedin text-white m-4"></i>
-               <h2 className="font-outfit text-white">brainlink_softwares</h2>
+               <h2 className="font-outfit text-white"><a href="https://www.linkedin.com/company/brainlinksoftwares/" className="hover:text-blue-500 font-outfit">brainlinksoftwares</a></h2>
              </div>
             </div>
         </div>

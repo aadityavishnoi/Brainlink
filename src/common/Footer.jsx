@@ -33,7 +33,7 @@ export default function Footer() {
             <div className="flex space-x-4 mt-2">
               <a href="#" className="hover:text-blue-500"><i className="fab fa-facebook-f"></i></a>
               <a href="#" className="hover:text-blue-500"><i className="fab fa-twitter"></i></a>
-              <a href="#" className="hover:text-blue-500"><i className="fab fa-linkedin-in"></i></a>
+              <a href="https://www.linkedin.com/company/brainlinksoftwares/" className="hover:text-blue-500"><i className="fab fa-linkedin-in"></i></a>
               <a href="https://www.instagram.com/brainlinksoftwares/" className="hover:text-blue-500"><i className="fab fa-instagram"></i></a>
             </div>
           </div>
