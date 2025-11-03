@@ -2,11 +2,9 @@ import React, { useEffect } from "react";
 import Header from "../common/Header";
 import Footer from "../common/Footer";
 import "../css/index.css";
-import whatsapp from "../assets/logo/whatsapp-cta-btn.webp";
-import insta from "../assets/logo/instagram-2.webp";
 import logo from "../assets/logo/logo.png";
 import { Link } from "react-router-dom";
-
+import whatsapp from "../assets/logo/whatsapp.png";
 export default function Index() {
   const services = [
     {
@@ -114,11 +112,11 @@ export default function Index() {
             We create innovative software solutions that help you and your business grow.
           </p>
           <div className="flex space-x-4">
-            <Link to="https://wa.me/919412330177?text=Hi, BrainLink Softwares">
-              <img src={whatsapp} className="w-30 h-20"></img>
+            <Link to="/contact" className="bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg hover:scale-105 transition font-outfit inline-block text-center">
+              Contact Us
             </Link>
-            <Link to="https://www.instagram.com/brainlinksoftwares/">
-              <img src={insta} className="w-30 h-20"></img>
+            <Link to="/pricing" className="bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg hover:scale-105 transition font-outfit inline-block text-center">
+              Our Pricing
             </Link>
           </div>
         </section>
@@ -143,7 +141,11 @@ export default function Index() {
           </div>
         </section>
       </main>
-
+      <div className="flex fixed bottom-2 right-0">
+        <Link to="https://wa.me/919412330177?text=Hi,%20BrainLink%20Softwares">
+        <img src={whatsapp} className="w-16 h-16 rounded-xl"></img>
+        </Link>
+      </div>
       <Footer />
     </>
   );
