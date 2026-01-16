@@ -35,7 +35,7 @@ export default function Team() {
           <h1 className="text-4xl md:text-5xl font-outfit font-bold text-gray-900">
             The Team Behind Brainlink
           </h1>
-          <p className="mt-5 text-lg text-gray-600 leading-relaxed">
+          <p className="mt-5 text-lg text-gray-600 leading-relaxed font-outfit">
             A focused founding team committed to building reliable, scalable
             and business-ready software solutions.
           </p>
