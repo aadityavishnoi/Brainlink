@@ -8,7 +8,7 @@ const teamMembers = [
     name: "Aaditya Vishnoi",
     role: "Co-Founder",
     img: "https://media.licdn.com/dms/image/v2/D5603AQEwlb2boefMFA/profile-displayphoto-scale_400_400/B56ZpF2eFBHQAg-/0/1762108500586?e=1770249600&v=beta&t=CzZIFcDA1c67mpokXXbmRAD4pPP6SqOgrMpBwO3Hat8",
-    linkedin: "www.linkedin.com/in/aadityavishnoi",
+    linkedin: "https://www.linkedin.com/in/aadityavishnoi",
     instagram: "https://www.instagram.com/steadyspace",
     speech:
       "Brainlink was started with a simple belief — software should solve real problems, not create new ones. We focus on clean architecture, long-term scalability, and honest engineering. Every project we take reflects our responsibility toward our clients’ businesses.",
