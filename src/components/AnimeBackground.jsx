@@ -1,20 +1,4 @@
-import { useEffect } from "react";
-
 export default function AnimeBackground() {
-  useEffect(() => {
-    const anime = require("animejs"); // ✅ NO .default
-
-    anime({
-      targets: ".anime-line",
-      strokeDashoffset: [anime.setDashoffset, 0],
-      easing: "easeInOutSine",
-      duration: 4500,
-      delay: anime.stagger(500),
-      direction: "alternate",
-      loop: true,
-    });
-  }, []);
-
   return (
     <svg
       className="absolute inset-0 w-full h-full -z-10"
@@ -26,14 +10,15 @@ export default function AnimeBackground() {
         fill="none"
         stroke="#2563eb"
         strokeWidth="2"
-        className="anime-line"
+        className="anime-line anime-line-1"
       />
+
       <path
         d="M0,500 C400,600 800,250 1200,400 1400,520 1440,380 1440,380"
         fill="none"
         stroke="#93c5fd"
         strokeWidth="1.5"
-        className="anime-line"
+        className="anime-line anime-line-2"
       />
     </svg>
   );

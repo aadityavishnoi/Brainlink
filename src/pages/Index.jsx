@@ -55,7 +55,6 @@ export default function Index() {
     },
   ];
 
-  // SEO
   useEffect(() => {
     document.title =
       "Brainlink Softwares | Web Development, UI/UX & Digital Marketing";
@@ -66,7 +65,7 @@ export default function Index() {
       <Header />
 
       <main>
-        {/* HERO WITH ANIME BACKGROUND */}
+        {/* HERO SECTION */}
         <section
           className="relative overflow-hidden flex flex-col items-center justify-center text-center bg-gray-50 py-28 px-4"
           id="hero"
@@ -77,6 +76,7 @@ export default function Index() {
             <h1 className="text-4xl md:text-5xl font-outfit font-bold mb-5 text-gray-900">
               Welcome to Brainlink Softwares
             </h1>
+
             <p className="font-outfit text-gray-700 text-lg md:text-xl mb-10">
               We create innovative software solutions that help your business
               grow.
@@ -116,12 +116,15 @@ export default function Index() {
                   alt={service.title}
                   className="w-10 bg-white rounded-3xl p-2 mb-4"
                 />
+
                 <h3 className="text-2xl font-bold mb-2">
                   {service.title}
                 </h3>
+
                 <p className="mb-5 text-white/90">
                   {service.subtitle}
                 </p>
+
                 <ul className="list-disc list-inside space-y-2">
                   {service.features.map((feature, idx) => (
                     <li key={idx}>{feature}</li>
@@ -133,13 +136,13 @@ export default function Index() {
         </section>
       </main>
 
-      {/* WhatsApp Floating */}
+      {/* WhatsApp Floating Button */}
       <div className="fixed bottom-3 right-3 z-50">
         <Link to="https://wa.me/919412330177?text=Hi,%20BrainLink%20Softwares">
           <img
             src={whatsapp}
-            className="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition"
             alt="WhatsApp"
+            className="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition"
           />
         </Link>
       </div>
