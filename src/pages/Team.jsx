@@ -8,9 +8,6 @@ export default function Team() {
         <>
         <Header />
         
-        <div className="">
-
-        </div>
         </>
     );
 }
