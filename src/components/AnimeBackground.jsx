@@ -2,8 +2,7 @@ import { useEffect } from "react";
 
 export default function AnimeBackground() {
   useEffect(() => {
-    // ✅ CRA-safe dynamic require
-    const anime = require("animejs").default;
+    const anime = require("animejs"); // ✅ NO .default
 
     anime({
       targets: ".anime-line",
