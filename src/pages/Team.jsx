@@ -6,18 +6,13 @@ import "../css/index.css";
 const teamMembers = [
   {
     name: "Aaditya Vishnoi",
-    role: "Founder & Lead Engineer",
+    role: "Co-Founder",
     img: "https://ui-avatars.com/api/?name=Aaditya+Vishnoi&background=2563eb&color=fff",
   },
   {
-    name: "Rahul Sharma",
-    role: "Full Stack Developer",
+    name: "Ayush Gautam",
+    role: "Co-Founder",
     img: "https://ui-avatars.com/api/?name=Rahul+Sharma&background=0ea5e9&color=fff",
-  },
-  {
-    name: "Sneha Verma",
-    role: "UI / UX Designer",
-    img: "https://ui-avatars.com/api/?name=Sneha+Verma&background=9333ea&color=fff",
   },
 ];
 
