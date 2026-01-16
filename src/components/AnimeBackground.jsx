@@ -1,14 +1,14 @@
 import { useEffect } from "react";
-import anime from "animejs";
+import { anime } from "animejs";
 
 export default function AnimeBackground() {
   useEffect(() => {
     anime({
-      targets: ".anime-path",
+      targets: ".anime-line",
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: "easeInOutSine",
-      duration: 4000,
-      delay: anime.stagger(400),
+      duration: 4500,
+      delay: anime.stagger(500),
       direction: "alternate",
       loop: true,
     });
@@ -23,16 +23,16 @@ export default function AnimeBackground() {
       <path
         d="M0,200 C300,100 600,300 900,150 1200,50 1440,120 1440,120"
         fill="none"
-        stroke="#3b82f6"
+        stroke="#2563eb"
         strokeWidth="2"
-        className="anime-path"
+        className="anime-line"
       />
       <path
-        d="M0,450 C400,550 800,250 1200,400 1400,520 1440,380 1440,380"
+        d="M0,500 C400,600 800,250 1200,400 1400,520 1440,380 1440,380"
         fill="none"
         stroke="#93c5fd"
         strokeWidth="1.5"
-        className="anime-path"
+        className="anime-line"
       />
     </svg>
   );
