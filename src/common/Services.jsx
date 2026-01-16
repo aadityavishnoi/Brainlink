@@ -2,7 +2,6 @@ import React from "react";
 import "../css/index.css";
 import logo from "../assets/logo/logo.png";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-
 export default function Services(){
      const services = [
     {
