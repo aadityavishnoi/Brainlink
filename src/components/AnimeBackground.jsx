@@ -1,8 +1,10 @@
 import { useEffect } from "react";
-import anime from "animejs/lib/anime.es.js";
 
 export default function AnimeBackground() {
   useEffect(() => {
+    // ✅ CRA-safe dynamic require
+    const anime = require("animejs").default;
+
     anime({
       targets: ".anime-line",
       strokeDashoffset: [anime.setDashoffset, 0],
