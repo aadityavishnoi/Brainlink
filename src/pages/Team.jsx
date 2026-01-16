@@ -10,6 +10,8 @@ const teamMembers = [
     img: "https://media.licdn.com/dms/image/v2/D5603AQEwlb2boefMFA/profile-displayphoto-scale_400_400/B56ZpF2eFBHQAg-/0/1762108500586?e=1770249600&v=beta&t=CzZIFcDA1c67mpokXXbmRAD4pPP6SqOgrMpBwO3Hat8",
     linkedin: "https://www.linkedin.com/in/aaditya-vishnoi",
     instagram: "https://www.instagram.com/aaditya.vishnoi",
+    speech:
+      "Brainlink was started with a simple belief — software should solve real problems, not create new ones. We focus on clean architecture, long-term scalability, and honest engineering. Every project we take reflects our responsibility toward our clients’ businesses.",
   },
   {
     name: "Ayush Gautam",
@@ -17,6 +19,8 @@ const teamMembers = [
     img: "https://ui-avatars.com/api/?name=Ayush+Gautam&background=0ea5e9&color=fff",
     linkedin: "https://www.linkedin.com/in/ayush-gautam",
     instagram: "https://www.instagram.com/ayush.gautam",
+    speech:
+      "Our goal has never been to build flashy products. We build systems that teams can trust in production. At Brainlink, execution matters more than promises, and quality matters more than speed.",
   },
 ];
 
@@ -25,7 +29,7 @@ export default function Team() {
     <>
       <Header />
 
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="bg-gradient-to-b from-blue-50 to-white py-24">
         <div className="max-w-4xl mx-auto text-center px-6">
           <h1 className="text-4xl md:text-5xl font-outfit font-bold text-gray-900">
@@ -41,7 +45,7 @@ export default function Team() {
       {/* Divider */}
       <div className="h-px bg-gray-200 max-w-5xl mx-auto" />
 
-      {/* Team Section */}
+      {/* Team Cards */}
       <section className="py-24 bg-white">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid gap-12 sm:grid-cols-2 justify-center">
@@ -64,24 +68,20 @@ export default function Team() {
                   {member.role}
                 </p>
 
-                {/* Social Links */}
-                <div className="mt-6 flex justify-center gap-6 opacity-0 group-hover:opacity-100 transition">
+                <div className="mt-6 flex justify-center gap-6">
                   <a
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-500 hover:text-blue-700 text-xl"
-                    aria-label="LinkedIn"
                   >
                     <i className="fab fa-linkedin"></i>
                   </a>
-
                   <a
                     href={member.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-500 hover:text-pink-500 text-xl"
-                    aria-label="Instagram"
                   >
                     <i className="fab fa-instagram"></i>
                   </a>
@@ -92,8 +92,44 @@ export default function Team() {
         </div>
       </section>
 
-      {/* Culture Section */}
+      {/* Founders Speech */}
       <section className="bg-gray-50 py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-16 font-outfit text-gray-900">
+            Message from the Founders
+          </h2>
+
+          <div className="grid gap-12 md:grid-cols-2">
+            {teamMembers.map((member, index) => (
+              <div
+                key={index}
+                className="bg-white border rounded-3xl p-10 shadow-sm hover:shadow-xl transition"
+              >
+                <div className="flex items-center gap-5 mb-6">
+                  <img
+                    src={member.img}
+                    alt={member.name}
+                    className="w-16 h-16 rounded-full object-cover"
+                  />
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900">
+                      {member.name}
+                    </h3>
+                    <p className="text-sm text-blue-600">{member.role}</p>
+                  </div>
+                </div>
+
+                <p className="text-gray-600 leading-relaxed italic">
+                  “{member.speech}”
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Culture */}
+      <section className="bg-white py-24">
         <div className="max-w-4xl mx-auto text-center px-6">
           <h2 className="text-3xl font-bold font-outfit text-gray-900">
             How We Work
