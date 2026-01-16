@@ -5,8 +5,6 @@ import "../css/index.css";
 import logo from "../assets/logo/logo.png";
 import { Link } from "react-router-dom";
 import whatsapp from "../assets/logo/whatsapp.png";
-import AnimeBackground from "../components/AnimeBackground";
-
 export default function Index() {
   const services = [
     {
@@ -55,9 +53,49 @@ export default function Index() {
     },
   ];
 
+  // ✅ SEO without Helmet
   useEffect(() => {
-    document.title =
-      "Brainlink Softwares | Web Development, UI/UX & Digital Marketing";
+    document.title = "Brainlink Softwares | Web Development, UI/UX & Digital Marketing";
+
+    const setMeta = (name, content) => {
+      let element = document.querySelector(`meta[name='${name}']`);
+      if (!element) {
+        element = document.createElement("meta");
+        element.setAttribute("name", name);
+        document.head.appendChild(element);
+      }
+      element.setAttribute("content", content);
+    };
+
+    setMeta("description", "Brainlink Softwares builds SEO-friendly websites, custom web apps, and digital marketing solutions to help your business grow.");
+    setMeta("keywords", "Brainlink, Brainlink Softwares, web development, UI UX design, SEO, digital marketing, responsive websites, software company India");
+
+    // Open Graph
+    const setOg = (property, content) => {
+      let element = document.querySelector(`meta[property='${property}']`);
+      if (!element) {
+        element = document.createElement("meta");
+        element.setAttribute("property", property);
+        document.head.appendChild(element);
+      }
+      element.setAttribute("content", content);
+    };
+
+    setOg("og:type", "website");
+    setOg("og:title", "Brainlink Softwares | Web Development & Digital Marketing");
+    setOg("og:description", "We build high-performance websites and digital solutions that help businesses grow online.");
+    setOg("og:url", "https://www.brainlink.in/");
+    setOg("og:site_name", "Brainlink Softwares");
+
+    // Canonical
+    let canonical = document.querySelector("link[rel='canonical']");
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", "https://www.brainlink.in/");
+
   }, []);
 
   return (
@@ -65,88 +103,49 @@ export default function Index() {
       <Header />
 
       <main>
-        {/* HERO SECTION */}
-        <section
-          className="relative overflow-hidden flex flex-col items-center justify-center text-center bg-gray-50 py-28 px-4"
-          id="hero"
-        >
-          <AnimeBackground />
-
-          <div className="relative z-10 max-w-2xl">
-            <h1 className="text-4xl md:text-5xl font-outfit font-bold mb-5 text-gray-900">
-              Welcome to Brainlink Softwares
-            </h1>
-
-            <p className="font-outfit text-gray-700 text-lg md:text-xl mb-10">
-              We create innovative software solutions that help your business
-              grow.
-            </p>
-
-            <div className="flex justify-center gap-6">
-              <Link
-                to="/contact"
-                className="bg-blue-600 text-white font-semibold py-3 px-7 rounded-xl hover:scale-105 transition"
-              >
-                Contact Us
-              </Link>
-              <Link
-                to="/pricing"
-                className="bg-blue-600 text-white font-semibold py-3 px-7 rounded-xl hover:scale-105 transition"
-              >
-                Our Pricing
-              </Link>
-            </div>
+        {/* Hero Section */}
+        <section className="flex flex-col items-center justify-center text-center bg-gray-50 py-20 px-4" id="hero">
+          <h1 className="text-4xl md:text-5xl font-outfit font-bold mb-4 text-gray-900">
+            Welcome to Brainlink Softwares
+          </h1>
+          <p className="font-outfit text-gray-700 text-lg md:text-xl mb-8 max-w-xl">
+            We create innovative software solutions that help you and your business grow.
+          </p>
+          <div className="flex space-x-4">
+            <Link to="/contact" className="bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg hover:scale-105 transition font-outfit inline-block text-center">
+              Contact Us
+            </Link>
+            <Link to="/pricing" className="bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg hover:scale-105 transition font-outfit inline-block text-center">
+              Our Pricing
+            </Link>
           </div>
         </section>
 
-        {/* SERVICES */}
-        <section className="py-20 px-4 bg-white" id="services">
+        {/* Services Section */}
+        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white" id="services">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-outfit font-bold text-center mb-14">
+            <h2 className="text-3xl font-outfit font-bold text-center text-gray-900 mb-10">
               Our Services
             </h2>
 
             {services.map((service, index) => (
-              <article
-                key={index}
-                className={`rounded-2xl p-8 mb-10 bg-gradient-to-r ${service.color} text-white shadow-lg hover:scale-[1.03] hover:shadow-2xl transition`}
-              >
-                <img
-                  src={logo}
-                  alt={service.title}
-                  className="w-10 bg-white rounded-3xl p-2 mb-4"
-                />
-
-                <h3 className="text-2xl font-bold mb-2">
-                  {service.title}
-                </h3>
-
-                <p className="mb-5 text-white/90">
-                  {service.subtitle}
-                </p>
-
-                <ul className="list-disc list-inside space-y-2">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx}>{feature}</li>
-                  ))}
+              <article key={index} className={`rounded-lg p-6 mb-8 bg-gradient-to-r ${service.color} text-white shadow-md hover:scale-105 transition transform`}>
+                <img src={logo} alt={`${service.title} logo`} className="w-10 bg-white rounded-3xl p-2 mb-3" loading="lazy" />
+                <h3 className="text-2xl font-bold font-outfit mb-2">{service.title}</h3>
+                <p className="mb-4 text-white text-opacity-90 font-outfit">{service.subtitle}</p>
+                <ul className="list-disc list-inside space-y-2 font-outfit text-white text-opacity-90">
+                  {service.features.map((feature, idx) => <li key={idx}>{feature}</li>)}
                 </ul>
               </article>
             ))}
           </div>
         </section>
       </main>
-
-      {/* WhatsApp Floating Button */}
-      <div className="fixed bottom-3 right-3 z-50">
+      <div className="flex fixed bottom-2 right-0">
         <Link to="https://wa.me/919412330177?text=Hi,%20BrainLink%20Softwares">
-          <img
-            src={whatsapp}
-            alt="WhatsApp"
-            className="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition"
-          />
+        <img src={whatsapp} className="w-16 h-16 m-2 rounded-full"></img>
         </Link>
       </div>
-
       <Footer />
     </>
   );
