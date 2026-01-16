@@ -48,6 +48,7 @@ export default function Header() {
             <li><a href="/service" className="font-outfit block py-2 px-3 hover:text-blue-700">Services</a></li>
             <li><a href="/pricing" className="font-outfit block py-2 px-3 hover:text-blue-700">Pricing</a></li>
             <li><a href="/contact" className="font-outfit block py-2 px-3 hover:text-blue-700">Contact</a></li>
+            <li><a href="/team" className="font-outfit block py-2 px-3 hover:text-blue-700">Team</a></li>
           </ul>
         </div>
       </div>
