@@ -16,9 +16,9 @@ const teamMembers = [
   {
     name: "Ayush Gautam",
     role: "Co-Founder",
-    img: "https://ui-avatars.com/api/?name=Ayush+Gautam&background=0ea5e9&color=fff",
-    linkedin: "https://www.linkedin.com/in/ayush-gautam",
-    instagram: "https://www.instagram.com/ayush.gautam",
+    img: "https://media.licdn.com/dms/image/v2/D5603AQHsFSBUn3U-FA/profile-displayphoto-scale_400_400/B56ZvHvIsoIQAg-/0/1768582584574?e=1770249600&v=beta&t=X3EplQ0nZEaU7IC_FxY2rOwb1OGlHO-KNPJhUSMxQ2k",
+    linkedin: "https://www.linkedin.com/in/ayush24kr",
+    instagram: "https://www.instagram.com/ayus.h_24/",
     speech:
       "Our goal has never been to build flashy products. We build systems that teams can trust in production. At Brainlink, execution matters more than promises, and quality matters more than speed.",
   },
