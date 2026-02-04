@@ -134,7 +134,7 @@ export default function Index() {
             Welcome to Brainlink Softwares
           </h1>
           <p className="font-outfit text-white text-sm md:text-xl mb-8 max-w-xl">
-            We create innovative software solutions that help you and your business grow.
+           We build fast, scalable websites that actually help businesses grow.
           </p>
           <div className="flex gap-4">
           <Link to="/contact" className="inline-flex items-center justify-center bg-white text-blue-600 font-semibold py-3 px-7 rounded-xl shadow-lg shadow-blue-600/20 hover:bg-white hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-outfit">
@@ -180,7 +180,7 @@ export default function Index() {
 <div className="flex flex-col items-center my-10">
   <h1 className="font-outfit text-2xl font-bold">Why Choose Us!</h1>
 </div>
-<div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 gap-6 px-4">
+<div className="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2 gap-6 px-4">
 {wcus.map((wcus, index) => (
   <div className={`p-6 rounded-xl bg-gradient-to-br ${wcus.color} text-white shadow-lg hover:scale-95 transition`} key={index}>
     <h2 className="font-outfit text-xl font-bold mb-2">
@@ -192,6 +192,9 @@ export default function Index() {
   </div>
 ))}
 </div>
+
+{/* Social Media */}
+
       </main>
       <div className="flex fixed bottom-2 right-0">
         <Link to="https://wa.me/919412330177?text=Hi,%20BrainLink%20Softwares">
