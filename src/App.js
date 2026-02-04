@@ -3,7 +3,6 @@ import Index from "./pages/Index";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import Service from "./pages/Service";
-import Team from "./pages/Team";
 import NotFound from "./common/NotFound";
 // Import plan pages
 import Sites999 from "./pages/plans/sites999";
@@ -25,7 +24,6 @@ export default function App() {
         <Route path="/pricing/custom" element={<Custom />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/service" element={<Service />} />
-        <Route path="/team" element={<Team />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
