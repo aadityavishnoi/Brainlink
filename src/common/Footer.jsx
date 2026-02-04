@@ -38,7 +38,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm">
+        <div className="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm font-outfit">
           ©2025 - {new Date().getFullYear()} Brainlink Softwares. All rights reserved.
         </div>
       </div>
