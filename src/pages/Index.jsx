@@ -52,6 +52,31 @@ export default function Index() {
     },
   ];
 
+  const wcus = [
+    {
+      title: 'Direct Developer Communication',
+      desc: 'No middlemen. You talk directly to the person building your product.',
+      color: "from-indigo-600 to-violet-700",
+
+    }
+    ,
+    {
+      title: 'We Don’t Over-Promise',
+      desc: 'We commit only what we can realistically deliver — and then deliver it properly.',
+      color: "from-slate-800 to-zinc-700",
+    },
+    {
+      title: 'Built for Performance, Not Just Looks',
+      desc: 'Clean code, fast loading, and scalable architecture — not just a pretty UI.',
+      color: "from-cyan-600 to-sky-700",
+    },
+    {
+      title: 'Transparent Pricing',
+      desc: 'We don’t disappear after delivery. You get proper support and guidance.',
+      color: "from-amber-600 to-orange-700",
+    },
+  ];
+
   // ✅ SEO without Helmet
   useEffect(() => {
     document.title = "Brainlink Softwares | Web Development, UI/UX & Digital Marketing";
@@ -147,6 +172,24 @@ export default function Index() {
       </ul>
     </div>
   ))}
+</div>
+
+{/* Why Choose Us! */}
+
+<div className="flex flex-col items-center my-10">
+  <h1 className="font-outfit text-2xl font-bold">Why Choose Us!</h1>
+</div>
+<div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 px-4">
+{wcus.map((wcus, index) => (
+  <div className={`p-6 rounded-xl bg-gradient-to-br ${wcus.color} text-white shadow-lg hover:scale-105 transition`} key={index}>
+    <h2 className="font-outfit text-xl font-bold mb-2">
+      {wcus.title}
+    </h2>
+    <p className="text-sm opacity-90 mb-4 font-outfit">
+      {wcus.desc}
+    </p>
+  </div>
+))}
 </div>
       </main>
       <div className="flex fixed bottom-2 right-0">
