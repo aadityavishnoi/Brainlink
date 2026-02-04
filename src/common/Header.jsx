@@ -21,11 +21,11 @@ export default function Header() {
     <ul className="flex items-center font-outfit font-medium whitespace-nowrap
                    gap-1 sm:gap-2 md:gap-4
                    text-[10px] sm:text-xs md:text-sm lg:text-base">
-      <li><a href="/" className="text-blue-700 hover:text-blue-800 m-2">Home</a></li>
-      <li><a href="/service" className="hover:text-blue-700 m-2">Services</a></li>
-      <li><a href="/pricing" className="hover:text-blue-700 m-2">Pricing</a></li>
-      <li><a href="/contact" className="hover:text-blue-700 m-2">Contact</a></li>
-      <li><a href="/team" className="hover:text-blue-700 m-2">Team</a></li>
+      <li><a href="/" className="text-blue-700 hover:text-blue-800 m-2 tracking-wider">Home</a></li>
+      <li><a href="/service" className="hover:text-blue-700 m-2 tracking-wider">Services</a></li>
+      <li><a href="/pricing" className="hover:text-blue-700 m-2 tracking-wider">Pricing</a></li>
+      <li><a href="/contact" className="hover:text-blue-700 m-2 tracking-wider">Contact</a></li>
+      <li><a href="/team" className="hover:text-blue-700 m-2 tracking-wider">Team</a></li>
     </ul>
 
   </div>
