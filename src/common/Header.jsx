@@ -18,7 +18,7 @@ export default function Header() {
     </a>
 
     {/* Navigation links */}
-    <ul className="flex items-center font-outfit font-semibold whitespace-nowrap
+    <ul className="flex items-center font-outfit font-medium whitespace-nowrap
                    gap-1 sm:gap-2 md:gap-4
                    text-[10px] sm:text-xs md:text-sm lg:text-base">
       <li><a href="/" className="text-blue-700 hover:text-blue-800 m-2">Home</a></li>
