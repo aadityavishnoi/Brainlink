@@ -37,8 +37,6 @@ export default function Services() {
       features: [
         "SEO",
         "Social Media Marketing",
-        "Content Strategy",
-        "Email Campaigns",
       ],
     },
     {
