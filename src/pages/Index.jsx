@@ -192,9 +192,6 @@ export default function Index() {
   </div>
 ))}
 </div>
-
-{/* Social Media */}
-
       </main>
       <div className="flex fixed bottom-2 right-0">
         <Link to="https://wa.me/919412330177?text=Hi,%20BrainLink%20Softwares">

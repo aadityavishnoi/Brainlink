@@ -20,7 +20,7 @@ export default function Header() {
     {/* Navigation links */}
     <ul className="flex items-center font-outfit font-semibold whitespace-nowrap
                    gap-1 sm:gap-2 md:gap-4
-                   text-[10px] sm:text-xs md:text-sm lg:text-base">
+                   text-[12px] sm:text-xs md:text-sm lg:text-base">
       <li><a href="/" className="text-blue-700 hover:text-blue-800 m-1 tracking-wide">Home</a></li>
       <li><a href="/service" className="hover:text-blue-700 m-1 tracking-wide">Services</a></li>
       <li><a href="/pricing" className="hover:text-blue-700 m-1 tracking-wide">Pricing</a></li>
