@@ -128,19 +128,20 @@ export default function Index() {
 
       <main>
         {/* Hero Section */}
-        <section className="flex flex-col items-center justify-center text-center bg-gray-50 py-20 px-4" id="hero">
-          <h1 className="text-2xl md:text-4xl font-outfit font-bold mb-4 text-gray-900">
+        <section className="flex flex-col items-center justify-center text-center bg-gradient-to-br from-blue-900 to-gray-800 text-white py-20 px-4" id="hero">
+
+          <h1 className="text-2xl md:text-4xl font-outfit font-bold mb-4 text-white">
             Welcome to Brainlink Softwares
           </h1>
-          <p className="font-outfit text-gray-700 text-sm md:text-xl mb-8 max-w-xl">
+          <p className="font-outfit text-white text-sm md:text-xl mb-8 max-w-xl">
             We create innovative software solutions that help you and your business grow.
           </p>
           <div className="flex gap-4">
-          <Link to="/contact" className="inline-flex items-center justify-center bg-blue-600 text-white font-semibold py-3 px-7 rounded-xl shadow-lg shadow-blue-600/30 hover:bg-blue-700 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-outfit">
+          <Link to="/contact" className="inline-flex items-center justify-center bg-white text-blue-600 font-semibold py-3 px-7 rounded-xl shadow-lg shadow-blue-600/20 hover:bg-white hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-outfit">
             Contact Us
           </Link>
 
-          <Link to="/pricing" className="inline-flex items-center justify-center border-2 border-blue-600 text-blue-600 font-semibold py-3 px-7 rounded-xl hover:bg-blue-600 hover:text-white hover:-translate-y-0.5 transition-all duration-300 font-outfit">
+          <Link to="/pricing" className="inline-flex items-center justify-center border-2 border-white text-white font-semibold py-3 px-7 rounded-xl hover:bg-white hover:text-blue-600 hover:-translate-y-0.5 transition-all duration-300 font-outfit">
             Our Pricing
           </Link>
           </div>
