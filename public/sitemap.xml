@@ -19,18 +19,6 @@
     </url>
 
     <url>
-        <loc>https://www.brainlink.in/plans</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://www.brainlink.in/pricing</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <url>
         <loc>https://www.brainlink.in/service</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>

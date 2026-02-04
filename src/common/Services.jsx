@@ -102,7 +102,7 @@ export default function Services() {
 
                 <Link
                   to="/contact"
-                  className="font-outfit font-light inline-block text-indigo-600 font-semibold hover:underline"
+                  className="font-outfit inline-block text-indigo-600 font-semibold hover:underline"
                 >
                   Discuss this service →
                 </Link>
