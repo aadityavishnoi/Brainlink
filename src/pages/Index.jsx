@@ -180,7 +180,7 @@ export default function Index() {
 <div className="flex flex-col items-center my-10">
   <h1 className="font-outfit text-2xl font-bold">Why Choose Us!</h1>
 </div>
-<div className="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2 gap-6 px-4">
+<div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6 px-4">
 {wcus.map((wcus, index) => (
   <div className={`p-6 rounded-xl bg-gradient-to-br ${wcus.color} text-white shadow-lg hover:scale-95 transition`} key={index}>
     <h2 className="font-outfit text-xl font-bold mb-2">
