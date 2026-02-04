@@ -121,25 +121,33 @@ export default function Index() {
           </div>
         </section>
 
-        {/* Services Section */}
-        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white" id="services">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-outfit font-bold text-center text-gray-900 mb-10">
-              Our Services
-            </h2>
+       {/* Services Section */}
+<div className="flex flex-col items-center my-10">
+  <h1 className="font-outfit text-2xl font-bold">Our Services</h1>
+</div>
 
-            {services.map((service, index) => (
-              <article key={index} className={`rounded-lg p-6 mb-8 bg-gradient-to-r ${service.color} text-white shadow-md hover:scale-105 transition transform`}>
-                <img src={logo} alt={`${service.title} logo`} className="w-10 bg-white rounded-3xl p-2 mb-3" loading="lazy" />
-                <h3 className="text-2xl font-bold font-outfit mb-2">{service.title}</h3>
-                <p className="mb-4 text-white text-opacity-90 font-outfit">{service.subtitle}</p>
-                <ul className="list-disc list-inside space-y-2 font-outfit text-white text-opacity-90">
-                  {service.features.map((feature, idx) => <li key={idx}>{feature}</li>)}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </section>
+<div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 px-4">
+  {services.map((service, index) => (
+    <div
+      key={index}
+      className={`p-6 rounded-xl bg-gradient-to-br ${service.color} text-white shadow-lg hover:scale-105 transition`}
+    >
+      <h2 className="text-xl font-outfit font-bold mb-2">
+        {service.title}
+      </h2>
+
+      <p className="text-sm opacity-90 mb-4 font-outfit">
+        {service.subtitle}
+      </p>
+
+      <ul className="text-sm space-y-1 font-outfit">
+        {service.features.map((feature, i) => (
+          <li key={i}>• {feature}</li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</div>
       </main>
       <div className="flex fixed bottom-2 right-0">
         <Link to="https://wa.me/919412330177?text=Hi,%20BrainLink%20Softwares">
