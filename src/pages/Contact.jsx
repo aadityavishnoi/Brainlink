@@ -119,7 +119,7 @@ export default function Contact() {
             <div>
               <label 
                 htmlFor="name" 
-                className="block text-sm font-medium text-gray-700 mb-1"
+                className="block text-sm font-medium text-gray-700 mb-1 font-outfit"
               >
                 Full Name <span className="text-red-500">*</span>
               </label>
@@ -130,7 +130,7 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 disabled={isSubmitting}
-                className={`w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition ${
+                className={`font-outfit w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition ${
                   errors.name ? 'border-red-500' : 'border-gray-300'
                 } ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
                 placeholder="John Doe"
@@ -145,7 +145,7 @@ export default function Contact() {
             <div>
               <label 
                 htmlFor="email" 
-                className="block text-sm font-medium text-gray-700 mb-1"
+                className="font-outfit block text-sm font-medium text-gray-700 mb-1"
               >
                 Email Address <span className="text-red-500">*</span>
               </label>
@@ -156,7 +156,7 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 disabled={isSubmitting}
-                className={`w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition ${
+                className={`font-outfit w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition ${
                   errors.email ? 'border-red-500' : 'border-gray-300'
                 } ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
                 placeholder="john@example.com"
@@ -171,7 +171,7 @@ export default function Contact() {
             <div>
               <label 
                 htmlFor="phone" 
-                className="block text-sm font-medium text-gray-700 mb-1"
+                className="font-outfit block text-sm font-medium text-gray-700 mb-1"
               >
                 Phone Number <span className="text-red-500">*</span>
               </label>
@@ -182,7 +182,7 @@ export default function Contact() {
                 value={formData.phone}
                 onChange={handleChange}
                 disabled={isSubmitting}
-                className={`w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition ${
+                className={`font-outfit w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition ${
                   errors.phone ? 'border-red-500' : 'border-gray-300'
                 } ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
                 placeholder="+91 98765 43210"
@@ -197,7 +197,7 @@ export default function Contact() {
             <div>
               <label 
                 htmlFor="company" 
-                className="block text-sm font-medium text-gray-700 mb-1"
+                className="font-outfit block text-sm font-medium text-gray-700 mb-1"
               >
                 Company Name <span className="text-gray-400 text-xs">(Optional)</span>
               </label>
@@ -208,7 +208,7 @@ export default function Contact() {
                 value={formData.company}
                 onChange={handleChange}
                 disabled={isSubmitting}
-                className={`w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition ${
+                className={`font-outfit w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition ${
                   isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
                 }`}
                 placeholder="Your Company"
@@ -219,7 +219,7 @@ export default function Contact() {
             <div>
               <label 
                 htmlFor="message" 
-                className="block text-sm font-medium text-gray-700 mb-1"
+                className="font-outfit block text-sm font-medium text-gray-700 mb-1"
               >
                 Message <span className="text-red-500">*</span>
               </label>
@@ -230,14 +230,14 @@ export default function Contact() {
                 onChange={handleChange}
                 disabled={isSubmitting}
                 rows="5"
-                className={`w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition resize-none ${
+                className={`font-outfit w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition resize-none ${
                   errors.message ? 'border-red-500' : 'border-gray-300'
                 } ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
                 placeholder="Tell us about your project or inquiry..."
                 required
               ></textarea>
               {errors.message && (
-                <p className="mt-1 text-sm text-red-500">{errors.message}</p>
+                <p className="font-outfit mt-1 text-sm text-red-500">{errors.message}</p>
               )}
             </div>
 
@@ -245,17 +245,17 @@ export default function Contact() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full py-3 px-6 rounded-lg font-semibold text-white transition-all duration-200 ${
+              className={`font-outfit w-full py-3 px-6 rounded-lg font-semibold text-white transition-all duration-200 ${
                 isSubmitting 
                   ? 'bg-gray-400 cursor-not-allowed' 
                   : 'bg-blue-600 hover:bg-blue-700 hover:shadow-lg'
               }`}
             >
               {isSubmitting ? (
-                <span className="flex items-center justify-center">
-                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                <span className="font-outfit flex items-center justify-center">
+                  <svg className="font-outfitanimate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="font-outfit opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="font-outfit opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
                   Sending...
                 </span>
@@ -268,7 +268,7 @@ export default function Contact() {
             {result && (
               <div
                 role="alert"
-                className={`mt-4 p-3 rounded-lg text-center font-medium text-sm ${
+                className={`font-outfit mt-4 p-3 rounded-lg text-center font-medium text-sm ${
                   result.includes('✓') 
                     ? 'bg-green-100 text-green-800' 
                     : result.includes('✗')
@@ -281,7 +281,7 @@ export default function Contact() {
             )}
           </form>
 
-          <p className="text-xs text-gray-500 text-center mt-6">
+          <p className="font-outfit text-xs text-gray-500 text-center mt-6">
             By submitting this form, you agree to our Terms of Service and Privacy Policy.
           </p>
         </div>
