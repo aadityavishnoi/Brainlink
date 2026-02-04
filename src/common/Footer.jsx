@@ -29,17 +29,18 @@ export default function Footer() {
           <div className="flex flex-col space-y-2">
             <h3 className="font-semibold text-white mb-2 font-outfit">Contact Us</h3>
             <p className="font-outfit">Email: <a href="mailto:team.brainlink@gmail.com" className="hover:text-blue-500 font-outfit">team.brainlink@gmail.com</a><br />
-            Knowledge Park 2, Greater Noida (201306)<br />
+            Knowledge Park 2, Greater Noida (201310)<br />
             </p>
             <div className="flex space-x-4 mt-2">
               <a href="https://www.linkedin.com/company/brainlinksoftwares/" className="hover:text-blue-500"><i className="fab fa-linkedin-in"></i></a>
               <a href="https://www.instagram.com/brainlinksoftwares/" className="hover:text-blue-500"><i className="fab fa-instagram"></i></a>
+              <a href="https://x.com/BrainlinkIndia" className="hover:text-blue-500"><i className="fab fa-twitter"></i></a>
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm">
-          © {new Date().getFullYear()} Brainlink Softwares. All rights reserved.
+          ©2025 - {new Date().getFullYear()} Brainlink Softwares. All rights reserved.
         </div>
       </div>
     </footer>
