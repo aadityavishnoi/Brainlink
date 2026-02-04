@@ -131,18 +131,14 @@ export default function Index() {
         <section className="flex flex-col items-center justify-center text-center bg-gradient-to-br from-blue-900 to-gray-800 text-white py-20 px-4" id="hero">
 
           <h1 className="text-2xl md:text-4xl font-outfit font-bold mb-4 text-white">
-            Welcome to Brainlink Softwares
+            Ready to start a project?
           </h1>
           <p className="font-outfit text-white text-sm md:text-xl mb-8 max-w-xl">
-           We build fast, scalable websites that actually help businesses grow.
+           Tell us about your idea and we’ll get back with a clear plan and timeline.
           </p>
           <div className="flex gap-4">
           <Link to="/contact" className="inline-flex items-center justify-center bg-white text-blue-600 font-semibold py-3 px-7 rounded-xl shadow-lg shadow-blue-600/20 hover:bg-white hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-outfit">
-            Contact Us
-          </Link>
-
-          <Link to="/pricing" className="inline-flex items-center justify-center border-2 border-white text-white font-semibold py-3 px-7 rounded-xl hover:bg-white hover:text-blue-600 hover:-translate-y-0.5 transition-all duration-300 font-outfit">
-            Our Pricing
+            Schedule A Call!
           </Link>
           </div>
         </section>
