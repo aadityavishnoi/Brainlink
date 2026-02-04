@@ -27,8 +27,7 @@ const teamMembers = [
 export default function Team() {
   /* ================= SEO ================= */
   useEffect(() => {
-    document.title =
-      "Team | Brainlink Softwares – Founders & Leadership";
+    document.title = "Team | Brainlink Softwares – Founders & Leadership";
 
     let metaDesc = document.querySelector("meta[name='description']");
     if (!metaDesc) {
@@ -38,7 +37,7 @@ export default function Team() {
     }
     metaDesc.setAttribute(
       "content",
-      "Meet the founders and leadership team behind Brainlink Softwares. Learn about our vision, culture, and the people building scalable software solutions."
+      "Meet the founders of Brainlink Softwares — engineers focused on clean architecture, scalable systems, and long-term business growth."
     );
   }, []);
 
@@ -65,36 +64,42 @@ export default function Team() {
         {JSON.stringify(schemaData)}
       </script>
 
-      {/* Hero */}
+      {/* ================= HERO ================= */}
       <section className="bg-gradient-to-b from-blue-50 to-white py-24">
         <div className="max-w-4xl mx-auto text-center px-6">
           <h1 className="text-4xl md:text-5xl font-outfit font-bold text-gray-900">
-            The Team Behind Brainlink Softwares
+            People Who Actually Build Your Product
           </h1>
-          <p className="mt-5 text-lg text-gray-600 leading-relaxed font-outfit">
-            Meet the founding team of <strong>Brainlink Softwares</strong>, a
-            software development company focused on scalable web solutions,
-            clean architecture, and long-term business growth.
+          <p className="mt-6 text-lg text-gray-600 leading-relaxed font-outfit">
+            Brainlink Softwares is led by engineers who value clean code,
+            long-term scalability, and honest execution — not buzzwords.
           </p>
         </div>
       </section>
 
-      {/* Divider */}
       <div className="h-px bg-gray-200 max-w-5xl mx-auto" />
 
-      {/* Team Cards */}
+      {/* ================= TEAM CARDS ================= */}
       <section className="py-24 bg-white">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="grid gap-12 sm:grid-cols-2 justify-center">
+          <div className="grid gap-12 sm:grid-cols-2">
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="group bg-white border border-gray-200 rounded-3xl px-10 py-12 text-center shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+                className="group bg-white border border-gray-200 rounded-3xl px-10 py-12 text-center
+                           shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
               >
+                {/* Founder Badge */}
+                <span className="inline-block mb-6 px-4 py-1 text-xs font-semibold
+                                 text-blue-700 bg-blue-50 rounded-full">
+                  Founder
+                </span>
+
                 <img
                   src={member.img}
-                  alt={`${member.name} – ${member.role} at Brainlink Softwares`}
-                  className="w-32 h-32 mx-auto rounded-full object-cover ring-4 ring-blue-100 group-hover:ring-blue-300 transition"
+                  alt={`${member.name} – ${member.role}`}
+                  className="w-32 h-32 mx-auto rounded-full object-cover
+                             ring-4 ring-blue-100 group-hover:ring-blue-300 transition"
                   loading="lazy"
                 />
 
@@ -106,13 +111,13 @@ export default function Team() {
                   {member.role}
                 </p>
 
-                <div className="mt-6 flex justify-center gap-6">
+                <div className="mt-6 flex justify-center gap-6 text-xl">
                   <a
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-blue-700 text-xl"
-                    aria-label={`${member.name} LinkedIn`}
+                    title="LinkedIn Profile"
+                    className="text-gray-500 hover:text-blue-700"
                   >
                     <i className="fab fa-linkedin"></i>
                   </a>
@@ -120,8 +125,8 @@ export default function Team() {
                     href={member.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-pink-500 text-xl"
-                    aria-label={`${member.name} Instagram`}
+                    title="Instagram Profile"
+                    className="text-gray-500 hover:text-pink-500"
                   >
                     <i className="fab fa-instagram"></i>
                   </a>
@@ -132,7 +137,7 @@ export default function Team() {
         </div>
       </section>
 
-      {/* Founders Speech */}
+      {/* ================= FOUNDERS MESSAGE ================= */}
       <section className="bg-gray-50 py-24">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-16 font-outfit text-gray-900">
@@ -169,7 +174,7 @@ export default function Team() {
         </div>
       </section>
 
-      {/* Culture */}
+      {/* ================= CULTURE ================= */}
       <section className="bg-white py-24">
         <div className="max-w-4xl mx-auto text-center px-6">
           <h2 className="text-3xl font-bold font-outfit text-gray-900">
