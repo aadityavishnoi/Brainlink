@@ -3,7 +3,7 @@ import Index from "./pages/Index";
 import Contact from "./pages/Contact";
 import Service from "./pages/Service";
 import NotFound from "./common/NotFound";
-
+import { SpeedInsights } from "@vercel/speed-insights/react"
 export default function App() {
   return (
     <Router>
@@ -21,5 +21,6 @@ export default function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
+    
   );
 }
