@@ -3,10 +3,11 @@ import Index from "./pages/Index";
 import Contact from "./pages/Contact";
 import Service from "./pages/Service";
 import NotFound from "./common/NotFound";
-import { SpeedInsights } from "@vercel/speed-insights/react"
+import ScrollToTop from "./common/ScrollToTop";
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         {/* Active pages */}
         <Route path="/" element={<Index />} />
