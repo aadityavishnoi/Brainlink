@@ -6,51 +6,52 @@ import logo from "../assets/logo/logo.png";
 import { Link } from "react-router-dom";
 import whatsapp from "../assets/logo/whatsapp.png";
 export default function Index() {
-  const services = [
-    {
-      title: "Web Development",
-      subtitle: "Custom websites built for performance, flexibility & SEO.",
-      color: "from-blue-600 to-blue-800",
-      features: [
-        "Basic Landing Pages",
-        "Custom Web Applications",
-        "Responsive Design",
-        "SEO Optimized",
-      ],
-    },
-    {
-      title: "UI/UX Design",
-      subtitle: "Designs that are intuitive, beautiful, and brand-consistent.",
-      color: "from-green-600 to-green-800",
-      features: [
-        "Wireframes & Prototypes",
-        "User Flow Design",
-        "High-Fidelity Mockups",
-        "Brand Consistency",
-      ],
-    },
-    {
-      title: "Digital Marketing",
-      subtitle: "Grow your brand with results-driven marketing strategies.",
-      color: "from-pink-600 to-pink-800",
-      features: [
-        "SEO",
-        "Social Media",
-        "Content Marketing",
-      ],
-    },
-    {
-      title: "Solutions",
-      subtitle: "Technical support and optimization tailored to your needs.",
-      color: "from-blue-900 to-gray-800",
-      features: [
-        "Bug Fixes",
-        "Website Updates",
-        "Performance Optimization",
-        "24/7 Support",
-      ],
-    },
-  ];
+const services = [
+  {
+    title: "Web Development",
+    subtitle: "Custom websites built for performance, flexibility & SEO.",
+    color: "from-blue-600 to-blue-800",
+    features: [
+      "Basic Landing Pages",
+      "Custom Web Applications",
+      "Responsive Design",
+      "SEO Optimized",
+    ],
+  },
+  {
+    title: "UI/UX Design",
+    subtitle: "Designs that are intuitive, beautiful, and brand-consistent.",
+    color: "from-green-600 to-green-800",
+    features: [
+      "Wireframes & Prototypes",
+      "User Flow Design",
+      "High-Fidelity Mockups",
+      "Brand Consistency",
+    ],
+  },
+  {
+    title: "App Development",
+    subtitle: "Scalable mobile apps built for Android & iOS performance.",
+    color: "from-pink-600 to-pink-800",
+    features: [
+      "Android & iOS Apps",
+      "Cross-Platform Development",
+      "API Integration",
+      "Play Store Deployment",
+    ],
+  },
+  {
+    title: "Solutions",
+    subtitle: "Technical support and optimization tailored to your needs.",
+    color: "from-blue-900 to-gray-800",
+    features: [
+      "Bug Fixes",
+      "Website Updates",
+      "Performance Optimization",
+      "24/7 Support",
+    ],
+  },
+];
 
   const wcus = [
     {
