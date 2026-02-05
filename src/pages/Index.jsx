@@ -3,7 +3,6 @@ import Header from "../common/Header";
 import Footer from "../common/Footer";
 import "../css/index.css";
 import logo from "../assets/logo/logo.png";
-import { SpeedInsights } from "@vercel/speed-insights/react"
 import { Link } from "react-router-dom";
 import whatsapp from "../assets/logo/whatsapp.png";
 export default function Index() {
@@ -196,7 +195,6 @@ const services = [
         <img src={whatsapp} className="w-16 h-16 m-2 rounded-full"></img>
         </Link>
       </div>
-      <SpeedInsights />
       <Footer />
     </>
   );
