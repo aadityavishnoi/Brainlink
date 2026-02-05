@@ -4,54 +4,52 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import { Link } from "react-router-dom";
 
 export default function Services() {
-  const services = [
-    {
-      title: "Web Development",
-      subtitle: "Fast, scalable websites built for real business growth.",
-      color: "from-blue-600 to-blue-800",
-      icon: "fa-code",
-      features: [
-        "Landing Pages",
-        "Custom Web Applications",
-        "Responsive Design",
-        "SEO Optimized",
-      ],
-    },
-    {
-      title: "UI/UX Design",
-      subtitle: "Clean, intuitive interfaces users actually enjoy using.",
-      color: "from-green-600 to-green-800",
-      icon: "fa-pen-ruler",
-      features: [
-        "Wireframes & Prototypes",
-        "User Flow Design",
-        "High-Fidelity Mockups",
-        "Brand Consistency",
-      ],
-    },
-    {
-      title: "Digital Marketing",
-      subtitle: "Data-driven strategies to increase reach and conversions.",
-      color: "from-pink-600 to-pink-800",
-      icon: "fa-bullhorn",
-      features: [
-        "SEO",
-        "Social Media Marketing",
-      ],
-    },
-    {
-      title: "Solutions & Support",
-      subtitle: "Reliable technical support to keep your systems running.",
-      color: "from-slate-800 to-zinc-700",
-      icon: "fa-screwdriver-wrench",
-      features: [
-        "Bug Fixes",
-        "Website Updates",
-        "Performance Optimization",
-        "Ongoing Support",
-      ],
-    },
-  ];
+const services = [
+  {
+    title: "Web Development",
+    subtitle: "Custom websites built for performance, flexibility & SEO.",
+    color: "from-blue-600 to-blue-800",
+    features: [
+      "Basic Landing Pages",
+      "Custom Web Applications",
+      "Responsive Design",
+      "SEO Optimized",
+    ],
+  },
+  {
+    title: "UI/UX Design",
+    subtitle: "Designs that are intuitive, beautiful, and brand-consistent.",
+    color: "from-green-600 to-green-800",
+    features: [
+      "Wireframes & Prototypes",
+      "User Flow Design",
+      "High-Fidelity Mockups",
+      "Brand Consistency",
+    ],
+  },
+  {
+    title: "App Development",
+    subtitle: "Scalable mobile apps built for Android & iOS performance.",
+    color: "from-pink-600 to-pink-800",
+    features: [
+      "Android & iOS Apps",
+      "Cross-Platform Development",
+      "API Integration",
+      "App Store Deployment",
+    ],
+  },
+  {
+    title: "Solutions",
+    subtitle: "Technical support and optimization tailored to your needs.",
+    color: "from-blue-900 to-gray-800",
+    features: [
+      "Bug Fixes",
+      "Website Updates",
+      "Performance Optimization",
+      "24/7 Support",
+    ],
+  },
+];
 
   return (
     <section className="bg-gray-50 py-20 px-4">
