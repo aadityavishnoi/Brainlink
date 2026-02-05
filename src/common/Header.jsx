@@ -24,7 +24,7 @@ export default function Header() {
       <li><a href="/" className="text-blue-700 hover:text-blue-800 m-1 tracking-wide">Home</a></li>
       <li><a href="/service" className="hover:text-blue-700 m-1 tracking-wide">Services</a></li>
       <li><a href="/contact" className="hover:text-blue-700 m-1 tracking-wide">Contact</a></li>
-      <li><a href="/" className="hover:text-blue-700 m-1 tracking-wide">Blog</a></li>
+      <li><a href="/blog" className="hover:text-blue-700 m-1 tracking-wide">Blog</a></li>
     </ul>
 
   </div>
