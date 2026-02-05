@@ -5,9 +5,6 @@ import Contacts from "../common/Contacts";
 import "../css/index.css";
 
 export default function Contact() {
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
   const [result, setResult] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
