@@ -15,7 +15,11 @@ export default function BlogList() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/posts")
+    fetch("/api/posts", {
+    headers: {
+      "x-api-key": import.meta.env.VITE_API_KEY
+    }
+  })
       .then(res => res.json())
       .then(data => {
         setPosts(data);
