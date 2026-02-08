@@ -1,10 +1,21 @@
 import { neon } from "@neondatabase/serverless";
+import ApiAuth from "../middleware/ApiAuth";
 
 const sql = neon(process.env.DATABASE_URL);
 
 export default async function handler(req, res) {
+
+  // 🔒 API Lock
+  if (!ApiAuth(req, res)) return;
+
   try {
     const { slug } = req.query;
+
+    if (!slug) {
+      return res.status(400).json({
+        error: "Slug is required"
+      });
+    }
 
     const result = await sql`
       SELECT *
@@ -15,12 +26,18 @@ export default async function handler(req, res) {
     `;
 
     if (!result.length) {
-      return res.status(404).json({ message: "Post not found" });
+      return res.status(404).json({
+        message: "Post not found"
+      });
     }
 
     res.status(200).json(result[0]);
 
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error(err);
+
+    res.status(500).json({
+      error: "Server error"
+    });
   }
 }
