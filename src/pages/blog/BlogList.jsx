@@ -43,7 +43,7 @@ export default function BlogList() {
       <main className="max-w-7xl mx-auto px-6 py-12">
 
         {loading ? (
-          <p className="text-center text-lg font-medium animate-pulse">
+          <p className="text-center text-lg font-medium animate-pulse font-outfit">
             Loading blogs...
           </p>
         ) : posts.length === 0 ? (

@@ -81,20 +81,20 @@ export default function BlogDetail() {
             )}
 
             {/* Title */}
-            <h1 className="text-4xl font-bold mb-4">
+            <h1 className="text-4xl font-bold mb-4 font-outfit">
               {post.title}
             </h1>
 
             {/* Date */}
             {post.created_at && (
-              <p className="text-gray-500 mb-6 text-sm">
+              <p className="text-gray-500 mb-6 text-sm font-outfit">
                 {new Date(post.created_at).toLocaleDateString()}
               </p>
             )}
 
             {/* Excerpt */}
             {post.excerpt && (
-              <p className="text-lg text-gray-700 mb-8 font-medium">
+              <p className="text-lg text-gray-700 mb-8 font-medium font-outfit">
                 {post.excerpt}
               </p>
             )}
