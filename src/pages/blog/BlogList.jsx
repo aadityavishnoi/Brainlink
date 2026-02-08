@@ -33,7 +33,7 @@ export default function BlogList() {
 
       {/* HERO / BLOG HEADER */}
       <section className="bg-gray-100 py-16 text-center">
-        <h1 className="text-4xl font-bold mb-3 font-outfit">Brainlink Blog</h1>
+        <h1 className="text-4xl font-bold mb-3 font-outfit">Brainlink Blogs</h1>
         <p className="text-gray-600 max-w-xl mx-auto font-outfit">
           Insights, tutorials, tech updates and practical knowledge from our team.
         </p>
