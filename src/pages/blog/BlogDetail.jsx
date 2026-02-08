@@ -61,11 +61,11 @@ export default function BlogDetail() {
       <main className="max-w-4xl mx-auto px-6 py-12">
 
         {loading ? (
-          <p className="text-center text-lg animate-pulse">
+          <p className="text-center text-lg animate-pulse font-outfit">
             Loading article...
           </p>
         ) : !post ? (
-          <p className="text-center text-gray-500">
+          <p className="text-center text-gray-500 font-outfit">
             Blog not found.
           </p>
         ) : (
