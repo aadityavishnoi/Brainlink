@@ -102,7 +102,7 @@ export default function BlogDetail() {
             {/* Content (safe fallback if missing) */}
             {post.content ? (
               <div
-                className="prose max-w-none"
+                className="prose max-w-none font-outfit"
                 dangerouslySetInnerHTML={{
                   __html: post.content,
                 }}
@@ -113,7 +113,7 @@ export default function BlogDetail() {
 
             {/* Keywords */}
             {post.keywords?.length > 0 && (
-              <div className="mt-10 flex flex-wrap gap-2">
+              <div className="mt-10 flex flex-wrap gap-2 font-outfit">
                 {post.keywords.map((tag, i) => (
                   <span
                     key={i}
