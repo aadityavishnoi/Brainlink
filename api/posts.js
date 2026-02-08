@@ -8,31 +8,36 @@ export default async function handler(req, res) {
 
     // 👉 Single post
     if (slug) {
-      const post = await sql`
+      const result = await sql`
         SELECT *
         FROM posts
         WHERE slug = ${slug}
-        AND status = 'published'
+        LIMIT 1
       `;
 
-      if (!post.length) {
-        return res.status(404).json({ message: "Post Not Found!" });
+      if (!result.length) {
+        return res.status(404).json({
+          message: "Post not found"
+        });
       }
 
-      return res.status(200).json(post[0]);
+      return res.status(200).json(result[0]);
     }
 
-    // 👉 All posts
+    // 👉 All published posts list
     const posts = await sql`
       SELECT id, title, slug, excerpt, created_at
       FROM posts
-      WHERE status = 'published'
+      WHERE status='published'
       ORDER BY created_at DESC
     `;
 
-    res.status(200).json(posts);
+    return res.status(200).json(posts);
 
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error(err);
+    return res.status(500).json({
+      error: "Server error"
+    });
   }
 }
