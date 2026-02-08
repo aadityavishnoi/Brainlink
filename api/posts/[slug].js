@@ -5,9 +5,6 @@ const sql = neon(process.env.DATABASE_URL);
 
 export default async function handler(req, res) {
 
-  // 🔒 API Lock
-  if (!ApiAuth(req, res)) return;
-
   try {
     const { slug } = req.query;
 
