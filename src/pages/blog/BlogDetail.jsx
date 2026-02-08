@@ -11,7 +11,11 @@ export default function BlogDetail() {
   useEffect(() => {
     async function fetchPost() {
       try {
-        const res = await fetch(`/api/posts/${slug}`);
+        const res = await fetch(`/api/posts/${slug}`, {
+          headers: {
+            "x-api-key": import.meta.env.VITE_API_KEY
+          }
+        });
 
         if (!res.ok) throw new Error("Failed to fetch");
 
