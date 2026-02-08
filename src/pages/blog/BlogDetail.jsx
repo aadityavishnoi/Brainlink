@@ -9,30 +9,49 @@ export default function BlogDetail() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`/api/posts/${slug}`)
-      .then(res => res.json())
-      .then(data => {
-        setPost(data);
-        setLoading(false);
+    async function fetchPost() {
+      try {
+        const res = await fetch(`/api/posts/${slug}`);
 
-        // SEO Meta Handling
-        if (data?.meta_title)
-          document.title = data.meta_title;
+        if (!res.ok) throw new Error("Failed to fetch");
 
-        if (data?.meta_description) {
-          let meta = document.querySelector("meta[name='description']");
+        const data = await res.json();
+
+        // API returning array -> take first item
+        const postData = Array.isArray(data) ? data[0] : data;
+
+        setPost(postData || null);
+
+        // SEO meta handling
+        if (postData?.meta_title) {
+          document.title = postData.meta_title;
+        } else if (postData?.title) {
+          document.title = postData.title;
+        }
+
+        if (postData?.meta_description) {
+          let meta = document.querySelector(
+            "meta[name='description']"
+          );
+
           if (!meta) {
             meta = document.createElement("meta");
             meta.name = "description";
             document.head.appendChild(meta);
           }
-          meta.content = data.meta_description;
+
+          meta.content = postData.meta_description;
         }
-      })
-      .catch(err => {
-        console.error(err);
+
+      } catch (err) {
+        console.error("Blog fetch error:", err);
+        setPost(null);
+      } finally {
         setLoading(false);
-      });
+      }
+    }
+
+    fetchPost();
   }, [slug]);
 
   return (
@@ -67,9 +86,11 @@ export default function BlogDetail() {
             </h1>
 
             {/* Date */}
-            <p className="text-gray-500 mb-6 text-sm">
-              {new Date(post.created_at).toLocaleDateString()}
-            </p>
+            {post.created_at && (
+              <p className="text-gray-500 mb-6 text-sm">
+                {new Date(post.created_at).toLocaleDateString()}
+              </p>
+            )}
 
             {/* Excerpt */}
             {post.excerpt && (
@@ -78,11 +99,17 @@ export default function BlogDetail() {
               </p>
             )}
 
-            {/* Content */}
-            <div
-              className="prose max-w-none"
-              dangerouslySetInnerHTML={{ __html: post.content }}
-            />
+            {/* Content (safe fallback if missing) */}
+            {post.content ? (
+              <div
+                className="prose max-w-none"
+                dangerouslySetInnerHTML={{
+                  __html: post.content,
+                }}
+              />
+            ) : (
+              <p>No content added yet.</p>
+            )}
 
             {/* Keywords */}
             {post.keywords?.length > 0 && (
