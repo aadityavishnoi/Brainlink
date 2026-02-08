@@ -11,40 +11,59 @@ const colors = [
 ];
 
 export default function BlogList() {
-  const[posts, setPosts] = useState([]);
-  const[loading, setLoading] = useState(true);
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("/api/posts")
-    .then(res => res.json())
-    .then(data => {
-      setPosts(data);
-      setLoading(false);
-    })
-    .catch(err => {
-      console.error(err);
-      setLoading(false);
-    });
+      .then(res => res.json())
+      .then(data => {
+        setPosts(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error(err);
+        setLoading(false);
+      });
   }, []);
+
   return (
     <>
       <Header />
-      <div className="flex flex-col items-center p-6 font-outfit">
-        <h1 className="text-2xl font-semibold">Brainlink Blogs</h1>
-      </div>
-      {loading ? (
-        <p className="text-center text-lg font-outfit">Loading Blogs. Please Wait!</p>
-      ) : (
-      <div className="p-10 grid grid-cols-2 md:grid-cols-4 sm:grid-cols-2 gap-6">
-        {posts.map((post, index) => (
-            <BlogCard
-            key={index}
-            post={post}
-            color={colors[index % colors.length]}
-            />
-          ))}
-      </div>
-      )}
+
+      {/* HERO / BLOG HEADER */}
+      <section className="bg-gray-100 py-16 text-center">
+        <h1 className="text-4xl font-bold mb-3">Brainlink Blog</h1>
+        <p className="text-gray-600 max-w-xl mx-auto">
+          Insights, tutorials, tech updates and practical knowledge from our team.
+        </p>
+      </section>
+
+      {/* MAIN CONTENT */}
+      <main className="max-w-7xl mx-auto px-6 py-12">
+
+        {loading ? (
+          <p className="text-center text-lg font-medium animate-pulse">
+            Loading blogs...
+          </p>
+        ) : posts.length === 0 ? (
+          <p className="text-center text-gray-500">
+            No blog posts yet.
+          </p>
+        ) : (
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {posts.map((post, index) => (
+              <BlogCard
+                key={post.id || index}
+                post={post}
+                color={colors[index % colors.length]}
+              />
+            ))}
+          </div>
+        )}
+
+      </main>
+
       <Footer />
     </>
   );
