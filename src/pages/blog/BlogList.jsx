@@ -51,7 +51,7 @@ export default function BlogList() {
             No blog posts yet.
           </p>
         ) : (
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-4">
             {posts.map((post, index) => (
               <BlogCard
                 key={post.id || index}
