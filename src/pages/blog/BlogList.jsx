@@ -15,7 +15,7 @@ export default function BlogList() {
   const[loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/posts")
+    fetch("https://brainlink.in/api/posts")
     .then(res => res.json())
     .then(data => {
       setPosts(data);
