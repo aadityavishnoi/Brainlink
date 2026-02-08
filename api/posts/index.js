@@ -1,11 +1,8 @@
 import { neon } from "@neondatabase/serverless";
-import ApiAuth from "../middleware/ApiAuth";
 
 const sql = neon(process.env.DATABASE_URL);
 
 export default async function handler(req, res) {
- 
-  if (!ApiAuth(req, res)) return;
 
   try {
     const posts = await sql`
