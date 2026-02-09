@@ -3,13 +3,6 @@ import Footer from "../../common/Footer";
 import BlogCard from "../../components/blog/BlogCard";
 import { useEffect, useState } from "react";
 
-const colors = [
-  "bg-blue-600",
-  "bg-green-600",
-  "bg-purple-600",
-  "bg-red-600"
-];
-
 export default function BlogList() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -56,7 +49,6 @@ export default function BlogList() {
               <BlogCard
                 key={post.id || index}
                 post={post}
-                color={colors[index % colors.length]}
               />
             ))}
           </div>
