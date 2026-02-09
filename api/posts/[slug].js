@@ -1,5 +1,4 @@
 import { neon } from "@neondatabase/serverless";
-import ApiAuth from "../middleware/ApiAuth";
 
 const sql = neon(process.env.DATABASE_URL);
 
