@@ -21,6 +21,8 @@ export default function Footer() {
             <a href="/" className="hover:text-blue-500 font-outfit">Home</a>
             <a href="/service" className="hover:text-blue-500 font-outfit">Services</a>
             <a href="/contact" className="hover:text-blue-500 font-outfit">Contact</a>
+            <a href="/blog" className="hover:text-blue-500 font-outfit">Blog</a>
+
           </div>
 
           {/* Contact Info */}
