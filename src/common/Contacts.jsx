@@ -31,7 +31,7 @@ export default function Contacts() {
             <ul className="space-y-5 font-outfit text-sm md:text-base">
               <li className="flex items-start gap-4">
                 <i className="fas fa-location-dot text-lg mt-1"></i>
-                <span>Knowledge Park 2, Greater Noida (201306)</span>
+                <span>Knowledge Park 2, Greater Noida (201310)</span>
               </li>
 
               <li className="flex items-center gap-4">
