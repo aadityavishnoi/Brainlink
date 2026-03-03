@@ -81,7 +81,7 @@ export default function Contacts() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://wa.me/919412330177?text=Hi,%20Brainlink%20Softwares"
+                href="https://wa.me/918126280200?text=Hi,%20Brainlink%20Softwares"
                 className="bg-green-600 text-white text-center font-semibold py-3 px-6 rounded-xl hover:bg-green-700 transition font-outfit"
               >
                 WhatsApp Us
