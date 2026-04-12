@@ -78,7 +78,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop nav */}
-          <ul style={{ display: "flex", alignItems: "center", gap: 8, listStyle: "none" }} className="hidden md:flex">
+          <ul style={{ display: "flex", alignItems: "center", gap: 8, listStyle: "none" }} className="desktop-nav">
             {navLinks.map((l) =>
               l.hash ? (
                 <li key={l.label}>
@@ -102,7 +102,7 @@ export default function Header() {
           <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
             <a
               href="/contact"
-              className="btn-primary hidden sm:inline-flex"
+              className="btn-primary cta-desktop-only"
               style={{ padding: "10px 22px", fontSize: "0.85rem" }}
             >
               Get Free Audit
@@ -110,7 +110,7 @@ export default function Header() {
             {/* Hamburger */}
             <button
               onClick={() => setOpen(o => !o)}
-              className="md:hidden"
+              className="mobile-nav-btn"
               style={{
                 background: "rgba(255,255,255,0.07)",
                 border: "1px solid var(--border)",
@@ -146,16 +146,16 @@ export default function Header() {
           <div style={{ padding: "16px 24px 24px", display: "flex", flexDirection: "column", gap: 4 }}>
             {navLinks.map(l =>
               l.hash ? (
-                <a key={l.label} href={l.to} style={{ fontFamily: "'Inter',sans-serif", fontWeight: 500, fontSize: "0.95rem", color: "var(--muted)", textDecoration: "none", padding: "12px 0", borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
+                <a key={l.label} href={l.to} onClick={() => setOpen(false)} style={{ fontFamily: "'Inter',sans-serif", fontWeight: 500, fontSize: "0.95rem", color: "var(--muted)", textDecoration: "none", padding: "12px 0", borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
                   {l.label}
                 </a>
               ) : (
-                <Link key={l.label} to={l.to} style={{ fontFamily: "'Inter',sans-serif", fontWeight: 500, fontSize: "0.95rem", color: pathname === l.to ? "#fff" : "var(--muted)", textDecoration: "none", padding: "12px 0", borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
+                <Link key={l.label} to={l.to} onClick={() => setOpen(false)} style={{ fontFamily: "'Inter',sans-serif", fontWeight: 500, fontSize: "0.95rem", color: pathname === l.to ? "#fff" : "var(--muted)", textDecoration: "none", padding: "12px 0", borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
                   {l.label}
                 </Link>
               )
             )}
-            <a href="/contact" className="btn-primary" style={{ marginTop: 12, justifyContent: "center" }}>
+            <a href="/contact" onClick={() => setOpen(false)} className="btn-primary" style={{ marginTop: 12, justifyContent: "center" }}>
               Get Free Audit
             </a>
           </div>

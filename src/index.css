@@ -159,7 +159,17 @@ h1, h2, h3, h4 {
 @keyframes drawLine { to { stroke-dashoffset:0; } }
 
 /* Responsive helpers */
+.desktop-nav { display: flex; }
+.mobile-nav-btn { display: none !important; }
+.cta-desktop-only { display: inline-flex; }
+
+@media (max-width: 768px) {
+  .desktop-nav { display: none !important; }
+  .mobile-nav-btn { display: flex !important; }
+}
+
 @media (max-width: 640px) {
   .section { padding: 64px 20px; }
   .section-sm { padding: 48px 20px; }
+  .cta-desktop-only { display: none !important; }
 }
