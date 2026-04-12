@@ -1,48 +1,134 @@
 import React from "react";
 import logo from "../assets/logo/logo.png";
-import "@fortawesome/fontawesome-free/css/all.min.css";
+import "../index.css";
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="bg-gray-900 text-gray-200 dark:bg-gray-800 mt-12">
-      <div className="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between space-y-8 md:space-y-0">
-          {/* Logo and Info */}
-          <div className="flex flex-col space-y-4">
-            <img src={logo} alt="Brainlink Softwares" className="w-10" />
-            <p className="text-gray-400 max-w-xs font-outfit">
-              Brainlink Softwares creates innovative software solutions to help your business grow and succeed.
+    <footer style={{
+      background: "#0A0A0A",
+      borderTop: "1px solid var(--border)",
+      padding: "64px 24px 32px",
+    }}>
+      <div className="container">
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "2fr 1fr 1fr",
+          gap: 48,
+          marginBottom: 48,
+        }} className="footer-cols">
+
+          {/* Brand */}
+          <div>
+            <a href="/" style={{ display: "inline-flex", alignItems: "center", gap: 10, textDecoration: "none", marginBottom: 16 }}>
+              <img src={logo} alt="Brainlink" style={{ height: 28, width: 28, objectFit: "contain" }} />
+              <span style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "0.95rem", color: "#fff" }}>
+                Brainlink <span style={{ color: "var(--accent)" }}>Softwares</span>
+              </span>
+            </a>
+            <p style={{ fontSize: "0.875rem", color: "var(--muted)", lineHeight: 1.75, maxWidth: 280, marginBottom: 24 }}>
+              We build websites, apps and run digital marketing campaigns to help businesses grow online.
             </p>
+            {/* Socials */}
+            <div style={{ display: "flex", gap: 10 }}>
+              {[
+                { icon: "fab fa-linkedin-in", href: "https://www.linkedin.com/company/brainlinksoftwares/", label: "LinkedIn" },
+                { icon: "fab fa-instagram", href: "https://www.instagram.com/brainlinksoftwares/", label: "Instagram" },
+                { icon: "fab fa-x-twitter", href: "https://x.com/BrainlinkIndia", label: "Twitter" },
+              ].map((s, i) => (
+                <a
+                  key={i}
+                  href={s.href}
+                  aria-label={s.label}
+                  style={{
+                    width: 36, height: 36, borderRadius: 8,
+                    background: "rgba(255,255,255,0.05)",
+                    border: "1px solid var(--border)",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    color: "var(--muted)",
+                    textDecoration: "none",
+                    transition: "all 0.2s",
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.borderColor = "var(--accent)"; e.currentTarget.style.color = "var(--accent)"; }}
+                  onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.color = "var(--muted)"; }}
+                >
+                  <i className={s.icon} style={{ fontSize: "1rem" }} />
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Quick Links */}
-          <div className="flex flex-col space-y-2">
-            <h3 className="font-semibold text-white mb-2 font-outfit">Quick Links</h3>
-            <a href="/" className="hover:text-blue-500 font-outfit">Home</a>
-            <a href="/service" className="hover:text-blue-500 font-outfit">Services</a>
-            <a href="/contact" className="hover:text-blue-500 font-outfit">Contact</a>
-            <a href="/blog" className="hover:text-blue-500 font-outfit">Blog</a>
-
+          <div>
+            <h4 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "0.8rem", color: "#fff", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 20 }}>Links</h4>
+            <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 12 }}>
+              {[
+                { l: "Home", h: "/" },
+                { l: "Services", h: "/service" },
+                { l: "Pricing", h: "/#pricing" },
+                { l: "About", h: "/#about" },
+                { l: "Blog", h: "/blog" },
+                { l: "Contact", h: "/contact" },
+              ].map((item, i) => (
+                <li key={i}>
+                  <a href={item.h} style={{ fontSize: "0.875rem", color: "var(--muted)", textDecoration: "none", transition: "color 0.2s" }}
+                    onMouseEnter={e => e.currentTarget.style.color = "#fff"}
+                    onMouseLeave={e => e.currentTarget.style.color = "var(--muted)"}
+                  >{item.l}</a>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Contact Info */}
-          <div className="flex flex-col space-y-2">
-            <h3 className="font-semibold text-white mb-2 font-outfit">Contact Us</h3>
-            <p className="font-outfit">Email: <a href="mailto:team.brainlink@gmail.com" className="hover:text-blue-500 font-outfit">team.brainlink@gmail.com</a><br />
-            Knowledge Park 2, Greater Noida (201310)<br />
-            </p>
-            <div className="flex space-x-4 mt-2">
-              <a href="https://www.linkedin.com/company/brainlinksoftwares/" className="hover:text-blue-500"><i className="fab fa-linkedin-in"></i></a>
-              <a href="https://www.instagram.com/brainlinksoftwares/" className="hover:text-blue-500"><i className="fab fa-instagram"></i></a>
-              <a href="https://x.com/BrainlinkIndia" className="hover:text-blue-500"><i className="fab fa-twitter"></i></a>
+          {/* Contact */}
+          <div>
+            <h4 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "0.8rem", color: "#fff", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 20 }}>Contact</h4>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+              <a href="mailto:team.brainlink@gmail.com" style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: "0.875rem", color: "var(--muted)", textDecoration: "none", lineHeight: 1.5, transition: "color 0.2s" }}
+                onMouseEnter={e => e.currentTarget.style.color = "#fff"}
+                onMouseLeave={e => e.currentTarget.style.color = "var(--muted)"}
+              >
+                <span><i className="fas fa-envelope"></i></span> team.brainlink@gmail.com
+              </a>
+              <a href="tel:+919412330177" style={{ display: "flex", gap: 10, alignItems: "center", fontSize: "0.875rem", color: "var(--muted)", textDecoration: "none", transition: "color 0.2s" }}
+                onMouseEnter={e => e.currentTarget.style.color = "#fff"}
+                onMouseLeave={e => e.currentTarget.style.color = "var(--muted)"}
+              >
+                <span><i className="fas fa-phone-alt"></i></span> +91-94123-30177
+              </a>
+              <a href="https://wa.me/918126280200" style={{ display: "flex", gap: 10, alignItems: "center", fontSize: "0.875rem", color: "#25D366", textDecoration: "none" }}>
+                <span><i className="fab fa-whatsapp"></i></span> WhatsApp Us
+              </a>
+              <p style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: "0.8rem", color: "var(--muted2)", lineHeight: 1.5 }}>
+                <span><i className="fas fa-map-marker-alt"></i></span> Knowledge Park 2, Greater Noida (201310)
+              </p>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm font-outfit">
-          ©2025 - {new Date().getFullYear()} Brainlink Softwares. All rights reserved.
+        {/* Divider */}
+        <div style={{ height: 1, background: "var(--border)", marginBottom: 28 }} />
+
+        {/* Bottom */}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
+          <p style={{ fontSize: "0.8rem", color: "var(--muted2)" }}>
+            © 2025–{year} Brainlink Softwares. All rights reserved.
+          </p>
+          <p style={{ fontSize: "0.8rem", color: "var(--muted2)" }}>
+            Built in Greater Noida 🇮🇳
+          </p>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .footer-cols { grid-template-columns: 1fr 1fr !important; }
+        }
+        @media (max-width: 480px) {
+          .footer-cols { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </footer>
   );
 }

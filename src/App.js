@@ -6,25 +6,24 @@ import NotFound from "./common/NotFound";
 import ScrollToTop from "./common/ScrollToTop";
 import BlogList from "./pages/blog/BlogList";
 import BlogDetail from "./pages/blog/BlogDetail";
+import "./index.css";
+
 export default function App() {
   return (
     <Router>
       <ScrollToTop />
       <Routes>
-        {/* Active pages */}
-        <Route path="/" element={<Index />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/service" element={<Service />} />
-        <Route path="/blog" element={<BlogList />} />
+        <Route path="/"          element={<Index />} />
+        <Route path="/contact"   element={<Contact />} />
+        <Route path="/service"   element={<Service />} />
+        <Route path="/blog"      element={<BlogList />} />
         <Route path="/blog/:slug" element={<BlogDetail />} />
-        {/* Deleted pages explicitly returning 404 */}
-        <Route path="/pricing" element={<NotFound />} />
-        <Route path="/team" element={<NotFound />} />
-
-        {/* Catch-all */}
-        <Route path="*" element={<NotFound />} />
+        {/* Pricing & About are sections on the homepage — redirect there */}
+        <Route path="/pricing"   element={<Index />} />
+        <Route path="/about"     element={<Index />} />
+        <Route path="/team"      element={<NotFound />} />
+        <Route path="*"          element={<NotFound />} />
       </Routes>
     </Router>
-    
   );
 }

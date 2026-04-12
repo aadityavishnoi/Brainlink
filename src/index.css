@@ -1,31 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --bg:       #0A0A0A;
+  --bg-card:  #111116;
+  --bg-card2: #16161C;
+  --accent:   #4F6EF7;
+  --accent-h: #3D5CE3;
+  --green:    #25D366;
+  --green-h:  #1EBE59;
+  --border:   rgba(255,255,255,0.08);
+  --text:     #F0F0F5;
+  --muted:    #8888A0;
+  --muted2:   #55556A;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1, h2, h3, h4 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-/* ===== Anime Background Lines ===== */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
 
-.anime-line {
-  stroke-dasharray: 1200;
-  stroke-dashoffset: 1200;
-  animation: drawLine 5s ease-in-out infinite alternate;
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 13px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  letter-spacing: 0.01em;
+}
+.btn-primary:hover {
+  background: var(--accent-h);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(79,110,247,0.35);
 }
 
-.anime-line-2 {
-  animation-delay: 1.5s;
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+  letter-spacing: 0.01em;
+}
+.btn-secondary:hover {
+  border-color: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.04);
+  transform: translateY(-1px);
 }
 
-@keyframes drawLine {
-  to {
-    stroke-dashoffset: 0;
-  }
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--green);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 13px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-whatsapp:hover {
+  background: var(--green-h);
+  transform: translateY(-1px);
+}
+
+.section { padding: 96px 24px; }
+.section-sm { padding: 72px 24px; }
+.container { max-width: 1100px; margin: 0 auto; }
+
+.label {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(79,110,247,0.1);
+  border: 1px solid rgba(79,110,247,0.2);
+  padding: 5px 14px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.section-sub {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 520px;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+  transition: border-color 0.2s, transform 0.2s, background 0.2s;
+}
+.card:hover {
+  border-color: rgba(79,110,247,0.3);
+  background: var(--bg-card2);
+  transform: translateY(-2px);
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0;
+}
+
+/* Anime lines (keep for compat) */
+.anime-line { stroke-dasharray:1200; stroke-dashoffset:1200; animation:drawLine 5s ease-in-out infinite alternate; }
+.anime-line-2 { animation-delay:1.5s; }
+@keyframes drawLine { to { stroke-dashoffset:0; } }
+
+/* Responsive helpers */
+@media (max-width: 640px) {
+  .section { padding: 64px 20px; }
+  .section-sm { padding: 48px 20px; }
 }

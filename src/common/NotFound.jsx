@@ -1,21 +1,28 @@
 import { Link } from "react-router-dom";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import logo from "../assets/logo/logo.png";
+import "../index.css";
+
 export default function NotFound() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100 text-center">
-      <img src={logo} className="h-16 w-16" alt="Brainlink Software" />
-      <h1 className="text-6xl font-bold text-gray-800 mb-4 font-outfit">404</h1>
-      <h2 className="text-2xl font-semibold text-gray-700 mb-2 font-outfit">Page Not Found</h2>
-      <p className="text-gray-500 mb-6 font-outfit">
-        The page you’re looking for doesn’t exist or has been moved.
+    <div style={{
+      minHeight: "100vh", background: "var(--bg)",
+      display: "flex", flexDirection: "column",
+      alignItems: "center", justifyContent: "center",
+      textAlign: "center", padding: 40,
+    }}>
+      <div style={{
+        fontFamily: "'Poppins',sans-serif", fontWeight: 800,
+        fontSize: "clamp(6rem,20vw,10rem)",
+        color: "var(--accent)", lineHeight: 1,
+        opacity: 0.25, marginBottom: 24,
+        letterSpacing: "-0.04em",
+      }}>404</div>
+      <h1 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "clamp(1.5rem,4vw,2.2rem)", color: "#fff", marginBottom: 12 }}>
+        Page Not Found
+      </h1>
+      <p style={{ color: "var(--muted)", fontSize: "0.95rem", marginBottom: 36, maxWidth: 360, lineHeight: 1.75 }}>
+        The page you're looking for doesn't exist or has been moved.
       </p>
-      <Link
-        to="/"
-        className="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-outfit"
-      >
-        Go Back Home
-      </Link>
+      <Link to="/" className="btn-primary">← Back to Home</Link>
     </div>
   );
 }
