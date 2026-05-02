@@ -29,7 +29,7 @@ const steps = [
 const plans = [
   {
     name: "Starter",
-    price: "₹4,999",
+    price: "₹7,999",
     period: "/mo",
     tag: null,
     desc: "Perfect for new businesses getting started online.",
@@ -45,7 +45,7 @@ const plans = [
   },
   {
     name: "Growth",
-    price: "₹8,999",
+    price: "₹13,999",
     period: "/mo",
     tag: "Most Popular",
     desc: "For businesses ready to seriously grow online.",
@@ -63,7 +63,7 @@ const plans = [
   },
   {
     name: "Premium",
-    price: "₹13,999",
+    price: "₹19,999",
     period: "/mo",
     tag: null,
     desc: "Full-service package for established businesses.",
