@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Header from "../common/Header";
 import Footer from "../common/Footer";
 import "../index.css";
-import auraaLogo from "../assets/clients/auraa-logo.png";
+import auraaLogo from "../assets/clients/image.png";
 
 
 /* ─── Data ─────────────────────────────────────────── */
@@ -250,7 +250,7 @@ export default function Index() {
                       <p style={{ fontSize: "0.75rem", color: "var(--accent)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em" }}>{c.tagline}</p>
                     </div>
                   </div>
-                  
+
                   <div style={{ flex: 1 }}>
                     <p style={{ fontSize: "0.9rem", color: "var(--muted)", lineHeight: 1.6, marginBottom: 16 }}>{c.desc}</p>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
