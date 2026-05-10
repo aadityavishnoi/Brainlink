@@ -11,7 +11,7 @@ const devServices = [
 ];
 
 const mktServices = [
-  { icon: <i className="fab fa-instagram"></i>, title: "Instagram Growth", desc: "Consistent content strategy, real engagement, and organic follower growth for your brand.", features: ["Content Calendar", "Reels & Posts", "Engagement Strategy", "Monthly Analytics"] },
+  { icon: <i className="fab fa-instagram"></i>, title: "Instagram Growth", desc: "Specialised content strategy for Architects & Interior Designers. We handle everything from on-site reel shooting to premium editing and organic growth.", features: ["On-site Reel Shooting", "Premium Video Editing", "Niche-Specific Strategy", "Monthly Analytics"] },
   { icon: <i className="fab fa-whatsapp"></i>, title: "WhatsApp Marketing", desc: "Targeted broadcast campaigns to your customer base — 98% open rate, real results.", features: ["Bulk Broadcasts", "Drip Campaigns", "Lead Nurturing", "Catalogue Setup"] },
   { icon: <i className="fas fa-bullhorn"></i>, title: "Meta & Google Ads", desc: "Paid advertising that brings qualified leads, not just impressions.", features: ["Campaign Strategy", "Ad Creatives", "Audience Targeting", "ROI Reporting"] },
   { icon: <i className="fas fa-search"></i>, title: "SEO", desc: "Rank on Google and get free, organic traffic that compounds month after month.", features: ["Keyword Research", "On-Page SEO", "Technical SEO", "Monthly Reports"] },

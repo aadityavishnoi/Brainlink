@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Header from "../common/Header";
 import Footer from "../common/Footer";
 import "../index.css";
+import auraaLogo from "../assets/clients/auraa-logo.png";
+
 
 /* ─── Data ─────────────────────────────────────────── */
 const devServices = [
@@ -79,6 +81,19 @@ const plans = [
     highlight: false,
   },
 ];
+
+const clients = [
+  {
+    name: "FORM AURAA ARCHITECTS",
+    tagline: "Architecture | Interior | Landscape | Structure",
+    logo: auraaLogo,
+    service: "Reel Editing, Shooting & Marketing",
+    contact: "Ar. Kushagra Raj | Ar. Saurav Sharma",
+    location: "Greater Noida, UP",
+    desc: "We handle their complete digital presence, from on-site reel shooting to premium editing and targeted marketing."
+  }
+];
+
 
 /* ─── Component ───────────────────────────────────── */
 export default function Index() {
@@ -197,6 +212,68 @@ export default function Index() {
 
           </div>
         </section>
+
+        {/* ── CLIENTS ───────────────────────────────────────────── */}
+        <section className="section" style={{ background: "var(--bg)", borderBottom: "1px solid var(--border)" }}>
+          <div className="container">
+            <div style={{ textAlign: "center", marginBottom: 56 }}>
+              <span className="label">Our Clients</span>
+              <h2 className="section-title">Trusted by Industry Leaders</h2>
+              <p className="section-sub" style={{ margin: "0 auto" }}>
+                Helping businesses build a premium brand through quality content and strategic marketing.
+              </p>
+            </div>
+
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 32 }}>
+              {clients.map((c, i) => (
+                <div key={i} className="card" style={{
+                  background: "var(--bg-card)",
+                  border: "1px solid var(--border)",
+                  borderRadius: 20,
+                  padding: 32,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 20,
+                  transition: "transform 0.3s ease",
+                }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+                    <div style={{
+                      width: 64, height: 64, borderRadius: 12,
+                      background: "#064e3b", // Matching the logo's dark green background
+                      padding: 4, display: "flex", alignItems: "center", justifyContent: "center",
+                      overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)"
+                    }}>
+                      <img src={c.logo} alt={c.name} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+                    </div>
+                    <div>
+                      <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "#fff", marginBottom: 2 }}>{c.name}</h3>
+                      <p style={{ fontSize: "0.75rem", color: "var(--accent)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em" }}>{c.tagline}</p>
+                    </div>
+                  </div>
+                  
+                  <div style={{ flex: 1 }}>
+                    <p style={{ fontSize: "0.9rem", color: "var(--muted)", lineHeight: 1.6, marginBottom: 16 }}>{c.desc}</p>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                      <span style={{ fontSize: "0.75rem", background: "rgba(79,110,247,0.1)", color: "var(--accent)", padding: "4px 10px", borderRadius: 4, border: "1px solid rgba(79,110,247,0.2)" }}>
+                        <i className="fas fa-video" style={{ marginRight: 6 }}></i> {c.service}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div style={{ paddingTop: 16, borderTop: "1px solid var(--border)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <div style={{ fontSize: "0.8rem", color: "var(--muted2)" }}>
+                      <i className="fas fa-user-tie" style={{ marginRight: 6 }}></i> {c.contact}
+                    </div>
+                    <div style={{ fontSize: "0.8rem", color: "var(--muted2)" }}>
+                      <i className="fas fa-map-marker-alt" style={{ marginRight: 6 }}></i> {c.location}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
 
         {/* ── HOW IT WORKS ─────────────────────────────────────── */}
         <section className="section" id="how">
