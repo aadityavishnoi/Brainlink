@@ -47,10 +47,10 @@ export default function Contacts() {
               <li className="flex items-center gap-4">
                 <i className="fas fa-envelope text-lg"></i>
                 <a
-                  href="mailto:vishnoiaaditya29@gmail.com"
+                  href="mailto:team.brainlink@gmail.com"
                   className="hover:underline"
                 >
-                  vishnoiaaditya29@gmail.com
+                  team.brainlink@gmail.com
                 </a>
               </li>
             </ul>

@@ -7,77 +7,70 @@ import auraaLogo from "../assets/clients/image.png";
 
 
 /* ─── Data ─────────────────────────────────────────── */
-const devServices = [
-  { icon: <i className="fas fa-globe"></i>, title: "Website Development", desc: "Fast, SEO-ready websites that convert visitors into customers." },
-  { icon: <i className="fas fa-mobile-alt"></i>, title: "App Development", desc: "Android & iOS apps built for scale and performance." },
-  { icon: <i className="fas fa-bullseye"></i>, title: "Landing Pages", desc: "High-converting pages designed around your offer." },
-];
-
-const mktServices = [
-  { icon: <i className="fab fa-instagram"></i>, title: "Instagram Growth", desc: "Consistent content, real engagement, real followers." },
-  { icon: <i className="fab fa-whatsapp"></i>, title: "WhatsApp Marketing", desc: "Broadcast campaigns that get read — 98% open rate." },
-  { icon: <i className="fas fa-bullhorn"></i>, title: "Meta & Google Ads", desc: "Paid ads that bring leads, not just impressions." },
-  { icon: <i className="fas fa-search"></i>, title: "SEO", desc: "Rank on Google and get free traffic month after month." },
+/* ─── Data ─────────────────────────────────────────── */
+const coreServices = [
+  { icon: <i className="fas fa-code"></i>, title: "Custom Software Development", desc: "Writing, modifying and testing computer programs (NIC 62011) to meet the specific needs of your business." },
+  { icon: <i className="fas fa-laptop-code"></i>, title: "Web Design & Development", desc: "Premium web-page designing (NIC 62012) with modern UI/UX and high-performance layouts." },
+  { icon: <i className="fas fa-tools"></i>, title: "Support & Maintenance", desc: "Reliable software support and maintenance (NIC 62013) to ensure your systems run smoothly 24/7." },
 ];
 
 const steps = [
-  { n: "01", title: "Understand Your Business", desc: "We learn your goals, audience and competition before doing anything." },
-  { n: "02", title: "Build Your Online Presence", desc: "Website, landing page or app — we set your foundation right." },
-  { n: "03", title: "Launch Campaigns", desc: "We run ads, content and campaigns to put you in front of customers." },
-  { n: "04", title: "Generate Leads", desc: "Calls, form fills, WhatsApp messages — real business enquiries." },
-  { n: "05", title: "Scale Growth", desc: "Analyse, optimise, and grow month over month." },
+  { n: "01", title: "Analyze Requirements", desc: "We understand your specific needs for software or web solutions." },
+  { n: "02", title: "Strategic Planning", desc: "Designing the architecture and roadmap for your custom project." },
+  { n: "03", title: "Development & Testing", desc: "Writing and testing code to ensure a bug-free, high-performance product." },
+  { n: "04", title: "Deployment", desc: "Launching your web page or software into production with care." },
+  { n: "05", title: "Continuous Support", desc: "Regular maintenance and support to keep your software updated and secure." },
 ];
 
 const plans = [
   {
-    name: "Starter",
-    price: "₹7,999",
-    period: "/mo",
+    name: "Standard",
+    price: "₹9,999",
+    period: "/project",
     tag: null,
-    desc: "Perfect for new businesses getting started online.",
+    desc: "Perfect for basic web design and software needs.",
     features: [
-      "1 Static Website",
-      "8 Reels/month",
-      "Basic video editing",
-      "3 WhatsApp campaigns",
-      "6 Static posts",
+      "Custom Web Page Design",
+      "Responsive Layout",
+      "Basic Software Support",
+      "Software Testing",
+      "Deployment Assistance",
     ],
-    cta: "Choose Starter",
+    cta: "Choose Standard",
     highlight: false,
   },
   {
-    name: "Growth",
-    price: "₹13,999",
+    name: "Professional",
+    price: "₹19,999",
     period: "/mo",
     tag: "Most Popular",
-    desc: "For businesses ready to seriously grow online.",
+    desc: "For businesses needing ongoing development & support.",
     features: [
-      "16 Reels + 4 Free = 20 Reels",
-      "12 Static posts",
-      "Force editing",
-      "Caption strategy",
-      "6 WhatsApp campaigns",
-      "1 PR Brand",
-      "SEO",
+      "Custom Computer Programming",
+      "Advanced Web Solutions",
+      "Regular Feature Updates",
+      "24/7 Maintenance",
+      "Priority Bug Fixes",
+      "API Integrations",
     ],
-    cta: "Choose Growth",
+    cta: "Choose Professional",
     highlight: true,
   },
   {
-    name: "Premium",
-    price: "₹19,999",
-    period: "/mo",
+    name: "Enterprise",
+    price: "Custom",
+    period: "",
     tag: null,
-    desc: "Full-service package for established businesses.",
+    desc: "Full-scale software support and complex dev projects.",
     features: [
-      "Personalised guidance/consultancy",
-      "24 + 6 Free = 30 Reels",
-      "Premium editing",
-      "9 WhatsApp campaigns",
-      "3 PR Brand Articles",
-      "18 Static posters",
+      "Dedicated Dev Team",
+      "Legacy Code Maintenance",
+      "Scalable Software Support",
+      "Complex System Architecture",
+      "Monthly Code Audits",
+      "Strategic Consultancy",
     ],
-    cta: "Choose Premium",
+    cta: "Contact Us",
     highlight: false,
   },
 ];
@@ -87,10 +80,10 @@ const clients = [
     name: "FORM AURAA ARCHITECTS",
     tagline: "Architecture | Interior | Landscape | Structure",
     logo: auraaLogo,
-    service: "Reel Editing, Shooting & Marketing",
+    service: "Video Editing & Production",
     contact: "Ar. Kushagra Raj | Ar. Saurav Sharma",
     location: "Greater Noida, UP",
-    desc: "We handle their complete digital presence, from on-site reel shooting to premium editing and targeted marketing."
+    desc: "We handled their visual storytelling, providing premium video editing and production services to showcase their architectural masterpieces."
   }
 ];
 
@@ -99,9 +92,9 @@ const clients = [
 export default function Index() {
 
   useEffect(() => {
-    document.title = "Brainlink Softwares | Web Development & Digital Marketing";
+    document.title = "Brainlink Softwares | Software Development & Web Design";
     const sm = (n, c) => { let el = document.querySelector(`meta[name='${n}']`); if (!el) { el = document.createElement("meta"); el.setAttribute("name", n); document.head.appendChild(el); } el.setAttribute("content", c); };
-    sm("description", "Brainlink Softwares builds websites, apps and runs digital marketing campaigns to help your business grow online.");
+    sm("description", "Brainlink Softwares specializes in custom software development, web designing, and maintenance services (NIC 62011, 62012, 62013).");
   }, []);
 
   return (
@@ -134,8 +127,8 @@ export default function Index() {
               marginBottom: 24,
               letterSpacing: "-0.02em",
             }}>
-              We Build Your Online Presence —{" "}
-              <span style={{ color: "var(--accent)" }}>And Bring You Customers.</span>
+              Custom Software Development &{" "}
+              <span style={{ color: "var(--accent)" }}>Web Design Solutions.</span>
             </h1>
 
             <p style={{
@@ -146,7 +139,7 @@ export default function Index() {
               maxWidth: 580,
               margin: "0 auto 40px",
             }}>
-              Websites, apps, ads, social media & WhatsApp marketing — everything you need to grow your business.
+              Writing, modifying, and supporting computer programs to meet your business needs. Reliable software support and premium web designing.
             </p>
 
             <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
@@ -166,48 +159,20 @@ export default function Index() {
 
             <div style={{ textAlign: "center", marginBottom: 64 }}>
               <span className="label">What We Do</span>
-              <h2 className="section-title">Services Built Around Your Growth</h2>
+              <h2 className="section-title">Core Software & Web Solutions</h2>
               <p className="section-sub" style={{ margin: "0 auto" }}>
-                Two pillars — build your presence, then drive customers to it.
+                Specialized in Computer Programming, Web Page Designing, and Software Support.
               </p>
             </div>
 
-            {/* Development */}
-            <div style={{ marginBottom: 56 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
-                <span style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--accent)" }}>
-                  ◆ Development
-                </span>
-                <div style={{ flex: 1, height: 1, background: "var(--border)" }} />
-              </div>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
-                {devServices.map((s, i) => (
-                  <div key={i} className="card">
-                    <div style={{ fontSize: "1.8rem", marginBottom: 14 }}>{s.icon}</div>
-                    <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "1rem", color: "#fff", marginBottom: 8 }}>{s.title}</h3>
-                    <p style={{ fontSize: "0.88rem", color: "var(--muted)", lineHeight: 1.7 }}>{s.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Marketing */}
-            <div>
-              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
-                <span style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "#34d399" }}>
-                  ◆ Marketing
-                </span>
-                <div style={{ flex: 1, height: 1, background: "var(--border)" }} />
-              </div>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 20 }}>
-                {mktServices.map((s, i) => (
-                  <div key={i} className="card" style={{ borderLeft: "2px solid rgba(52,211,153,0.3)" }}>
-                    <div style={{ fontSize: "1.8rem", marginBottom: 14 }}>{s.icon}</div>
-                    <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "1rem", color: "#fff", marginBottom: 8 }}>{s.title}</h3>
-                    <p style={{ fontSize: "0.88rem", color: "var(--muted)", lineHeight: 1.7 }}>{s.desc}</p>
-                  </div>
-                ))}
-              </div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 24 }}>
+              {coreServices.map((s, i) => (
+                <div key={i} className="card">
+                  <div style={{ fontSize: "1.8rem", marginBottom: 14 }}>{s.icon}</div>
+                  <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "1rem", color: "#fff", marginBottom: 8 }}>{s.title}</h3>
+                  <p style={{ fontSize: "0.88rem", color: "var(--muted)", lineHeight: 1.7 }}>{s.desc}</p>
+                </div>
+              ))}
             </div>
 
           </div>
@@ -321,9 +286,9 @@ export default function Index() {
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }} className="about-grid">
               <div>
                 <span className="label">Who We Are</span>
-                <h2 className="section-title">Developers & Marketers — Under One Roof</h2>
+                <h2 className="section-title">Software Engineers & Web Designers</h2>
                 <p style={{ color: "var(--muted)", lineHeight: 1.85, fontSize: "0.95rem", marginTop: 16 }}>
-                  We're a team of developers and digital marketers — a registered <strong>MSME (UDYAM-UP-59-0113622)</strong> enterprise. Based in Uttar Pradesh, we help small and medium businesses build a strong online presence and attract real customers through smart digital strategies.
+                  We're a team of software engineers and designers — a registered <strong>MSME (UDYAM-UP-59-0113622)</strong> enterprise. Based in Uttar Pradesh, we specialize in high-quality computer programming, custom web designing, and long-term software maintenance for businesses.
                 </p>
                 <p style={{ color: "var(--muted)", lineHeight: 1.85, fontSize: "0.95rem", marginTop: 16 }}>
                   No outsourcing. No fluff. You talk directly to the people building and running your campaigns.

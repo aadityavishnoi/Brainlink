@@ -85,11 +85,11 @@ export default function Footer() {
           <div>
             <h4 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "0.8rem", color: "#fff", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 20 }}>Contact</h4>
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-              <a href="mailto:vishnoiaaditya29@gmail.com" style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: "0.875rem", color: "var(--muted)", textDecoration: "none", lineHeight: 1.5, transition: "color 0.2s" }}
+              <a href="mailto:team.brainlink@gmail.com" style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: "0.875rem", color: "var(--muted)", textDecoration: "none", lineHeight: 1.5, transition: "color 0.2s" }}
                 onMouseEnter={e => e.currentTarget.style.color = "#fff"}
                 onMouseLeave={e => e.currentTarget.style.color = "var(--muted)"}
               >
-                <span><i className="fas fa-envelope"></i></span> vishnoiaaditya29@gmail.com
+                <span><i className="fas fa-envelope"></i></span> team.brainlink@gmail.com
               </a>
               <a href="tel:+919412330177" style={{ display: "flex", gap: 10, alignItems: "center", fontSize: "0.875rem", color: "var(--muted)", textDecoration: "none", transition: "color 0.2s" }}
                 onMouseEnter={e => e.currentTarget.style.color = "#fff"}

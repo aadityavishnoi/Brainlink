@@ -4,17 +4,28 @@ import Footer from "../common/Footer";
 import "../index.css";
 import { Link } from "react-router-dom";
 
-const devServices = [
-  { icon: <i className="fas fa-globe"></i>, title: "Website Development", desc: "Fast, SEO-ready websites built to convert visitors into paying customers. From simple business sites to full web applications.", features: ["Responsive Design", "SEO Optimised", "Fast Load Speed", "CMS Integration"] },
-  { icon: <i className="fas fa-mobile-alt"></i>, title: "App Development", desc: "Android & iOS mobile apps built for real users. We handle design, development, and Play Store / App Store deployment.", features: ["Android & iOS", "Cross-Platform", "API Integration", "Store Deployment"] },
-  { icon: <i className="fas fa-bullseye"></i>, title: "Landing Pages", desc: "High-converting single pages built around your offer — for ads, campaigns, or direct sales.", features: ["Conversion Focused", "A/B Test Ready", "Fast Performance", "Lead Capture Forms"] },
-];
-
-const mktServices = [
-  { icon: <i className="fab fa-instagram"></i>, title: "Instagram Growth", desc: "Specialised content strategy for Architects & Interior Designers. We handle everything from on-site reel shooting to premium editing and organic growth.", features: ["On-site Reel Shooting", "Premium Video Editing", "Niche-Specific Strategy", "Monthly Analytics"] },
-  { icon: <i className="fab fa-whatsapp"></i>, title: "WhatsApp Marketing", desc: "Targeted broadcast campaigns to your customer base — 98% open rate, real results.", features: ["Bulk Broadcasts", "Drip Campaigns", "Lead Nurturing", "Catalogue Setup"] },
-  { icon: <i className="fas fa-bullhorn"></i>, title: "Meta & Google Ads", desc: "Paid advertising that brings qualified leads, not just impressions.", features: ["Campaign Strategy", "Ad Creatives", "Audience Targeting", "ROI Reporting"] },
-  { icon: <i className="fas fa-search"></i>, title: "SEO", desc: "Rank on Google and get free, organic traffic that compounds month after month.", features: ["Keyword Research", "On-Page SEO", "Technical SEO", "Monthly Reports"] },
+const coreServices = [
+  {
+    icon: <i className="fas fa-code"></i>,
+    title: "Custom Software Development",
+    desc: "Writing, modifying, and testing computer programs to meet the specific needs of your business. We build scalable and high-performance software solutions.",
+    features: ["NIC 62011 Compliant", "Custom Programming", "Rigorous Testing", "Legacy Code Modification"],
+    color: "var(--accent)"
+  },
+  {
+    icon: <i className="fas fa-laptop-code"></i>,
+    title: "Premium Web Design",
+    desc: "Professional web-page designing with a focus on user experience, performance, and modern aesthetics.",
+    features: ["NIC 62012 Compliant", "Responsive UI/UX", "Interactive Elements", "Modern Frameworks"],
+    color: "#34d399"
+  },
+  {
+    icon: <i className="fas fa-tools"></i>,
+    title: "Software Support & Maintenance",
+    desc: "Providing reliable software support and maintenance to ensure your digital tools never stop working for you.",
+    features: ["NIC 62013 Compliant", "24/7 Monitoring", "Bug Fixes & Updates", "Technical Assistance"],
+    color: "#fbbf24"
+  },
 ];
 
 export default function Service() {
@@ -31,73 +42,40 @@ export default function Service() {
         <section style={{
           padding: "80px 24px 64px",
           textAlign: "center",
-          background: "radial-gradient(ellipse at 50% 0%, rgba(79,110,247,0.1) 0%, transparent 65%), var(--bg)",
+          background: "radial-gradient(ellipse at 50% 0%, rgba(79,110,24,0.1) 0%, transparent 65%), var(--bg)",
         }}>
           <div style={{ maxWidth: 620, margin: "0 auto" }}>
             <span className="label">Our Services</span>
             <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.2rem)", fontWeight: 800, color: "#fff", marginBottom: 16, letterSpacing: "-0.02em" }}>
-              Build. Market. <span style={{ color: "var(--accent)" }}>Grow.</span>
+              Custom Software & <span style={{ color: "var(--accent)" }}>Web Solutions.</span>
             </h1>
             <p style={{ color: "var(--muted)", fontSize: "1rem", lineHeight: 1.8, marginBottom: 32 }}>
-              Everything your business needs to establish an online presence and attract real customers.
+              Dedicated to Computer Programming, Web Designing, and Enterprise Software Support.
             </p>
             <Link to="/contact" className="btn-primary" style={{ fontSize: "0.95rem", padding: "14px 32px" }}>
-              Get Free Audit
+              Start Your Project
             </Link>
           </div>
         </section>
 
-        {/* Development */}
+        {/* Core Services */}
         <section className="section" style={{ background: "var(--bg-card)", borderTop: "1px solid var(--border)" }}>
           <div className="container">
-            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 40 }}>
-              <span style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--accent)" }}>◆ Development</span>
-              <div style={{ flex: 1, height: 1, background: "var(--border)" }} />
-            </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 24 }}>
-              {devServices.map((s, i) => (
-                <div key={i} className="card" style={{ borderLeft: "2px solid rgba(79,110,247,0.4)" }}>
-                  <div style={{ fontSize: "2rem", marginBottom: 16 }}>{s.icon}</div>
-                  <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "#fff", marginBottom: 10 }}>{s.title}</h3>
-                  <p style={{ fontSize: "0.875rem", color: "var(--muted)", lineHeight: 1.75, marginBottom: 20 }}>{s.desc}</p>
-                  <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 8 }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 32 }}>
+              {coreServices.map((s, i) => (
+                <div key={i} className="card" style={{ borderTop: `4px solid ${s.color}` }}>
+                  <div style={{ fontSize: "2.5rem", marginBottom: 20, color: s.color }}>{s.icon}</div>
+                  <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.25rem", color: "#fff", marginBottom: 14 }}>{s.title}</h3>
+                  <p style={{ fontSize: "0.95rem", color: "var(--muted)", lineHeight: 1.8, marginBottom: 24 }}>{s.desc}</p>
+                  <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 12, marginBottom: 24 }}>
                     {s.features.map((f, fi) => (
-                      <li key={fi} style={{ display: "flex", gap: 8, fontSize: "0.83rem", color: "var(--muted)" }}>
-                        <span style={{ color: "var(--accent)", flexShrink: 0 }}>✓</span> {f}
+                      <li key={fi} style={{ display: "flex", gap: 10, fontSize: "0.9rem", color: "var(--muted)" }}>
+                        <span style={{ color: s.color, flexShrink: 0 }}>✓</span> {f}
                       </li>
                     ))}
                   </ul>
-                  <Link to="/contact" style={{ display: "inline-block", marginTop: 24, fontSize: "0.85rem", fontWeight: 600, color: "var(--accent)", fontFamily: "'Poppins',sans-serif", textDecoration: "none" }}>
-                    Discuss this →
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Marketing */}
-        <section className="section" style={{ borderTop: "1px solid var(--border)" }}>
-          <div className="container">
-            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 40 }}>
-              <span style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "#34d399" }}>◆ Marketing</span>
-              <div style={{ flex: 1, height: 1, background: "var(--border)" }} />
-            </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: 24 }}>
-              {mktServices.map((s, i) => (
-                <div key={i} className="card" style={{ borderLeft: "2px solid rgba(52,211,153,0.35)" }}>
-                  <div style={{ fontSize: "2rem", marginBottom: 16 }}>{s.icon}</div>
-                  <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.05rem", color: "#fff", marginBottom: 10 }}>{s.title}</h3>
-                  <p style={{ fontSize: "0.875rem", color: "var(--muted)", lineHeight: 1.75, marginBottom: 20 }}>{s.desc}</p>
-                  <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 8 }}>
-                    {s.features.map((f, fi) => (
-                      <li key={fi} style={{ display: "flex", gap: 8, fontSize: "0.83rem", color: "var(--muted)" }}>
-                        <span style={{ color: "#34d399", flexShrink: 0 }}>✓</span> {f}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link to="/contact" style={{ display: "inline-block", marginTop: 24, fontSize: "0.85rem", fontWeight: 600, color: "#34d399", fontFamily: "'Poppins',sans-serif", textDecoration: "none" }}>
-                    Discuss this →
+                  <Link to="/contact" style={{ display: "inline-block", fontSize: "0.9rem", fontWeight: 600, color: s.color, fontFamily: "'Poppins',sans-serif", textDecoration: "none", transition: "opacity 0.2s" }} onMouseEnter={e=>e.target.style.opacity=0.8} onMouseLeave={e=>e.target.style.opacity=1}>
+                    Start Discussion →
                   </Link>
                 </div>
               ))}
