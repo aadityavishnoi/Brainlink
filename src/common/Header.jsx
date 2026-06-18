@@ -21,6 +21,7 @@ export default function Header() {
     { label: "Services", to: "/service" },
     { label: "Pricing", to: "/#pricing", hash: true },
     { label: "About", to: "/#about", hash: true },
+    { label: "Careers", to: "/#careers", hash: true },
     { label: "Blog", to: "/blog" },
     { label: "Contact", to: "/contact" },
   ];

@@ -41,7 +41,7 @@ export default function BlogList() {
               Brainlink <span style={{ color: "var(--accent)" }}>Blog</span>
             </h1>
             <p style={{ color: "var(--muted)", fontSize: "1rem", lineHeight: 1.8 }}>
-              Actionable advice on digital marketing, web development, and growing your business online.
+              Expert insights on custom software development, web engineering, and scalable enterprise solutions.
             </p>
           </div>
         </section>

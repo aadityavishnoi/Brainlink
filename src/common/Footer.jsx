@@ -68,6 +68,7 @@ export default function Footer() {
                 { l: "Services", h: "/service" },
                 { l: "Pricing", h: "/#pricing" },
                 { l: "About", h: "/#about" },
+                { l: "Careers", h: "/#careers" },
                 { l: "Blog", h: "/blog" },
                 { l: "Contact", h: "/contact" },
               ].map((item, i) => (

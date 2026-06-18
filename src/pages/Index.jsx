@@ -402,6 +402,56 @@ export default function Index() {
           </div>
         </section>
 
+        {/* ── INTERNSHIPS ────────────────────────────────────── */}
+        <section id="careers" className="section" style={{ background: "var(--bg)", borderTop: "1px solid var(--border)" }}>
+          <div className="container">
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }} className="careers-grid">
+              <div style={{ order: 2 }}>
+                <span className="label">Careers</span>
+                <h2 className="section-title">Join Our Team</h2>
+                <p style={{ color: "var(--muted)", lineHeight: 1.8, fontSize: "1rem", marginTop: 20 }}>
+                  Are you a college student or a fresh graduate looking for real-world experience? We're regularly hiring interns for software development, web designing, and technical support.
+                </p>
+                <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 16, marginTop: 24, marginBottom: 32 }}>
+                  {[
+                    { t: "Practical Learning", d: "Work on live projects with experienced mentors." },
+                    { t: "Official Certification", d: "Get an MSME-verified internship certificate for your college credits." },
+                    { t: "Skill Growth", d: "Learn modern tech stacks (React, Node, Cloud) in a professional setting." },
+                  ].map((item, i) => (
+                    <li key={i} style={{ display: "flex", gap: 12 }}>
+                      <span style={{ color: "#34d399", fontWeight: "bold" }}>✓</span>
+                      <div>
+                        <strong style={{ color: "#fff", display: "block", fontSize: "0.95rem" }}>{item.t}</strong>
+                        <span style={{ color: "var(--muted2)", fontSize: "0.85rem" }}>{item.d}</span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+                <a href="mailto:team.brainlink@gmail.com?subject=Internship Application" className="btn-secondary">
+                  Apply for Internship
+                </a>
+              </div>
+
+              <div style={{ order: 1 }}>
+                <div style={{ position: "relative", padding: "40px", background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 24 }}>
+                  <div style={{ position: "absolute", top: -20, right: -20, width: 80, height: 80, background: "var(--accent)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", transform: "rotate(15deg)", boxShadow: "0 10px 30px rgba(79,110,247,0.4)" }}>
+                    <span style={{ color: "#fff", fontWeight: 800, fontSize: "0.8rem", textAlign: "center" }}>HIRING NOW</span>
+                  </div>
+                  <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.2rem", color: "#fff", marginBottom: 12 }}>Available Positions</h3>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                    {["Software Development Intern", "Web Design Intern", "Technical Support Intern"].map((pos, i) => (
+                      <div key={i} style={{ padding: "16px", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, color: "var(--muted)" }}>
+                        {pos}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <style>{`.careers-grid { @media (max-width:768px) { grid-template-columns:1fr !important; } }`}</style>
+        </section>
+
         {/* ── CTA ──────────────────────────────────────────────── */}
         <section style={{
           background: "radial-gradient(ellipse at 50% 100%, rgba(79,110,247,0.15) 0%, transparent 70%), var(--bg-card)",
