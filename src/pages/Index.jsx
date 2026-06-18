@@ -427,17 +427,14 @@ export default function Index() {
                     </li>
                   ))}
                 </ul>
-                <a href="mailto:team.brainlink@gmail.com?subject=Internship Application" className="btn-secondary">
+                <a href="mailto:team.brainlink@gmail.com?subject=Application for Internship - Brainlink Softwares&body=Hi Aaditya,%0D%0A%0D%0AI am interested in the internship opportunities at Brainlink Softwares.%0D%0A%0D%0AMy Skills: [Enter your skills]%0D%0AAvailability: [Enter your start date]%0D%0A%0D%0APlease find my resume attached below.%0D%0A%0D%0AThanks!" className="btn-secondary">
                   Apply for Internship
                 </a>
               </div>
 
               <div style={{ order: 1 }}>
                 <div style={{ position: "relative", padding: "40px", background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 24 }}>
-                  <div style={{ position: "absolute", top: -20, right: -20, width: 80, height: 80, background: "var(--accent)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", transform: "rotate(15deg)", boxShadow: "0 10px 30px rgba(79,110,247,0.4)" }}>
-                    <span style={{ color: "#fff", fontWeight: 800, fontSize: "0.8rem", textAlign: "center" }}>HIRING NOW</span>
-                  </div>
-                  <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.2rem", color: "#fff", marginBottom: 12 }}>Available Positions</h3>
+                  <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.2rem", color: "#fff", marginBottom: 12 }}>Potential Positions</h3>
                   <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                     {["Software Development Intern", "Web Design Intern", "Technical Support Intern"].map((pos, i) => (
                       <div key={i} style={{ padding: "16px", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, color: "var(--muted)" }}>
