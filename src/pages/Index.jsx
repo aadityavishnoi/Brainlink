@@ -124,7 +124,7 @@ export default function Index() {
           }}
         >
           <div style={{ maxWidth: 760, margin: "0 auto" }}>
-            <span className="label">Digital Agency — Greater Noida</span>
+            <span className="label">Digital Agency — Uttar Pradesh</span>
 
             <h1 style={{
               fontSize: "clamp(2rem, 5.5vw, 3.8rem)",
@@ -323,7 +323,7 @@ export default function Index() {
                 <span className="label">Who We Are</span>
                 <h2 className="section-title">Developers & Marketers — Under One Roof</h2>
                 <p style={{ color: "var(--muted)", lineHeight: 1.85, fontSize: "0.95rem", marginTop: 16 }}>
-                  We're a team of developers and digital marketers based in Greater Noida. We help small and medium businesses build a strong online presence and attract real customers through smart digital strategies.
+                  We're a team of developers and digital marketers — a registered <strong>MSME (UDYAM-UP-59-0113622)</strong> enterprise. Based in Uttar Pradesh, we help small and medium businesses build a strong online presence and attract real customers through smart digital strategies.
                 </p>
                 <p style={{ color: "var(--muted)", lineHeight: 1.85, fontSize: "0.95rem", marginTop: 16 }}>
                   No outsourcing. No fluff. You talk directly to the people building and running your campaigns.

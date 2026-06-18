@@ -85,11 +85,11 @@ export default function Footer() {
           <div>
             <h4 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "0.8rem", color: "#fff", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 20 }}>Contact</h4>
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-              <a href="mailto:team.brainlink@gmail.com" style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: "0.875rem", color: "var(--muted)", textDecoration: "none", lineHeight: 1.5, transition: "color 0.2s" }}
+              <a href="mailto:vishnoiaaditya29@gmail.com" style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: "0.875rem", color: "var(--muted)", textDecoration: "none", lineHeight: 1.5, transition: "color 0.2s" }}
                 onMouseEnter={e => e.currentTarget.style.color = "#fff"}
                 onMouseLeave={e => e.currentTarget.style.color = "var(--muted)"}
               >
-                <span><i className="fas fa-envelope"></i></span> team.brainlink@gmail.com
+                <span><i className="fas fa-envelope"></i></span> vishnoiaaditya29@gmail.com
               </a>
               <a href="tel:+919412330177" style={{ display: "flex", gap: 10, alignItems: "center", fontSize: "0.875rem", color: "var(--muted)", textDecoration: "none", transition: "color 0.2s" }}
                 onMouseEnter={e => e.currentTarget.style.color = "#fff"}
@@ -101,7 +101,7 @@ export default function Footer() {
                 <span><i className="fab fa-whatsapp"></i></span> WhatsApp Us
               </a>
               <p style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: "0.8rem", color: "var(--muted2)", lineHeight: 1.5 }}>
-                <span><i className="fas fa-map-marker-alt"></i></span> Knowledge Park 2, Greater Noida (201310)
+                <span><i className="fas fa-map-marker-alt"></i></span> Meena Market Road, Kanth, Moradabad (244501)
               </p>
             </div>
           </div>
@@ -112,11 +112,16 @@ export default function Footer() {
 
         {/* Bottom */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+            <p style={{ fontSize: "0.8rem", color: "var(--muted2)" }}>
+              © 2025–{year} Brainlink Softwares. All rights reserved.
+            </p>
+            <p style={{ fontSize: "0.7rem", color: "var(--muted2)", opacity: 0.8 }}>
+              MSME UDYAM: UDYAM-UP-59-0113622
+            </p>
+          </div>
           <p style={{ fontSize: "0.8rem", color: "var(--muted2)" }}>
-            © 2025–{year} Brainlink Softwares. All rights reserved.
-          </p>
-          <p style={{ fontSize: "0.8rem", color: "var(--muted2)" }}>
-            Built in Greater Noida 🇮🇳
+            Built in Uttar Pradesh 🇮🇳
           </p>
         </div>
       </div>

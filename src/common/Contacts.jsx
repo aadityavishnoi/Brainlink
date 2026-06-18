@@ -31,7 +31,7 @@ export default function Contacts() {
             <ul className="space-y-5 font-outfit text-sm md:text-base">
               <li className="flex items-start gap-4">
                 <i className="fas fa-location-dot text-lg mt-1"></i>
-                <span>Knowledge Park 2, Greater Noida (201310)</span>
+                <span>Meena Market Road, Kanth, Moradabad (244501)</span>
               </li>
 
               <li className="flex items-center gap-4">
@@ -47,10 +47,10 @@ export default function Contacts() {
               <li className="flex items-center gap-4">
                 <i className="fas fa-envelope text-lg"></i>
                 <a
-                  href="mailto:team.brainlink@gmail.com"
+                  href="mailto:vishnoiaaditya29@gmail.com"
                   className="hover:underline"
                 >
-                  team.brainlink@gmail.com
+                  vishnoiaaditya29@gmail.com
                 </a>
               </li>
             </ul>

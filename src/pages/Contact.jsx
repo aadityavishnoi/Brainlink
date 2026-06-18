@@ -92,8 +92,8 @@ export default function Contact() {
                 {/* Contact items */}
                 {[
                   { icon: <i className="fas fa-phone-alt"></i>, label: "Phone", val: "+91-94123-30177", href: "tel:+919412330177" },
-                  { icon: <i className="fas fa-envelope"></i>, label: "Email", val: "team.brainlink@gmail.com", href: "mailto:team.brainlink@gmail.com" },
-                  { icon: <i className="fas fa-map-marker-alt"></i>, label: "Location", val: "Knowledge Park 2, Greater Noida (201310)", href: null },
+                  { icon: <i className="fas fa-envelope"></i>, label: "Email", val: "vishnoiaaditya29@gmail.com", href: "mailto:vishnoiaaditya29@gmail.com" },
+                  { icon: <i className="fas fa-map-marker-alt"></i>, label: "Location", val: "Meena Market Road, Kanth, Moradabad (244501)", href: null },
                 ].map((item, i) => (
                   <div key={i} style={{ display: "flex", gap: 16, alignItems: "flex-start", marginBottom: 24 }}>
                     <div style={{ width: 42, height: 42, background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: "1.1rem" }}>
