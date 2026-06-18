@@ -427,21 +427,17 @@ export default function Index() {
                     </li>
                   ))}
                 </ul>
-                <a href="mailto:team.brainlink@gmail.com?subject=Application for Internship - Brainlink Softwares&body=Hi Aaditya,%0D%0A%0D%0AI am interested in the internship opportunities at Brainlink Softwares.%0D%0A%0D%0AMy Skills: [Enter your skills]%0D%0AAvailability: [Enter your start date]%0D%0A%0D%0APlease find my resume attached below.%0D%0A%0D%0AThanks!" className="btn-secondary">
+                <a href="mailto:team.brainlink@gmail.com?subject=Application for Internship - Brainlink Softwares&body=Dear Hiring Team, Brainlink Softwares,%0D%0A%0D%0AI am writing to express my interest in an internship at your esteemed firm. As a student of [Your Degree/Field], I am keen to apply my skills in [Your Skills] to real-world projects.%0D%0A%0D%0AI am highly motivated to learn from the experts at Brainlink Softwares and contribute to your technical excellence. I am available for [Number] months starting from [Date].%0D%0A%0D%0APlease find my resume attached for your review. I look forward to the possibility of discussing how I can contribute to your team.%0D%0A%0D%0ABest Regards,%0D%0A[Your Name]%0D%0A[Your Phone Number]" className="btn-secondary">
                   Apply for Internship
                 </a>
               </div>
 
               <div style={{ order: 1 }}>
-                <div style={{ position: "relative", padding: "40px", background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 24 }}>
-                  <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.2rem", color: "#fff", marginBottom: 12 }}>Potential Positions</h3>
-                  <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                    {["Software Development Intern", "Web Design Intern", "Technical Support Intern"].map((pos, i) => (
-                      <div key={i} style={{ padding: "16px", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, color: "var(--muted)" }}>
-                        {pos}
-                      </div>
-                    ))}
-                  </div>
+                <div style={{ padding: "40px", background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 24, textAlign: "center" }}>
+                   <i className="fas fa-user-graduate" style={{ fontSize: "4rem", color: "var(--accent)", opacity: 0.2, marginBottom: 20 }}></i>
+                   <p style={{ color: "var(--muted)", fontSize: "0.95rem" }}>
+                     We are always on the lookout for passionate learners to join our waitlist for upcoming opportunities.
+                   </p>
                 </div>
               </div>
             </div>
