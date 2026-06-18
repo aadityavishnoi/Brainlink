@@ -8,22 +8,22 @@ const coreServices = [
   {
     icon: <i className="fas fa-code"></i>,
     title: "Custom Software Development",
-    desc: "Writing, modifying, and testing computer programs to meet the specific needs of your business. We build scalable and high-performance software solutions.",
-    features: ["NIC 62011 Compliant", "Custom Programming", "Rigorous Testing", "Legacy Code Modification"],
+    desc: "We build scalable, high-performance software solutions tailored to your unique business requirements.",
+    features: ["Custom Programming", "Rigorous Testing", "Legacy Code Modification", "API Integrations"],
     color: "var(--accent)"
   },
   {
     icon: <i className="fas fa-laptop-code"></i>,
     title: "Premium Web Design",
-    desc: "Professional web-page designing with a focus on user experience, performance, and modern aesthetics.",
-    features: ["NIC 62012 Compliant", "Responsive UI/UX", "Interactive Elements", "Modern Frameworks"],
+    desc: "Professional web designing with a focus on immersive user experiences and modern visual storytelling.",
+    features: ["Responsive UI/UX", "Interactive Elements", "Modern Frameworks", "SEO Optimized"],
     color: "#34d399"
   },
   {
     icon: <i className="fas fa-tools"></i>,
-    title: "Software Support & Maintenance",
-    desc: "Providing reliable software support and maintenance to ensure your digital tools never stop working for you.",
-    features: ["NIC 62013 Compliant", "24/7 Monitoring", "Bug Fixes & Updates", "Technical Assistance"],
+    title: "Support & Maintenance",
+    desc: "Dedicated software support and maintenance to ensure your critical systems remain reliable and secure.",
+    features: ["24/7 Monitoring", "Bug Fixes & Updates", "Technical Assistance", "Security Audits"],
     color: "#fbbf24"
   },
 ];

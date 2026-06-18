@@ -9,9 +9,9 @@ import auraaLogo from "../assets/clients/image.png";
 /* ─── Data ─────────────────────────────────────────── */
 /* ─── Data ─────────────────────────────────────────── */
 const coreServices = [
-  { icon: <i className="fas fa-code"></i>, title: "Custom Software Development", desc: "Writing, modifying and testing computer programs (NIC 62011) to meet the specific needs of your business." },
-  { icon: <i className="fas fa-laptop-code"></i>, title: "Web Design & Development", desc: "Premium web-page designing (NIC 62012) with modern UI/UX and high-performance layouts." },
-  { icon: <i className="fas fa-tools"></i>, title: "Support & Maintenance", desc: "Reliable software support and maintenance (NIC 62013) to ensure your systems run smoothly 24/7." },
+  { icon: <i className="fas fa-code"></i>, title: "Custom Software Development", desc: "Tailored software solutions designed to solve your complex business challenges and drive efficiency." },
+  { icon: <i className="fas fa-laptop-code"></i>, title: "Web Design & Development", desc: "Stunning, high-performance websites that blend modern aesthetics with seamless user experiences." },
+  { icon: <i className="fas fa-tools"></i>, title: "Support & Maintenance", desc: "Proactive software support and long-term maintenance to keep your digital assets secure and updated." },
 ];
 
 const steps = [
@@ -120,26 +120,25 @@ export default function Index() {
             <span className="label">Digital Agency — Uttar Pradesh</span>
 
             <h1 style={{
-              fontSize: "clamp(2rem, 5.5vw, 3.8rem)",
+              fontSize: "clamp(2.2rem, 6vw, 4rem)",
               fontWeight: 800,
               color: "#fff",
-              lineHeight: 1.15,
+              lineHeight: 1.1,
               marginBottom: 24,
-              letterSpacing: "-0.02em",
+              letterSpacing: "-0.03em",
             }}>
-              Custom Software Development &{" "}
-              <span style={{ color: "var(--accent)" }}>Web Design Solutions.</span>
+              Engineering <span style={{ color: "var(--accent)" }}>Digital Excellence.</span>
             </h1>
 
             <p style={{
-              fontSize: "clamp(1rem, 2vw, 1.15rem)",
+              fontSize: "clamp(1.1rem, 2vw, 1.25rem)",
               color: "var(--muted)",
-              lineHeight: 1.8,
+              lineHeight: 1.7,
               marginBottom: 40,
-              maxWidth: 580,
+              maxWidth: 640,
               margin: "0 auto 40px",
             }}>
-              Writing, modifying, and supporting computer programs to meet your business needs. Reliable software support and premium web designing.
+              We build high-performance software solutions and premium web experiences tailored to your business goals. Scalable, secure, and supported 24/7.
             </p>
 
             <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
