@@ -46,7 +46,7 @@ export default function Contact() {
     width: "100%", background: "var(--bg-card2)",
     border: `1px solid ${err ? "#ef4444" : "var(--border)"}`,
     borderRadius: 8, padding: "13px 16px",
-    color: "#fff", fontFamily: "'Inter',sans-serif", fontSize: "0.9rem",
+    color: "var(--text)", fontFamily: "'Inter',sans-serif", fontSize: "0.9rem",
     outline: "none", transition: "border-color 0.2s",
     boxSizing: "border-box",
   });
@@ -66,7 +66,7 @@ export default function Contact() {
         <section style={{ padding: "80px 24px 56px", textAlign: "center", background: "radial-gradient(ellipse at 50% 0%, rgba(79,110,247,0.1) 0%, transparent 65%), var(--bg)" }}>
           <div style={{ maxWidth: 560, margin: "0 auto" }}>
             <span className="label">Contact Us</span>
-            <h1 style={{ fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 800, color: "#fff", marginBottom: 16, letterSpacing: "-0.02em" }}>
+            <h1 style={{ fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 800, color: "var(--text)", marginBottom: 16, letterSpacing: "-0.02em" }}>
               Let's Talk About Your <span style={{ color: "var(--accent)" }}>Business</span>
             </h1>
             <p style={{ color: "var(--muted)", fontSize: "0.95rem", lineHeight: 1.8 }}>
@@ -82,7 +82,7 @@ export default function Contact() {
 
               {/* Left — info */}
               <div>
-                <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.3rem", color: "#fff", marginBottom: 8 }}>
+                <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.3rem", color: "var(--text)", marginBottom: 8 }}>
                   Get In Touch
                 </h2>
                 <p style={{ color: "var(--muted)", fontSize: "0.875rem", lineHeight: 1.8, marginBottom: 36 }}>
@@ -102,8 +102,8 @@ export default function Contact() {
                     <div>
                       <p style={{ fontFamily: "'Poppins',sans-serif", fontSize: "0.75rem", fontWeight: 600, color: "var(--muted2)", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 4 }}>{item.label}</p>
                       {item.href
-                        ? <a href={item.href} style={{ fontSize: "0.875rem", color: "#fff", textDecoration: "none", transition: "color 0.2s" }} onMouseEnter={e=>e.currentTarget.style.color="var(--accent)"} onMouseLeave={e=>e.currentTarget.style.color="#fff"}>{item.val}</a>
-                        : <span style={{ fontSize: "0.875rem", color: "#fff" }}>{item.val}</span>
+                        ? <a href={item.href} style={{ fontSize: "0.875rem", color: "var(--text)", textDecoration: "none", transition: "color 0.2s" }} onMouseEnter={e=>e.currentTarget.style.color="var(--accent)"} onMouseLeave={e=>e.currentTarget.style.color="var(--text)"}>{item.val}</a>
+                        : <span style={{ fontSize: "0.875rem", color: "var(--text)" }}>{item.val}</span>
                       }
                     </div>
                   </div>
@@ -128,7 +128,7 @@ export default function Contact() {
 
               {/* Right — form */}
               <div style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 16, padding: "40px 36px" }}>
-                <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.15rem", color: "#fff", marginBottom: 28 }}>Send Us a Message</h3>
+                <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.15rem", color: "var(--text)", marginBottom: 28 }}>Send Us a Message</h3>
 
                 <form onSubmit={onSubmit} style={{ display: "flex", flexDirection: "column", gap: 20 }}>
 

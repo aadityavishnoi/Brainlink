@@ -16,7 +16,7 @@ export default function NotFound() {
         opacity: 0.25, marginBottom: 24,
         letterSpacing: "-0.04em",
       }}>404</div>
-      <h1 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "clamp(1.5rem,4vw,2.2rem)", color: "#fff", marginBottom: 12 }}>
+      <h1 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "clamp(1.5rem,4vw,2.2rem)", color: "var(--text)", marginBottom: 12 }}>
         Page Not Found
       </h1>
       <p style={{ color: "var(--muted)", fontSize: "0.95rem", marginBottom: 36, maxWidth: 360, lineHeight: 1.75 }}>

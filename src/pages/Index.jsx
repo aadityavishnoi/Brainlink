@@ -122,7 +122,7 @@ export default function Index() {
             <h1 style={{
               fontSize: "clamp(2.2rem, 6vw, 4rem)",
               fontWeight: 800,
-              color: "#fff",
+              color: "var(--text)",
               lineHeight: 1.1,
               marginBottom: 24,
               letterSpacing: "-0.03em",
@@ -168,7 +168,7 @@ export default function Index() {
               {coreServices.map((s, i) => (
                 <div key={i} className="card">
                   <div style={{ fontSize: "1.8rem", marginBottom: 14 }}>{s.icon}</div>
-                  <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "1rem", color: "#fff", marginBottom: 8 }}>{s.title}</h3>
+                  <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "1rem", color: "var(--text)", marginBottom: 8 }}>{s.title}</h3>
                   <p style={{ fontSize: "0.88rem", color: "var(--muted)", lineHeight: 1.7 }}>{s.desc}</p>
                 </div>
               ))}
@@ -210,7 +210,7 @@ export default function Index() {
                       <img src={c.logo} alt={c.name} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
                     </div>
                     <div>
-                      <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "#fff", marginBottom: 2 }}>{c.name}</h3>
+                      <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "var(--text)", marginBottom: 2 }}>{c.name}</h3>
                       <p style={{ fontSize: "0.75rem", color: "var(--accent)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em" }}>{c.tagline}</p>
                     </div>
                   </div>
@@ -270,7 +270,7 @@ export default function Index() {
                   }}>{s.n}</div>
                   {/* Content */}
                   <div style={{ paddingTop: 10 }}>
-                    <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "1rem", color: "#fff", marginBottom: 6 }}>{s.title}</h3>
+                    <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "1rem", color: "var(--text)", marginBottom: 6 }}>{s.title}</h3>
                     <p style={{ fontSize: "0.88rem", color: "var(--muted)", lineHeight: 1.7 }}>{s.desc}</p>
                   </div>
                 </div>
@@ -352,11 +352,11 @@ export default function Index() {
                     }}>{p.tag}</div>
                   )}
 
-                  <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "#fff", marginBottom: 6 }}>{p.name}</h3>
+                  <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "var(--text)", marginBottom: 6 }}>{p.name}</h3>
                   <p style={{ fontSize: "0.83rem", color: "var(--muted)", marginBottom: 20 }}>{p.desc}</p>
 
                   <div style={{ marginBottom: 28 }}>
-                    <span style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: "2.2rem", color: "#fff" }}>{p.price}</span>
+                    <span style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: "2.2rem", color: "var(--text)" }}>{p.price}</span>
                     <span style={{ color: "var(--muted)", fontSize: "0.9rem" }}>{p.period}</span>
                   </div>
 
@@ -421,7 +421,7 @@ export default function Index() {
                     <li key={i} style={{ display: "flex", gap: 12 }}>
                       <span style={{ color: "#34d399", fontWeight: "bold" }}>✓</span>
                       <div>
-                        <strong style={{ color: "#fff", display: "block", fontSize: "0.95rem" }}>{item.t}</strong>
+                        <strong style={{ color: "var(--text)", display: "block", fontSize: "0.95rem" }}>{item.t}</strong>
                         <span style={{ color: "var(--muted2)", fontSize: "0.85rem" }}>{item.d}</span>
                       </div>
                     </li>
@@ -458,7 +458,7 @@ export default function Index() {
               fontFamily: "'Poppins',sans-serif",
               fontWeight: 800,
               fontSize: "clamp(2rem, 5vw, 3.2rem)",
-              color: "#fff",
+              color: "var(--text)",
               marginBottom: 20,
               letterSpacing: "-0.02em",
             }}>

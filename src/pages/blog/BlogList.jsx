@@ -37,7 +37,7 @@ export default function BlogList() {
         }}>
           <div style={{ maxWidth: 620, margin: "0 auto" }}>
             <span className="label">Insights & Knowledge</span>
-            <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.2rem)", fontWeight: 800, color: "#fff", marginBottom: 16, letterSpacing: "-0.02em" }}>
+            <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.2rem)", fontWeight: 800, color: "var(--text)", marginBottom: 16, letterSpacing: "-0.02em" }}>
               Brainlink <span style={{ color: "var(--accent)" }}>Blog</span>
             </h1>
             <p style={{ color: "var(--muted)", fontSize: "1rem", lineHeight: 1.8 }}>
@@ -57,8 +57,8 @@ export default function BlogList() {
               </div>
             ) : posts.length === 0 ? (
               <div style={{ textAlign: "center", padding: "64px 0" }}>
-                <i className="fas fa-pen-nib" style={{ fontSize: "3rem", color: "rgba(255,255,255,0.1)", marginBottom: 20 }}></i>
-                <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "1.2rem", color: "#fff", marginBottom: 8 }}>No posts yet</h3>
+                <i className="fas fa-pen-nib" style={{ fontSize: "3rem", color: "var(--muted2)", marginBottom: 20 }}></i>
+                <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "1.2rem", color: "var(--text)", marginBottom: 8 }}>No posts yet</h3>
                 <p style={{ color: "var(--muted)" }}>Check back later for fresh insights.</p>
               </div>
             ) : (

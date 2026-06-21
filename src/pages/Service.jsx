@@ -46,7 +46,7 @@ export default function Service() {
         }}>
           <div style={{ maxWidth: 620, margin: "0 auto" }}>
             <span className="label">Our Services</span>
-            <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.2rem)", fontWeight: 800, color: "#fff", marginBottom: 16, letterSpacing: "-0.02em" }}>
+            <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.2rem)", fontWeight: 800, color: "var(--text)", marginBottom: 16, letterSpacing: "-0.02em" }}>
               Custom Software & <span style={{ color: "var(--accent)" }}>Web Solutions.</span>
             </h1>
             <p style={{ color: "var(--muted)", fontSize: "1rem", lineHeight: 1.8, marginBottom: 32 }}>
@@ -65,7 +65,7 @@ export default function Service() {
               {coreServices.map((s, i) => (
                 <div key={i} className="card" style={{ borderTop: `4px solid ${s.color}` }}>
                   <div style={{ fontSize: "2.5rem", marginBottom: 20, color: s.color }}>{s.icon}</div>
-                  <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.25rem", color: "#fff", marginBottom: 14 }}>{s.title}</h3>
+                  <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.25rem", color: "var(--text)", marginBottom: 14 }}>{s.title}</h3>
                   <p style={{ fontSize: "0.95rem", color: "var(--muted)", lineHeight: 1.8, marginBottom: 24 }}>{s.desc}</p>
                   <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 12, marginBottom: 24 }}>
                     {s.features.map((f, fi) => (
@@ -86,7 +86,7 @@ export default function Service() {
         {/* CTA */}
         <section style={{ background: "var(--bg-card)", borderTop: "1px solid var(--border)", padding: "80px 24px", textAlign: "center" }}>
           <div className="container">
-            <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: "clamp(1.8rem,4vw,2.8rem)", color: "#fff", marginBottom: 16, letterSpacing: "-0.02em" }}>
+            <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: "clamp(1.8rem,4vw,2.8rem)", color: "var(--text)", marginBottom: 16, letterSpacing: "-0.02em" }}>
               Not sure where to start?
             </h2>
             <p style={{ color: "var(--muted)", fontSize: "1rem", marginBottom: 36, lineHeight: 1.75, maxWidth: 440, margin: "0 auto 36px" }}>

@@ -18,7 +18,7 @@ export default function BlogCard({ post }) {
       )}
 
       <div style={{ padding: 24, display: "flex", flexDirection: "column", flexGrow: 1 }}>
-        <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "#fff", marginBottom: 12, lineHeight: 1.4 }}>
+        <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "var(--text)", marginBottom: 12, lineHeight: 1.4 }}>
           {post.title}
         </h3>
         <p style={{ fontSize: "0.875rem", color: "var(--muted)", lineHeight: 1.7, marginBottom: 24, flexGrow: 1 }}>

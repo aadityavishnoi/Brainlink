@@ -7,7 +7,7 @@ export default function Footer() {
 
   return (
     <footer style={{
-      background: "#0A0A0A",
+      background: "var(--bg)",
       borderTop: "1px solid var(--border)",
       padding: "64px 24px 32px",
     }}>
@@ -23,7 +23,7 @@ export default function Footer() {
           <div>
             <a href="/" style={{ display: "inline-flex", alignItems: "center", gap: 10, textDecoration: "none", marginBottom: 16 }}>
               <img src={logo} alt="Brainlink" style={{ height: 28, width: 28, objectFit: "contain" }} />
-              <span style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "0.95rem", color: "#fff" }}>
+              <span style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "0.95rem", color: "var(--text)" }}>
                 Brainlink <span style={{ color: "var(--accent)" }}>Softwares</span>
               </span>
             </a>
@@ -43,7 +43,7 @@ export default function Footer() {
                   aria-label={s.label}
                   style={{
                     width: 36, height: 36, borderRadius: 8,
-                    background: "rgba(255,255,255,0.05)",
+                    background: "var(--hamburger-bg)",
                     border: "1px solid var(--border)",
                     display: "flex", alignItems: "center", justifyContent: "center",
                     color: "var(--muted)",
@@ -61,7 +61,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "0.8rem", color: "#fff", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 20 }}>Links</h4>
+            <h4 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "0.8rem", color: "var(--text)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 20 }}>Links</h4>
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 12 }}>
               {[
                 { l: "Home", h: "/" },
@@ -74,7 +74,7 @@ export default function Footer() {
               ].map((item, i) => (
                 <li key={i}>
                   <a href={item.h} style={{ fontSize: "0.875rem", color: "var(--muted)", textDecoration: "none", transition: "color 0.2s" }}
-                    onMouseEnter={e => e.currentTarget.style.color = "#fff"}
+                    onMouseEnter={e => e.currentTarget.style.color = "var(--text)"}
                     onMouseLeave={e => e.currentTarget.style.color = "var(--muted)"}
                   >{item.l}</a>
                 </li>
@@ -84,16 +84,16 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "0.8rem", color: "#fff", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 20 }}>Contact</h4>
+            <h4 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "0.8rem", color: "var(--text)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 20 }}>Contact</h4>
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
               <a href="mailto:team.brainlink@gmail.com" style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: "0.875rem", color: "var(--muted)", textDecoration: "none", lineHeight: 1.5, transition: "color 0.2s" }}
-                onMouseEnter={e => e.currentTarget.style.color = "#fff"}
+                onMouseEnter={e => e.currentTarget.style.color = "var(--text)"}
                 onMouseLeave={e => e.currentTarget.style.color = "var(--muted)"}
               >
                 <span><i className="fas fa-envelope"></i></span> team.brainlink@gmail.com
               </a>
               <a href="tel:+919412330177" style={{ display: "flex", gap: 10, alignItems: "center", fontSize: "0.875rem", color: "var(--muted)", textDecoration: "none", transition: "color 0.2s" }}
-                onMouseEnter={e => e.currentTarget.style.color = "#fff"}
+                onMouseEnter={e => e.currentTarget.style.color = "var(--text)"}
                 onMouseLeave={e => e.currentTarget.style.color = "var(--muted)"}
               >
                 <span><i className="fas fa-phone-alt"></i></span> +91-94123-30177

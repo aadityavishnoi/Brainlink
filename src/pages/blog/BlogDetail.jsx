@@ -57,7 +57,7 @@ export default function BlogDetail() {
           </div>
         ) : !post ? (
           <div style={{ textAlign: "center", padding: "120px 0" }}>
-            <h1 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "clamp(1.5rem,4vw,2.5rem)", color: "#fff", marginBottom: 12 }}>Article Not Found</h1>
+            <h1 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "clamp(1.5rem,4vw,2.5rem)", color: "var(--text)", marginBottom: 12 }}>Article Not Found</h1>
             <p style={{ color: "var(--muted)", marginBottom: 24 }}>The post you're looking for was moved or deleted.</p>
             <Link to="/blog" className="btn-primary">Back to Blog</Link>
           </div>
@@ -78,7 +78,7 @@ export default function BlogDetail() {
             )}
 
             {/* Title */}
-            <h1 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: "clamp(2rem, 5vw, 3.2rem)", color: "#fff", lineHeight: 1.15, marginBottom: 24, letterSpacing: "-0.02em" }}>
+            <h1 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: "clamp(2rem, 5vw, 3.2rem)", color: "var(--text)", lineHeight: 1.15, marginBottom: 24, letterSpacing: "-0.02em" }}>
               {post.title}
             </h1>
 
@@ -110,7 +110,7 @@ export default function BlogDetail() {
                 {post.keywords.map((tag, i) => (
                   <span
                     key={i}
-                    style={{ background: "rgba(255,255,255,0.05)", border: "1px solid var(--border)", color: "var(--muted)", padding: "6px 14px", borderRadius: 50, fontSize: "0.75rem", fontFamily: "'Poppins',sans-serif", textTransform: "uppercase", letterSpacing: "0.05em" }}
+                    style={{ background: "var(--hamburger-bg)", border: "1px solid var(--border)", color: "var(--muted)", padding: "6px 14px", borderRadius: 50, fontSize: "0.75rem", fontFamily: "'Poppins',sans-serif", textTransform: "uppercase", letterSpacing: "0.05em" }}
                   >
                     #{tag}
                   </span>
@@ -129,14 +129,14 @@ export default function BlogDetail() {
           line-height: 1.8;
           font-size: 1.05rem;
         }
-        .prose-dark p { margin-bottom: 24px; color: rgba(240,240,255,0.8); }
-        .prose-dark h2 { font-family: 'Poppins', sans-serif; font-size: 1.8rem; font-weight: 700; color: #fff; margin: 48px 0 20px; }
-        .prose-dark h3 { font-family: 'Poppins', sans-serif; font-size: 1.4rem; font-weight: 600; color: #fff; margin: 32px 0 16px; }
+        .prose-dark p { margin-bottom: 24px; color: var(--muted); }
+        .prose-dark h2 { font-family: 'Poppins', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--text); margin: 48px 0 20px; }
+        .prose-dark h3 { font-family: 'Poppins', sans-serif; font-size: 1.4rem; font-weight: 600; color: var(--text); margin: 32px 0 16px; }
         .prose-dark a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
         .prose-dark a:hover { border-color: var(--accent); }
-        .prose-dark ul, .prose-dark ol { margin-bottom: 24px; padding-left: 24px; color: rgba(240,240,255,0.8); }
+        .prose-dark ul, .prose-dark ol { margin-bottom: 24px; padding-left: 24px; color: var(--muted); }
         .prose-dark li { margin-bottom: 10px; }
-        .prose-dark strong { color: #fff; font-weight: 600; }
+        .prose-dark strong { color: var(--text); font-weight: 600; }
         .prose-dark img { max-width: 100%; border-radius: 12px; margin: 32px 0; border: 1px solid var(--border); }
       `}</style>
       <Footer />
