@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useTheme } from "../ThemeContext";
 import logo from "../assets/logo/logo.png";
 import "../index.css";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { theme, toggle } = useTheme();
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -30,10 +32,10 @@ export default function Header() {
     position: "fixed",
     top: 0, left: 0, right: 0,
     zIndex: 1000,
-    background: scrolled ? "rgba(10,10,10,0.92)" : "transparent",
+    background: scrolled ? "var(--nav-bg-scrolled)" : "transparent",
     backdropFilter: scrolled ? "blur(16px)" : "none",
     WebkitBackdropFilter: scrolled ? "blur(16px)" : "none",
-    borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "1px solid transparent",
+    borderBottom: scrolled ? "1px solid var(--border)" : "1px solid transparent",
     transition: "all 0.3s ease",
   };
 
@@ -99,7 +101,7 @@ export default function Header() {
             )}
           </ul>
 
-          {/* CTA */}
+          {/* CTA + Theme Toggle */}
           <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
             <a
               href="/contact"
@@ -108,12 +110,24 @@ export default function Header() {
             >
               Get Free Audit
             </a>
+
+            {/* Theme Toggle */}
+            <button
+              onClick={toggle}
+              className="theme-toggle"
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+              title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            >
+              <span className="theme-toggle-icon moon">🌙</span>
+              <span className="theme-toggle-icon sun">☀️</span>
+            </button>
+
             {/* Hamburger */}
             <button
               onClick={() => setOpen(o => !o)}
               className="mobile-nav-btn"
               style={{
-                background: "rgba(255,255,255,0.07)",
+                background: "var(--hamburger-bg)",
                 border: "1px solid var(--border)",
                 borderRadius: 8,
                 padding: "8px 10px",
@@ -126,7 +140,9 @@ export default function Header() {
             >
               {[0, 1, 2].map(i => (
                 <span key={i} style={{
-                  display: "block", width: 20, height: 2, background: "#fff", borderRadius: 2,
+                  display: "block", width: 20, height: 2,
+                  background: "var(--hamburger-bar)",
+                  borderRadius: 2,
                   transition: "all 0.3s",
                   opacity: i === 1 && open ? 0 : 1,
                   transform: open ? (i === 0 ? "rotate(45deg) translateY(7px)" : i === 2 ? "rotate(-45deg) translateY(-7px)" : "none") : "none",
@@ -141,7 +157,7 @@ export default function Header() {
           maxHeight: open ? 400 : 0,
           overflow: "hidden",
           transition: "max-height 0.35s ease",
-          background: "rgba(10,10,10,0.98)",
+          background: "var(--mobile-menu-bg)",
           borderTop: open ? "1px solid var(--border)" : "none",
         }}>
           <div style={{ padding: "16px 24px 24px", display: "flex", flexDirection: "column", gap: 4 }}>
