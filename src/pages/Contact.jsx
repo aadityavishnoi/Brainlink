@@ -78,7 +78,7 @@ export default function Contact() {
       />
 
       <PageHero
-        label="Contact Us"
+        label="Communication Command Centre"
         title={<>Let's Talk About Your <span className="text-gradient">Project</span></>}
         subtitle="Tell us what you need and we'll come back within 24 hours with a clear plan — no jargon, no pressure."
       />
@@ -89,7 +89,7 @@ export default function Contact() {
 
             {/* Left — info */}
             <div>
-              <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.3rem", color: "var(--text)", marginBottom: 8 }}>
+              <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1.3rem", color: "var(--text)", marginBottom: 8 }}>
                 Get In Touch
               </h2>
               <p style={{ color: "var(--muted)", fontSize: "0.875rem", lineHeight: 1.8, marginBottom: 36 }}>
@@ -108,7 +108,7 @@ export default function Contact() {
                       <Icon size={18} style={{ color: "var(--text)" }} aria-hidden="true" />
                     </div>
                     <div>
-                      <p style={{ fontFamily: "'Poppins',sans-serif", fontSize: "0.75rem", fontWeight: 600, color: "var(--muted2)", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 4 }}>{item.label}</p>
+                      <p style={{ fontFamily: "var(--font-heading)", fontSize: "0.75rem", fontWeight: 600, color: "var(--muted2)", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 4 }}>{item.label}</p>
                       {item.href
                         ? <a href={item.href} style={{ fontSize: "0.875rem", color: "var(--text)", textDecoration: "none" }}>{item.val}</a>
                         : <span style={{ fontSize: "0.875rem", color: "var(--text)" }}>{item.val}</span>}
@@ -122,7 +122,7 @@ export default function Contact() {
               </a>
 
               <div style={{ marginTop: 28, padding: "18px 20px", background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 10 }}>
-                <p style={{ fontFamily: "'Poppins',sans-serif", fontSize: "0.75rem", fontWeight: 600, color: "var(--muted2)", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 8 }}>Working Hours</p>
+                <p style={{ fontFamily: "var(--font-heading)", fontSize: "0.75rem", fontWeight: 600, color: "var(--muted2)", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 8 }}>Working Hours</p>
                 <p style={{ fontSize: "0.875rem", color: "var(--muted)", lineHeight: 1.7 }}>{siteConfig.hours.weekdays}</p>
                 <p style={{ fontSize: "0.875rem", color: "var(--muted)" }}>{siteConfig.hours.weekend}</p>
               </div>
@@ -130,7 +130,7 @@ export default function Contact() {
 
             {/* Right — form */}
             <div style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 16, padding: "40px 36px" }}>
-              <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.15rem", color: "var(--text)", marginBottom: 28 }}>Tell Us About Your Project</h3>
+              <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1.15rem", color: "var(--text)", marginBottom: 28 }}>Tell Us About Your Project</h3>
 
               <form onSubmit={onSubmit} style={{ display: "flex", flexDirection: "column", gap: 20 }}>
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }} className="form-row-2">
@@ -222,7 +222,7 @@ export default function Contact() {
                   </div>
                 )}
 
-                <p style={{ fontFamily: "'Inter',sans-serif", fontSize: "0.75rem", color: "var(--muted2)", textAlign: "center", lineHeight: 1.6 }}>
+                <p style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "var(--muted2)", textAlign: "center", lineHeight: 1.6 }}>
                   By submitting, you agree to our <a href="/privacy-policy" style={{ color: "var(--accent)" }}>privacy policy</a>. We never spam.
                 </p>
               </form>

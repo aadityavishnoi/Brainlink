@@ -1,4 +1,5 @@
 import { ShieldCheck, Eye, GraduationCap, Lightbulb, Gauge, Handshake } from "lucide-react";
+import { Search, Compass as CompassIcon, Users2, Layers3, FlaskConical, Rocket as RocketIcon } from "lucide-react";
 
 export const coreValues = [
   { icon: ShieldCheck, title: "Ownership", desc: "We treat every project like it's our own product — accountable for outcomes, not just deliverables." },
@@ -23,4 +24,14 @@ export const trustStatements = [
   { label: "Modern Engineering Practices", desc: "Version-controlled, milestone-based development on a current technology stack." },
   { label: "Business-Focused Development", desc: "Technical decisions weighed against real business outcomes, not novelty." },
   { label: "Long-Term Technical Support", desc: "Available after launch — not just until the invoice is paid." },
+];
+
+/** Replaces fabricated testimonials — an honest description of process instead. */
+export const clientApproach = [
+  { icon: Search, title: "Understanding Your Business", desc: "We start by learning how your business actually works, not just what feature was requested." },
+  { icon: CompassIcon, title: "A Practical Digital Strategy", desc: "Scope and technical direction grounded in your goals, timeline and budget — not novelty for its own sake." },
+  { icon: Users2, title: "Designing Around Real Users", desc: "Interfaces built around how people will actually use the product, tested against real tasks." },
+  { icon: Layers3, title: "Developing Scalable Solutions", desc: "Architecture that holds up as usage grows, so early choices don't become expensive rewrites." },
+  { icon: FlaskConical, title: "Testing The Complete Experience", desc: "Core flows checked end-to-end before anything reaches production." },
+  { icon: RocketIcon, title: "Supporting Launch And Improvements", desc: "We stay involved after launch — monitoring, fixing and iterating as real usage comes in." },
 ];

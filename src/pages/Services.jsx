@@ -63,12 +63,12 @@ export default function Services() {
                     >
                       <Icon size={26} strokeWidth={1.8} aria-hidden="true" />
                     </div>
-                    <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "clamp(1.4rem,3vw,1.9rem)", color: "var(--text)", marginBottom: 14, letterSpacing: "-0.01em" }}>
+                    <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "clamp(1.4rem,3vw,1.9rem)", color: "var(--text)", marginBottom: 14, letterSpacing: "-0.01em" }}>
                       {s.title}
                     </h2>
                     <p style={{ color: "var(--muted)", fontSize: "0.95rem", lineHeight: 1.8, marginBottom: 20 }}>{s.shortDesc}</p>
 
-                    <p style={{ fontFamily: "'Poppins',sans-serif", fontSize: "0.72rem", fontWeight: 700, color: "var(--muted2)", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 8 }}>
+                    <p style={{ fontFamily: "var(--font-heading)", fontSize: "0.72rem", fontWeight: 700, color: "var(--muted2)", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 8 }}>
                       Who It's For
                     </p>
                     <p style={{ color: "var(--muted)", fontSize: "0.88rem", lineHeight: 1.7, marginBottom: 24 }}>{s.whoFor}</p>
@@ -82,7 +82,7 @@ export default function Services() {
 
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }} className="service-detail-cols">
                     <div className="card">
-                      <p style={{ fontFamily: "'Poppins',sans-serif", fontSize: "0.72rem", fontWeight: 700, color: "var(--muted2)", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 14 }}>
+                      <p style={{ fontFamily: "var(--font-heading)", fontSize: "0.72rem", fontWeight: 700, color: "var(--muted2)", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 14 }}>
                         Common Problems
                       </p>
                       <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 12 }}>
@@ -95,7 +95,7 @@ export default function Services() {
                     </div>
 
                     <div className="card">
-                      <p style={{ fontFamily: "'Poppins',sans-serif", fontSize: "0.72rem", fontWeight: 700, color: "var(--muted2)", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 14 }}>
+                      <p style={{ fontFamily: "var(--font-heading)", fontSize: "0.72rem", fontWeight: 700, color: "var(--muted2)", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 14 }}>
                         What We Deliver
                       </p>
                       <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 12 }}>
@@ -108,13 +108,13 @@ export default function Services() {
                     </div>
 
                     <div className="card" style={{ gridColumn: "1 / -1" }}>
-                      <p style={{ fontFamily: "'Poppins',sans-serif", fontSize: "0.72rem", fontWeight: 700, color: "var(--muted2)", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 10 }}>
+                      <p style={{ fontFamily: "var(--font-heading)", fontSize: "0.72rem", fontWeight: 700, color: "var(--muted2)", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 10 }}>
                         Engagement Process
                       </p>
                       <p style={{ fontSize: "0.88rem", color: "var(--muted)", lineHeight: 1.75, marginBottom: 18 }}>{s.process}</p>
                       <Link
                         to="/contact"
-                        style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: "0.88rem", fontWeight: 600, color: "var(--accent)", textDecoration: "none", fontFamily: "'Poppins',sans-serif" }}
+                        style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: "0.88rem", fontWeight: 600, color: "var(--accent)", textDecoration: "none", fontFamily: "var(--font-heading)" }}
                       >
                         Discuss This Service <ArrowRight size={15} aria-hidden="true" />
                       </Link>
@@ -134,7 +134,7 @@ export default function Services() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 20 }}>
             {engagementModels.map((m) => (
               <div key={m.title} className="card">
-                <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "0.98rem", color: "var(--text)", marginBottom: 8 }}>{m.title}</h3>
+                <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 600, fontSize: "0.98rem", color: "var(--text)", marginBottom: 8 }}>{m.title}</h3>
                 <p style={{ fontSize: "0.85rem", color: "var(--muted)", lineHeight: 1.65 }}>{m.desc}</p>
               </div>
             ))}
@@ -158,7 +158,7 @@ export default function Services() {
       {/* CTA */}
       <section style={{ background: "var(--bg-card)", borderTop: "1px solid var(--border)", padding: "80px 24px", textAlign: "center" }}>
         <div className="container">
-          <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: "clamp(1.8rem,4vw,2.8rem)", color: "var(--text)", marginBottom: 16, letterSpacing: "-0.02em" }}>
+          <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "clamp(1.8rem,4vw,2.8rem)", color: "var(--text)", marginBottom: 16, letterSpacing: "-0.02em" }}>
             Not sure where to start?
           </h2>
           <p style={{ color: "var(--muted)", fontSize: "1rem", marginBottom: 36, lineHeight: 1.75, maxWidth: 460, margin: "0 auto 36px" }}>

@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, ArrowUp } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowUp, Brain } from "lucide-react";
 import { LinkedInIcon, InstagramIcon, XIcon, WhatsAppIcon } from "../components/icons/BrandIcons";
+import FloatingClouds from "../components/FloatingClouds";
 import { siteConfig } from "../data/siteConfig";
 import logo from "../assets/logo/logo.png";
 import "../index.css";
@@ -32,15 +33,32 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer style={{ background: "var(--bg)", borderTop: "1px solid var(--border)", padding: "64px 24px 32px" }}>
-      <div className="container">
+    <footer style={{ position: "relative", overflow: "hidden", borderTop: "1px solid var(--border)", background: "linear-gradient(180deg, var(--bg) 0%, var(--surface-violet) 100%)" }}>
+      {/* horizon skyline */}
+      <div aria-hidden="true" style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
+        <FloatingClouds variant="footer" />
+        <svg viewBox="0 0 1200 140" preserveAspectRatio="none" style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: 120, opacity: 0.5 }}>
+          <polygon points="0,140 0,70 60,70 60,40 110,40 110,90 170,90 170,20 230,20 230,80 300,80 300,50 360,50 360,100 430,100 430,60 500,60 500,95 580,95 580,30 650,30 650,85 720,85 720,55 790,55 790,100 860,100 860,45 930,45 930,90 1000,90 1000,60 1070,60 1070,100 1140,100 1140,65 1200,65 1200,140" fill="var(--bg-card2)" />
+        </svg>
+        <div style={{ position: "absolute", top: 8, left: "50%", transform: "translateX(-50%)" }}>
+          <div
+            className="float-anim"
+            style={{
+              width: 46, height: 46, borderRadius: "50%",
+              background: "radial-gradient(circle, rgba(74,114,255,0.35), transparent 70%)",
+            }}
+          />
+        </div>
+      </div>
+
+      <div className="container" style={{ position: "relative", padding: "72px 24px 32px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 48, marginBottom: 48 }} className="footer-cols">
 
           <div>
             <Link to="/" style={{ display: "inline-flex", alignItems: "center", gap: 10, textDecoration: "none", marginBottom: 16 }}>
               <img src={logo} alt="" style={{ height: 28, width: 28, objectFit: "contain" }} />
-              <span style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "0.95rem", color: "var(--text)" }}>
-                Brainlink <span style={{ color: "var(--accent)" }}>Softwares</span>
+              <span style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "0.95rem", color: "var(--text)" }}>
+                Brainlink <span className="text-gradient">Softwares</span>
               </span>
             </Link>
             <p style={{ fontSize: "0.875rem", color: "var(--muted)", lineHeight: 1.75, maxWidth: 300, marginBottom: 24 }}>
@@ -56,8 +74,8 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   aria-label={label}
                   style={{
-                    width: 36, height: 36, borderRadius: 8,
-                    background: "var(--hamburger-bg)", border: "1px solid var(--border)",
+                    width: 36, height: 36, borderRadius: 10,
+                    background: "var(--bg-card)", border: "1px solid var(--border)",
                     display: "flex", alignItems: "center", justifyContent: "center",
                     color: "var(--muted)", textDecoration: "none", transition: "all 0.2s",
                   }}
@@ -71,7 +89,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "0.8rem", color: "var(--text)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 20 }}>
+            <h4 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "0.8rem", color: "var(--text)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 20 }}>
               Company
             </h4>
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 12 }}>
@@ -80,7 +98,7 @@ export default function Footer() {
                   <Link
                     to={item.h}
                     style={{ fontSize: "0.875rem", color: "var(--muted)", textDecoration: "none", transition: "color 0.2s" }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text)")}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
                     onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted)")}
                   >
                     {item.l}
@@ -91,14 +109,14 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "0.8rem", color: "var(--text)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 20 }}>
+            <h4 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "0.8rem", color: "var(--text)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 20 }}>
               Contact
             </h4>
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
               <a
                 href={`mailto:${siteConfig.email}`}
                 style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: "0.875rem", color: "var(--muted)", textDecoration: "none", lineHeight: 1.5, transition: "color 0.2s" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text)")}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted)")}
               >
                 <Mail size={16} style={{ flexShrink: 0, marginTop: 2 }} aria-hidden="true" /> {siteConfig.email}
@@ -106,7 +124,7 @@ export default function Footer() {
               <a
                 href={siteConfig.phoneHref}
                 style={{ display: "flex", gap: 10, alignItems: "center", fontSize: "0.875rem", color: "var(--muted)", textDecoration: "none", transition: "color 0.2s" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text)")}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted)")}
               >
                 <Phone size={16} aria-hidden="true" /> {siteConfig.phone}
@@ -115,7 +133,7 @@ export default function Footer() {
                 href={siteConfig.whatsappHref()}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ display: "flex", gap: 10, alignItems: "center", fontSize: "0.875rem", color: "#25D366", textDecoration: "none" }}
+                style={{ display: "flex", gap: 10, alignItems: "center", fontSize: "0.875rem", color: "#1EBE59", textDecoration: "none" }}
               >
                 <WhatsAppIcon width={16} height={16} /> WhatsApp Us
               </a>
@@ -130,8 +148,8 @@ export default function Footer() {
 
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
           <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            <p style={{ fontSize: "0.8rem", color: "var(--muted2)" }}>
-              © 2025–{year} Brainlink Softwares. All rights reserved.
+            <p style={{ fontSize: "0.8rem", color: "var(--muted2)", display: "flex", alignItems: "center", gap: 6 }}>
+              <Brain size={13} aria-hidden="true" /> © 2025–{year} Brainlink Softwares. All rights reserved.
             </p>
             <p style={{ fontSize: "0.7rem", color: "var(--muted2)", opacity: 0.8 }}>
               MSME UDYAM: {siteConfig.msmeUdyam}
@@ -154,7 +172,7 @@ export default function Footer() {
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               style={{
                 display: "flex", alignItems: "center", gap: 6, background: "none", border: "none",
-                color: "var(--muted2)", fontSize: "0.8rem", cursor: "pointer", padding: 0, fontFamily: "'Inter',sans-serif",
+                color: "var(--muted2)", fontSize: "0.8rem", cursor: "pointer", padding: 0, fontFamily: "var(--font-body)",
               }}
             >
               Back to top <ArrowUp size={14} aria-hidden="true" />

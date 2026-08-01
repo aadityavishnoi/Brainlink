@@ -111,7 +111,7 @@ export default function HeroVisual() {
             boxShadow: "0 0 0 1px rgba(255,255,255,0.15), 0 20px 60px rgba(var(--accent-rgb),0.45)",
           }}
         >
-          <span style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: "0.78rem", color: "#fff", textAlign: "center", lineHeight: 1.25 }}>
+          <span style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "0.78rem", color: "#fff", textAlign: "center", lineHeight: 1.25 }}>
             Brainlink<br />Core
           </span>
         </div>
@@ -141,7 +141,7 @@ export default function HeroVisual() {
               >
                 <Icon size={22} strokeWidth={1.8} aria-hidden="true" />
               </div>
-              <span style={{ fontSize: "0.7rem", fontWeight: 600, color: "var(--muted)", fontFamily: "'Inter',sans-serif", whiteSpace: "nowrap" }}>
+              <span style={{ fontSize: "0.7rem", fontWeight: 600, color: "var(--muted)", fontFamily: "var(--font-body)", whiteSpace: "nowrap" }}>
                 {n.label}
               </span>
             </div>

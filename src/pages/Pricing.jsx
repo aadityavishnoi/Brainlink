@@ -46,7 +46,7 @@ export default function Pricing() {
                     <div
                       style={{
                         position: "absolute", top: -14, left: "50%", transform: "translateX(-50%)",
-                        background: "var(--accent)", color: "#fff", fontFamily: "'Poppins',sans-serif",
+                        background: "var(--accent)", color: "#fff", fontFamily: "var(--font-heading)",
                         fontWeight: 600, fontSize: "0.72rem", padding: "4px 14px", borderRadius: 50, whiteSpace: "nowrap",
                       }}
                     >
@@ -54,16 +54,16 @@ export default function Pricing() {
                     </div>
                   )}
 
-                  <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.05rem", color: "var(--text)", marginBottom: 6 }}>{m.name}</h3>
+                  <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1.05rem", color: "var(--text)", marginBottom: 6 }}>{m.name}</h3>
                   <p style={{ fontSize: "0.82rem", color: "var(--muted)", marginBottom: 18, lineHeight: 1.6 }}>{m.desc}</p>
 
                   <div style={{ marginBottom: 22 }}>
-                    <span style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: "1.7rem", color: "var(--text)" }}>{m.startingPrice}</span>
+                    <span style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "1.7rem", color: "var(--text)" }}>{m.startingPrice}</span>
                     <div style={{ color: "var(--muted2)", fontSize: "0.78rem", marginTop: 2 }}>{m.priceNote}</div>
                   </div>
 
                   <div style={{ marginBottom: 16 }}>
-                    <p style={{ fontFamily: "'Poppins',sans-serif", fontSize: "0.7rem", fontWeight: 700, color: "var(--muted2)", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 10 }}>
+                    <p style={{ fontFamily: "var(--font-heading)", fontSize: "0.7rem", fontWeight: 700, color: "var(--muted2)", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 10 }}>
                       Included
                     </p>
                     <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 9 }}>
@@ -76,7 +76,7 @@ export default function Pricing() {
                   </div>
 
                   <div style={{ marginBottom: 20 }}>
-                    <p style={{ fontFamily: "'Poppins',sans-serif", fontSize: "0.7rem", fontWeight: 700, color: "var(--muted2)", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 10 }}>
+                    <p style={{ fontFamily: "var(--font-heading)", fontSize: "0.7rem", fontWeight: 700, color: "var(--muted2)", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 10 }}>
                       Not Included
                     </p>
                     <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 9 }}>
@@ -98,7 +98,7 @@ export default function Pricing() {
                     to="/contact"
                     style={{
                       marginTop: "auto", display: "block", textAlign: "center",
-                      fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "0.85rem",
+                      fontFamily: "var(--font-heading)", fontWeight: 600, fontSize: "0.85rem",
                       padding: "12px 20px", borderRadius: 8, textDecoration: "none",
                       background: m.highlight ? "var(--accent)" : "transparent",
                       color: m.highlight ? "#fff" : "var(--accent)",
@@ -127,7 +127,7 @@ export default function Pricing() {
 
       <section style={{ padding: "80px 24px", textAlign: "center" }}>
         <div className="container">
-          <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: "clamp(1.8rem,4vw,2.6rem)", color: "var(--text)", marginBottom: 16 }}>
+          <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "clamp(1.8rem,4vw,2.6rem)", color: "var(--text)", marginBottom: 16 }}>
             Get a Project Estimate
           </h2>
           <p style={{ color: "var(--muted)", fontSize: "0.95rem", marginBottom: 32, maxWidth: 440, margin: "0 auto 32px", lineHeight: 1.75 }}>

@@ -35,7 +35,7 @@ export default function BlogList() {
         jsonLd={[organizationSchema, breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Insights", path: "/blog" }])]}
       />
 
-      <PageHero label="Insights & Knowledge" title="Brainlink Blog" subtitle="Practical notes on software development, web engineering, and building digital products." />
+      <PageHero label="The Knowledge Library" title="Brainlink Blog" subtitle="Practical notes on software development, web engineering, and building digital products." />
 
       <section className="section">
         <div className="container">
@@ -46,7 +46,7 @@ export default function BlogList() {
           ) : posts.length === 0 ? (
             <div style={{ textAlign: "center", padding: "64px 0" }}>
               <FileText size={40} style={{ color: "var(--muted2)", marginBottom: 20 }} aria-hidden="true" />
-              <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "1.2rem", color: "var(--text)", marginBottom: 8 }}>No posts yet</h3>
+              <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 600, fontSize: "1.2rem", color: "var(--text)", marginBottom: 8 }}>No posts yet</h3>
               <p style={{ color: "var(--muted)" }}>Check back later for fresh insights.</p>
             </div>
           ) : (

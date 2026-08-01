@@ -101,13 +101,13 @@ export default function BlogDetail() {
           <LoadingState label="Loading article..." minHeight={320} />
         ) : notFound || !post ? (
           <div style={{ textAlign: "center", padding: "80px 0" }}>
-            <h1 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "clamp(1.5rem,4vw,2.5rem)", color: "var(--text)", marginBottom: 12 }}>Article Not Found</h1>
+            <h1 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "clamp(1.5rem,4vw,2.5rem)", color: "var(--text)", marginBottom: 12 }}>Article Not Found</h1>
             <p style={{ color: "var(--muted)", marginBottom: 24 }}>The post you're looking for was moved or deleted.</p>
             <Link to="/blog" className="btn-primary">Back to Blog</Link>
           </div>
         ) : (
           <article style={{ maxWidth: 760, margin: "0 auto" }}>
-            <Link to="/blog" style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "var(--accent)", textDecoration: "none", fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "0.85rem", marginBottom: 32 }}>
+            <Link to="/blog" style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "var(--accent)", textDecoration: "none", fontFamily: "var(--font-heading)", fontWeight: 600, fontSize: "0.85rem", marginBottom: 32 }}>
               <ArrowLeft size={15} aria-hidden="true" /> Back to articles
             </Link>
 
@@ -119,11 +119,11 @@ export default function BlogDetail() {
               />
             )}
 
-            <h1 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: "clamp(2rem, 5vw, 3.2rem)", color: "var(--text)", lineHeight: 1.15, marginBottom: 24, letterSpacing: "-0.02em" }}>
+            <h1 style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "clamp(2rem, 5vw, 3.2rem)", color: "var(--text)", lineHeight: 1.15, marginBottom: 24, letterSpacing: "-0.02em" }}>
               {post.title}
             </h1>
 
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16, color: "var(--muted)", fontFamily: "'Inter',sans-serif", fontSize: "0.85rem", marginBottom: 32, borderBottom: "1px solid var(--border)", paddingBottom: 24 }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16, color: "var(--muted)", fontFamily: "var(--font-body)", fontSize: "0.85rem", marginBottom: 32, borderBottom: "1px solid var(--border)", paddingBottom: 24 }}>
               {post.created_at && (
                 <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                   <Calendar size={15} aria-hidden="true" />
@@ -152,7 +152,7 @@ export default function BlogDetail() {
 
             {toc.length > 1 && (
               <nav aria-label="Table of contents" style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 12, padding: "20px 24px", marginBottom: 40 }}>
-                <p style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "0.8rem", color: "var(--muted2)", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 12 }}>On this page</p>
+                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 600, fontSize: "0.8rem", color: "var(--muted2)", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 12 }}>On this page</p>
                 <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 8 }}>
                   {toc.map((item) => (
                     <li key={item.id} style={{ paddingLeft: item.level === "H3" ? 16 : 0 }}>
@@ -172,7 +172,7 @@ export default function BlogDetail() {
             {post.keywords?.length > 0 && (
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 48, paddingTop: 32, borderTop: "1px solid var(--border)" }}>
                 {post.keywords.map((tag) => (
-                  <span key={tag} style={{ background: "var(--hamburger-bg)", border: "1px solid var(--border)", color: "var(--muted)", padding: "6px 14px", borderRadius: 50, fontSize: "0.75rem", fontFamily: "'Poppins',sans-serif", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                  <span key={tag} style={{ background: "var(--hamburger-bg)", border: "1px solid var(--border)", color: "var(--muted)", padding: "6px 14px", borderRadius: 50, fontSize: "0.75rem", fontFamily: "var(--font-heading)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
                     #{tag}
                   </span>
                 ))}
@@ -181,7 +181,7 @@ export default function BlogDetail() {
 
             {related.length > 0 && (
               <div style={{ marginTop: 64, paddingTop: 40, borderTop: "1px solid var(--border)" }}>
-                <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.3rem", color: "var(--text)", marginBottom: 24 }}>Related Articles</h2>
+                <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1.3rem", color: "var(--text)", marginBottom: 24 }}>Related Articles</h2>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 24 }}>
                   {related.map((p) => <BlogCard key={p.id} post={p} />)}
                 </div>
@@ -192,10 +192,10 @@ export default function BlogDetail() {
       </main>
 
       <style>{`
-        .prose-dark { color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.8; font-size: 1.05rem; }
+        .prose-dark { color: var(--text); font-family: var(--font-body); line-height: 1.8; font-size: 1.05rem; }
         .prose-dark p { margin-bottom: 24px; color: var(--muted); }
-        .prose-dark h2 { font-family: 'Poppins', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--text); margin: 48px 0 20px; scroll-margin-top: 90px; }
-        .prose-dark h3 { font-family: 'Poppins', sans-serif; font-size: 1.4rem; font-weight: 600; color: var(--text); margin: 32px 0 16px; scroll-margin-top: 90px; }
+        .prose-dark h2 { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: var(--text); margin: 48px 0 20px; scroll-margin-top: 90px; }
+        .prose-dark h3 { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text); margin: 32px 0 16px; scroll-margin-top: 90px; }
         .prose-dark a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
         .prose-dark a:hover { border-color: var(--accent); }
         .prose-dark ul, .prose-dark ol { margin-bottom: 24px; padding-left: 24px; color: var(--muted); }

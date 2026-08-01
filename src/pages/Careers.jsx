@@ -5,6 +5,7 @@ import SEO, { organizationSchema, breadcrumbSchema } from "../components/SEO";
 import PageHero from "../components/PageHero";
 import SectionHeading from "../components/SectionHeading";
 import FAQAccordion from "../components/FAQAccordion";
+import LearningAcademyScene from "../components/LearningAcademyScene";
 import Reveal, { StaggerGroup, StaggerItem } from "../components/Reveal";
 import { internshipHighlights, whoShouldApply, skillsValued, selectionProcess, careerFaqs } from "../data/careers";
 import { submitWeb3Form } from "../utils/web3forms";
@@ -78,10 +79,19 @@ export default function Careers() {
       />
 
       <PageHero
-        label="Careers & Internships"
-        title="Learn by Building Real Software"
+        label="Brainlink Learning Academy"
+        title="Learn By Building Real Software"
         subtitle="We regularly bring in students and early-career developers for hands-on, mentored work. Openings depend on current availability — apply and we'll follow up honestly either way."
       />
+
+      {/* Academy scene */}
+      <section className="section" style={{ paddingTop: 56, paddingBottom: 56 }}>
+        <div className="container">
+          <Reveal>
+            <LearningAcademyScene />
+          </Reveal>
+        </div>
+      </section>
 
       {/* Life at Brainlink */}
       <section className="section">
@@ -95,7 +105,7 @@ export default function Careers() {
                   <div style={{ display: "flex", justifyContent: "center", marginBottom: 12, color: "var(--accent)" }}>
                     <Icon size={26} strokeWidth={1.8} aria-hidden="true" />
                   </div>
-                  <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "0.95rem", color: "var(--text)", marginBottom: 6 }}>{h.title}</h3>
+                  <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 600, fontSize: "0.95rem", color: "var(--text)", marginBottom: 6 }}>{h.title}</h3>
                   <p style={{ fontSize: "0.83rem", color: "var(--muted)", lineHeight: 1.6 }}>{h.desc}</p>
                 </StaggerItem>
               );
@@ -108,7 +118,7 @@ export default function Careers() {
       <section className="section" style={{ background: "var(--bg-card)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
         <div className="container who-skills-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40 }}>
           <Reveal>
-            <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.15rem", color: "var(--text)", marginBottom: 18 }}>Who Should Apply</h2>
+            <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1.15rem", color: "var(--text)", marginBottom: 18 }}>Who Should Apply</h2>
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 12 }}>
               {whoShouldApply.map((w) => (
                 <li key={w} style={{ display: "flex", gap: 10, fontSize: "0.88rem", color: "var(--muted)", lineHeight: 1.6 }}>
@@ -118,7 +128,7 @@ export default function Careers() {
             </ul>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.15rem", color: "var(--text)", marginBottom: 18 }}>Skills We Value</h2>
+            <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1.15rem", color: "var(--text)", marginBottom: 18 }}>Skills We Value</h2>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
               {skillsValued.map((s) => (
                 <span key={s} className="tech-pill">{s}</span>
@@ -135,10 +145,10 @@ export default function Careers() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 20, maxWidth: 900, margin: "0 auto" }}>
             {selectionProcess.map((s, i) => (
               <Reveal key={s.step} delay={i * 0.08} className="card">
-                <div style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: "1.4rem", color: "var(--accent)", marginBottom: 10 }}>
+                <div style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "1.4rem", color: "var(--accent)", marginBottom: 10 }}>
                   0{i + 1}
                 </div>
-                <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "0.95rem", color: "var(--text)", marginBottom: 8 }}>{s.step}</h3>
+                <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 600, fontSize: "0.95rem", color: "var(--text)", marginBottom: 8 }}>{s.step}</h3>
                 <p style={{ fontSize: "0.85rem", color: "var(--muted)", lineHeight: 1.65 }}>{s.desc}</p>
               </Reveal>
             ))}

@@ -30,7 +30,7 @@ export default function ServiceCard({ service, compact = false }) {
       >
         <Icon size={22} strokeWidth={1.8} aria-hidden="true" />
       </div>
-      <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "1.02rem", color: "var(--text)" }}>
+      <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 600, fontSize: "1.02rem", color: "var(--text)" }}>
         {service.title}
       </h3>
       <p style={{ fontSize: "0.875rem", color: "var(--muted)", lineHeight: 1.7, flexGrow: 1 }}>
@@ -42,7 +42,7 @@ export default function ServiceCard({ service, compact = false }) {
             display: "inline-flex",
             alignItems: "center",
             gap: 6,
-            fontFamily: "'Poppins',sans-serif",
+            fontFamily: "var(--font-heading)",
             fontWeight: 600,
             fontSize: "0.82rem",
             color: "var(--accent)",

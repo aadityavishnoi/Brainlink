@@ -38,3 +38,10 @@ if (typeof window.matchMedia === 'undefined') {
 // jsdom logs a "not implemented" console error for window.scrollTo
 // (ScrollToTop runs on every route render) — stub it out for clean test output.
 window.scrollTo = () => {};
+
+// jsdom has no real canvas/WebGL backend; HeroScene's feature-detection
+// already handles a null context gracefully (falls back to the static
+// illustration) — this just keeps jsdom's "not implemented" notice quiet.
+if (typeof HTMLCanvasElement !== 'undefined') {
+  HTMLCanvasElement.prototype.getContext = () => null;
+}

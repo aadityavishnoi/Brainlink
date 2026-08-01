@@ -1,34 +1,37 @@
 import AnimatedBackground from "./AnimatedBackground";
+import FloatingClouds from "./FloatingClouds";
 import Reveal from "./Reveal";
 
 /**
  * Shared hero block for inner pages (Services, About, Pricing, Careers, ...).
- * Home page uses its own richer hero with the interactive visual.
+ * Home page uses its own richer hero with the interactive 3D visual — this
+ * keeps the same universe language (sky gradient, clouds, glow) so no inner
+ * page feels like a plain fallback of the homepage.
  */
 export default function PageHero({ label, title, subtitle, children, maxWidth = 680 }) {
   return (
     <section
       style={{
         position: "relative",
-        padding: "120px 24px 64px",
+        padding: "128px 24px 72px",
         textAlign: "center",
         overflow: "hidden",
-        background: "var(--bg)",
+        background: "linear-gradient(180deg, #F8FAFF 0%, #EEF5FF 100%)",
         borderBottom: "1px solid var(--border)",
       }}
     >
       <AnimatedBackground variant="page" />
+      <FloatingClouds variant="hero" />
       <div style={{ position: "relative", zIndex: 1, maxWidth, margin: "0 auto" }}>
         <Reveal>
           {label && <span className="label">{label}</span>}
           <h1
             style={{
-              fontSize: "clamp(2rem, 5vw, 3.2rem)",
-              fontWeight: 800,
+              fontSize: "clamp(2.2rem, 5vw, 3.6rem)",
+              fontWeight: 700,
               color: "var(--text)",
               marginBottom: 16,
-              letterSpacing: "-0.02em",
-              lineHeight: 1.15,
+              lineHeight: 1.12,
             }}
           >
             {title}

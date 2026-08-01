@@ -5,7 +5,7 @@ import { siteConfig } from "../data/siteConfig";
 
 const Section = ({ title, children }) => (
   <div style={{ marginBottom: 36 }}>
-    <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "var(--text)", marginBottom: 12 }}>{title}</h2>
+    <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1.1rem", color: "var(--text)", marginBottom: 12 }}>{title}</h2>
     <div style={{ color: "var(--muted)", fontSize: "0.92rem", lineHeight: 1.85 }}>{children}</div>
   </div>
 );

@@ -49,7 +49,7 @@ export default function About() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }} className="mv-grid">
             <Reveal className="card" style={{ padding: 36 }}>
               <Target size={26} style={{ color: "var(--accent)", marginBottom: 16 }} aria-hidden="true" />
-              <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.2rem", color: "var(--text)", marginBottom: 12 }}>Our Mission</h2>
+              <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1.2rem", color: "var(--text)", marginBottom: 12 }}>Our Mission</h2>
               <p style={{ color: "var(--muted)", fontSize: "0.92rem", lineHeight: 1.8 }}>
                 To help businesses and ambitious founders transform ideas into practical, scalable and well-engineered
                 digital products.
@@ -57,7 +57,7 @@ export default function About() {
             </Reveal>
             <Reveal delay={0.1} className="card" style={{ padding: 36 }}>
               <EyeIcon size={26} style={{ color: "var(--accent2)", marginBottom: 16 }} aria-hidden="true" />
-              <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.2rem", color: "var(--text)", marginBottom: 12 }}>Our Vision</h2>
+              <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1.2rem", color: "var(--text)", marginBottom: 12 }}>Our Vision</h2>
               <p style={{ color: "var(--muted)", fontSize: "0.92rem", lineHeight: 1.8 }}>
                 To build a trusted technology company known for honest collaboration, strong engineering and meaningful
                 digital innovation.
@@ -77,7 +77,7 @@ export default function About() {
               return (
                 <StaggerItem key={v.title} className="card">
                   <Icon size={22} style={{ color: "var(--accent)", marginBottom: 14 }} strokeWidth={1.8} aria-hidden="true" />
-                  <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "1rem", color: "var(--text)", marginBottom: 8 }}>{v.title}</h3>
+                  <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 600, fontSize: "1rem", color: "var(--text)", marginBottom: 8 }}>{v.title}</h3>
                   <p style={{ fontSize: "0.87rem", color: "var(--muted)", lineHeight: 1.7 }}>{v.desc}</p>
                 </StaggerItem>
               );
@@ -134,7 +134,7 @@ export default function About() {
       {/* CTA */}
       <section style={{ padding: "80px 24px", textAlign: "center" }}>
         <div className="container">
-          <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: "clamp(1.8rem,4vw,2.6rem)", color: "var(--text)", marginBottom: 16 }}>
+          <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "clamp(1.8rem,4vw,2.6rem)", color: "var(--text)", marginBottom: 16 }}>
             Want to work together?
           </h2>
           <Link to="/contact" className="btn-primary" style={{ padding: "14px 32px" }}>Let's Talk</Link>

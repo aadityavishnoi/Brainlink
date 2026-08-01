@@ -4,17 +4,18 @@ import { motion, useReducedMotion } from "framer-motion";
  * Scroll-reveal wrapper: fades + lifts content into view once, using
  * transform/opacity only. Fully inert when the user prefers reduced motion.
  */
-export default function Reveal({ children, delay = 0, y = 20, as = "div", className, style }) {
+export default function Reveal({ children, delay = 0, y = 20, as = "div", className, style, id }) {
   const shouldReduceMotion = useReducedMotion();
   const MotionTag = motion[as] || motion.div;
 
   if (shouldReduceMotion) {
     const Tag = as;
-    return <Tag className={className} style={style}>{children}</Tag>;
+    return <Tag id={id} className={className} style={style}>{children}</Tag>;
   }
 
   return (
     <MotionTag
+      id={id}
       className={className}
       style={style}
       initial={{ opacity: 0, y }}
