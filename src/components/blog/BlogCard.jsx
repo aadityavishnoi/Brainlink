@@ -1,19 +1,19 @@
 import { Link } from "react-router-dom";
-import "../../index.css";
+import { ImageIcon, ArrowRight } from "lucide-react";
 
 export default function BlogCard({ post }) {
   return (
     <div className="card" style={{ padding: 0, overflow: "hidden", display: "flex", flexDirection: "column", height: "100%" }}>
-      {/* Featured Image */}
       {post.featured_image ? (
         <img
           src={post.featured_image}
           alt={post.title}
+          loading="lazy"
           style={{ width: "100%", height: 200, objectFit: "cover", borderBottom: "1px solid var(--border)" }}
         />
       ) : (
         <div style={{ width: "100%", height: 200, background: "rgba(255,255,255,0.03)", borderBottom: "1px solid var(--border)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <i className="fas fa-image" style={{ color: "var(--muted)", fontSize: "2rem" }}></i>
+          <ImageIcon size={32} style={{ color: "var(--muted)" }} aria-hidden="true" />
         </div>
       )}
 
@@ -28,10 +28,8 @@ export default function BlogCard({ post }) {
         <Link
           to={`/blog/${post.slug}`}
           style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "0.85rem", color: "var(--accent)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6 }}
-          onMouseEnter={e => e.currentTarget.style.color = "var(--accent-h)"}
-          onMouseLeave={e => e.currentTarget.style.color = "var(--accent)"}
         >
-          Read Article <i className="fas fa-arrow-right" style={{ fontSize: "0.75rem" }}></i>
+          Read Article <ArrowRight size={14} aria-hidden="true" />
         </Link>
       </div>
     </div>

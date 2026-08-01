@@ -1,510 +1,264 @@
-import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import Header from "../common/Header";
-import Footer from "../common/Footer";
-import "../index.css";
-import auraaLogo from "../assets/clients/image.png";
+import { ArrowRight, Phone } from "lucide-react";
+import Layout from "../common/Layout";
+import SEO, { organizationSchema } from "../components/SEO";
+import AnimatedBackground from "../components/AnimatedBackground";
+import HeroVisual from "../components/HeroVisual";
+import TechMarquee from "../components/TechMarquee";
+import SectionHeading from "../components/SectionHeading";
+import ServiceCard from "../components/ServiceCard";
+import ProcessTimeline from "../components/ProcessTimeline";
+import CaseStudyCard from "../components/CaseStudyCard";
+import Reveal, { StaggerGroup, StaggerItem } from "../components/Reveal";
+import { WhatsAppIcon } from "../components/icons/BrandIcons";
+import { homeServices } from "../data/services";
+import { processSteps } from "../data/process";
+import { techStack } from "../data/techStack";
+import { clients } from "../data/clients";
+import { whyBrainlink, trustStatements } from "../data/values";
+import { internshipHighlights } from "../data/careers";
+import { siteConfig } from "../data/siteConfig";
 
-
-/* ─── Data ─────────────────────────────────────────── */
-/* ─── Data ─────────────────────────────────────────── */
-const coreServices = [
-  { icon: <i className="fas fa-code"></i>, title: "Custom Software Development", desc: "Tailored software solutions designed to solve your complex business challenges and drive efficiency." },
-  { icon: <i className="fas fa-laptop-code"></i>, title: "Web Design & Development", desc: "Stunning, high-performance websites that blend modern aesthetics with seamless user experiences." },
-  { icon: <i className="fas fa-tools"></i>, title: "Support & Maintenance", desc: "Proactive software support and long-term maintenance to keep your digital assets secure and updated." },
-];
-
-const steps = [
-  { n: "01", title: "Analyze Requirements", desc: "We understand your specific needs for software or web solutions." },
-  { n: "02", title: "Strategic Planning", desc: "Designing the architecture and roadmap for your custom project." },
-  { n: "03", title: "Development & Testing", desc: "Writing and testing code to ensure a bug-free, high-performance product." },
-  { n: "04", title: "Deployment", desc: "Launching your web page or software into production with care." },
-  { n: "05", title: "Continuous Support", desc: "Regular maintenance and support to keep your software updated and secure." },
-];
-
-const plans = [
-  {
-    name: "Standard",
-    price: "₹9,999",
-    period: "/project",
-    tag: null,
-    desc: "Perfect for basic web design and software needs.",
-    features: [
-      "Custom Web Page Design",
-      "Responsive Layout",
-      "Basic Software Support",
-      "Software Testing",
-      "Deployment Assistance",
-    ],
-    cta: "Choose Standard",
-    highlight: false,
-  },
-  {
-    name: "Professional",
-    price: "₹19,999",
-    period: "/mo",
-    tag: "Most Popular",
-    desc: "For businesses needing ongoing development & support.",
-    features: [
-      "Custom Computer Programming",
-      "Advanced Web Solutions",
-      "Regular Feature Updates",
-      "24/7 Maintenance",
-      "Priority Bug Fixes",
-      "API Integrations",
-    ],
-    cta: "Choose Professional",
-    highlight: true,
-  },
-  {
-    name: "Enterprise",
-    price: "Custom",
-    period: "",
-    tag: null,
-    desc: "Full-scale software support and complex dev projects.",
-    features: [
-      "Dedicated Dev Team",
-      "Legacy Code Maintenance",
-      "Scalable Software Support",
-      "Complex System Architecture",
-      "Monthly Code Audits",
-      "Strategic Consultancy",
-    ],
-    cta: "Contact Us",
-    highlight: false,
-  },
-];
-
-const clients = [
-  {
-    name: "FORM AURAA ARCHITECTS",
-    tagline: "Architecture | Interior | Landscape | Structure",
-    logo: auraaLogo,
-    service: "Video Editing & Production",
-    contact: "Ar. Kushagra Raj | Ar. Saurav Sharma",
-    location: "Greater Noida, UP",
-    desc: "We handled their visual storytelling, providing premium video editing and production services to showcase their architectural masterpieces."
-  }
-];
-
-
-/* ─── Component ───────────────────────────────────── */
 export default function Index() {
-
-  useEffect(() => {
-    document.title = "Brainlink Softwares | Software Development & Web Design";
-    const sm = (n, c) => { let el = document.querySelector(`meta[name='${n}']`); if (!el) { el = document.createElement("meta"); el.setAttribute("name", n); document.head.appendChild(el); } el.setAttribute("content", c); };
-    sm("description", "Brainlink Softwares specializes in custom software development, web designing, and maintenance services (NIC 62011, 62012, 62013).");
-  }, []);
-
   return (
-    <>
-      <Header />
-      <main>
+    <Layout>
+      <SEO
+        title="Custom Software, Web & Mobile App Development"
+        description="Brainlink Softwares builds scalable software, modern web applications, mobile apps and digital products for startups and growing businesses."
+        path="/"
+        jsonLd={organizationSchema}
+      />
 
-        {/* ── HERO ─────────────────────────────────────────────── */}
-        <section
-          id="hero"
-          style={{
-            minHeight: "90vh",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center",
-            padding: "80px 24px 64px",
-            background: "radial-gradient(ellipse at 50% 0%, rgba(79,110,247,0.12) 0%, transparent 65%), var(--bg)",
-          }}
+      {/* ── HERO ─────────────────────────────────────────────── */}
+      <section
+        style={{
+          position: "relative",
+          minHeight: "92vh",
+          display: "flex",
+          alignItems: "center",
+          padding: "128px 24px 64px",
+          overflow: "hidden",
+        }}
+      >
+        <AnimatedBackground variant="hero" />
+        <div
+          className="container hero-grid"
+          style={{ position: "relative", zIndex: 1, display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: 48, alignItems: "center" }}
         >
-          <div style={{ maxWidth: 760, margin: "0 auto" }}>
-            <span className="label">Digital Agency — Uttar Pradesh</span>
-
-            <h1 style={{
-              fontSize: "clamp(2.2rem, 6vw, 4rem)",
-              fontWeight: 800,
-              color: "var(--text)",
-              lineHeight: 1.1,
-              marginBottom: 24,
-              letterSpacing: "-0.03em",
-            }}>
-              Engineering <span style={{ color: "var(--accent)" }}>Digital Excellence.</span>
+          <Reveal>
+            <span className="label">Software Engineering & Digital Product Studio</span>
+            <h1
+              style={{
+                fontSize: "clamp(2.2rem, 5.2vw, 3.6rem)",
+                fontWeight: 800,
+                color: "var(--text)",
+                lineHeight: 1.12,
+                marginBottom: 22,
+                letterSpacing: "-0.03em",
+              }}
+            >
+              Engineering Digital Products That{" "}
+              <span className="text-gradient">Move Businesses Forward.</span>
             </h1>
-
-            <p style={{
-              fontSize: "clamp(1.1rem, 2vw, 1.25rem)",
-              color: "var(--muted)",
-              lineHeight: 1.7,
-              marginBottom: 40,
-              maxWidth: 640,
-              margin: "0 auto 40px",
-            }}>
-              We build high-performance software solutions and premium web experiences tailored to your business goals. Scalable, secure, and supported 24/7.
+            <p style={{ fontSize: "clamp(1.05rem, 1.6vw, 1.2rem)", color: "var(--muted)", lineHeight: 1.75, marginBottom: 16, maxWidth: 540 }}>
+              Brainlink Softwares designs and develops scalable software, intelligent web platforms and
+              high-performance digital experiences for startups, businesses and growing organizations.
             </p>
-
-            <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-              <Link to="/contact" className="btn-primary" style={{ fontSize: "0.95rem", padding: "14px 32px" }}>
-                Get Started
+            <p style={{ fontSize: "0.9rem", color: "var(--muted2)", marginBottom: 36 }}>
+              From idea to launch — strategy, design, engineering and continuous support under one roof.
+            </p>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 40 }}>
+              <Link to="/contact" className="btn-primary" style={{ fontSize: "0.95rem", padding: "14px 30px" }}>
+                Start a Project <ArrowRight size={16} aria-hidden="true" />
               </Link>
-              <Link to="/contact" className="btn-secondary" style={{ fontSize: "0.95rem", padding: "14px 32px" }}>
-                Get Free Audit
+              <Link to="/work" className="btn-secondary" style={{ fontSize: "0.95rem", padding: "14px 30px" }}>
+                Explore Our Work
               </Link>
             </div>
-          </div>
-        </section>
-
-        {/* ── SERVICES ─────────────────────────────────────────── */}
-        <section className="section" style={{ background: "var(--bg-card)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
-          <div className="container">
-
-            <div style={{ textAlign: "center", marginBottom: 64 }}>
-              <span className="label">What We Do</span>
-              <h2 className="section-title">Core Software & Web Solutions</h2>
-              <p className="section-sub" style={{ margin: "0 auto" }}>
-                Specialized in Computer Programming, Web Page Designing, and Software Support.
-              </p>
-            </div>
-
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 24 }}>
-              {coreServices.map((s, i) => (
-                <div key={i} className="card">
-                  <div style={{ fontSize: "1.8rem", marginBottom: 14 }}>{s.icon}</div>
-                  <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "1rem", color: "var(--text)", marginBottom: 8 }}>{s.title}</h3>
-                  <p style={{ fontSize: "0.88rem", color: "var(--muted)", lineHeight: 1.7 }}>{s.desc}</p>
+            <div style={{ display: "flex", gap: 28, flexWrap: "wrap" }}>
+              {["MSME-Registered Studio", "Direct Team Communication", "Transparent, Milestone-Based Delivery"].map((t) => (
+                <div key={t} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: "0.8rem", color: "var(--muted)" }}>
+                  <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--accent)", flexShrink: 0 }} />
+                  {t}
                 </div>
               ))}
             </div>
+          </Reveal>
 
+          <Reveal delay={0.15} className="hero-visual-wrap">
+            <HeroVisual />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── TECH MARQUEE ─────────────────────────────────────── */}
+      <section style={{ padding: "28px 0 48px", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)", background: "var(--bg-card)" }}>
+        <p style={{ textAlign: "center", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--muted2)", marginBottom: 20 }}>
+          Built with the technologies we ship in production
+        </p>
+        <TechMarquee items={techStack} />
+      </section>
+
+      {/* ── SERVICES OVERVIEW ────────────────────────────────── */}
+      <section className="section" id="services">
+        <div className="container">
+          <SectionHeading
+            label="What We Do"
+            title="Software & Digital Product Services"
+            subtitle="From a first working prototype to a fully scaled platform — engineering support for every stage of your product."
+          />
+          <StaggerGroup style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
+            {homeServices.map((s) => (
+              <StaggerItem key={s.id}>
+                <ServiceCard service={s} />
+              </StaggerItem>
+            ))}
+          </StaggerGroup>
+          <div style={{ textAlign: "center", marginTop: 40 }}>
+            <Link to="/services" className="btn-secondary" style={{ fontSize: "0.9rem" }}>
+              View All Services <ArrowRight size={15} aria-hidden="true" />
+            </Link>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ── CLIENTS ───────────────────────────────────────────── */}
-        <section className="section" style={{ background: "var(--bg)", borderBottom: "1px solid var(--border)" }}>
-          <div className="container">
-            <div style={{ textAlign: "center", marginBottom: 56 }}>
-              <span className="label">Our Clients</span>
-              <h2 className="section-title">Trusted by Industry Leaders</h2>
-              <p className="section-sub" style={{ margin: "0 auto" }}>
-                Helping businesses build a premium brand through quality content and strategic marketing.
-              </p>
-            </div>
+      {/* ── WHY BRAINLINK ────────────────────────────────────── */}
+      <section className="section" style={{ background: "var(--bg-card)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
+        <div className="container">
+          <SectionHeading label="Why Brainlink Softwares" title="Built for Long-Term, Honest Collaboration" />
+          <StaggerGroup style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24 }}>
+            {whyBrainlink.map((w) => (
+              <StaggerItem key={w.title} className="card">
+                <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "1rem", color: "var(--text)", marginBottom: 8 }}>{w.title}</h3>
+                <p style={{ fontSize: "0.88rem", color: "var(--muted)", lineHeight: 1.7 }}>{w.desc}</p>
+              </StaggerItem>
+            ))}
+          </StaggerGroup>
+        </div>
+      </section>
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 32 }}>
-              {clients.map((c, i) => (
-                <div key={i} className="card" style={{
-                  background: "var(--bg-card)",
-                  border: "1px solid var(--border)",
-                  borderRadius: 20,
-                  padding: 32,
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 20,
-                  transition: "transform 0.3s ease",
-                }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-                    <div style={{
-                      width: 64, height: 64, borderRadius: 12,
-                      background: "#064e3b", // Matching the logo's dark green background
-                      padding: 4, display: "flex", alignItems: "center", justifyContent: "center",
-                      overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)"
-                    }}>
-                      <img src={c.logo} alt={c.name} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
-                    </div>
-                    <div>
-                      <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "var(--text)", marginBottom: 2 }}>{c.name}</h3>
-                      <p style={{ fontSize: "0.75rem", color: "var(--accent)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em" }}>{c.tagline}</p>
-                    </div>
-                  </div>
+      {/* ── PROCESS ──────────────────────────────────────────── */}
+      <section className="section" id="process">
+        <div className="container">
+          <SectionHeading label="Our Process" title="How We Take an Idea to Production" subtitle="A clear, proven process — so you always know what's happening next." />
+          <ProcessTimeline steps={processSteps} />
+        </div>
+      </section>
 
-                  <div style={{ flex: 1 }}>
-                    <p style={{ fontSize: "0.9rem", color: "var(--muted)", lineHeight: 1.6, marginBottom: 16 }}>{c.desc}</p>
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                      <span style={{ fontSize: "0.75rem", background: "rgba(79,110,247,0.1)", color: "var(--accent)", padding: "4px 10px", borderRadius: 4, border: "1px solid rgba(79,110,247,0.2)" }}>
-                        <i className="fas fa-video" style={{ marginRight: 6 }}></i> {c.service}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div style={{ paddingTop: 16, borderTop: "1px solid var(--border)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <div style={{ fontSize: "0.8rem", color: "var(--muted2)" }}>
-                      <i className="fas fa-user-tie" style={{ marginRight: 6 }}></i> {c.contact}
-                    </div>
-                    <div style={{ fontSize: "0.8rem", color: "var(--muted2)" }}>
-                      <i className="fas fa-map-marker-alt" style={{ marginRight: 6 }}></i> {c.location}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+      {/* ── FEATURED WORK ────────────────────────────────────── */}
+      <section className="section" style={{ background: "var(--bg-card)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
+        <div className="container">
+          <SectionHeading label="Featured Work" title="Case Studies" subtitle="A verified engagement from our client work. We're building out this library as current software projects complete." />
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: 32, maxWidth: 720, margin: "0 auto" }}>
+            {clients.map((c) => (
+              <CaseStudyCard key={c.name} client={c} detailed />
+            ))}
           </div>
-        </section>
+          <div style={{ textAlign: "center", marginTop: 40 }}>
+            <Link to="/work" className="btn-secondary" style={{ fontSize: "0.9rem" }}>
+              See Our Work <ArrowRight size={15} aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
+      {/* ── COMPANY STATISTICS (trust statements, no fabricated numbers) ── */}
+      <section className="section">
+        <div className="container">
+          <SectionHeading label="How We Operate" title="Built for Growing Businesses" subtitle="We're an early-stage, MSME-registered studio — here's what that means for how we work with you." />
+          <StaggerGroup style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 20 }}>
+            {trustStatements.map((t) => (
+              <StaggerItem
+                key={t.label}
+                style={{ background: "var(--bg-card2)", border: "1px solid var(--border)", borderRadius: 12, padding: "26px 22px" }}
+              >
+                <div style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "0.98rem", color: "var(--accent)", marginBottom: 8 }}>{t.label}</div>
+                <p style={{ fontSize: "0.85rem", color: "var(--muted)", lineHeight: 1.65 }}>{t.desc}</p>
+              </StaggerItem>
+            ))}
+          </StaggerGroup>
+        </div>
+      </section>
 
-        {/* ── HOW IT WORKS ─────────────────────────────────────── */}
-        <section className="section" id="how">
-          <div className="container">
-            <div style={{ textAlign: "center", marginBottom: 64 }}>
-              <span className="label">Our Process</span>
-              <h2 className="section-title">How It Works</h2>
-              <p className="section-sub" style={{ margin: "0 auto" }}>
-                A clear, proven process — so you always know what's happening next.
-              </p>
-            </div>
+      {/* ── HOW WE WORK WITH CLIENTS (replaces testimonials) ─── */}
+      <section className="section" style={{ background: "var(--bg-card)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
+        <div className="container">
+          <SectionHeading label="How We Work" title="How We Work With Clients" subtitle="We haven't published client testimonials yet — here's what to expect instead, in plain terms." />
+          <StaggerGroup style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24 }}>
+            {[
+              { t: "One point of contact", d: "You work directly with the person building your product — questions get answered without a chain of hand-offs." },
+              { t: "Milestone check-ins", d: "You see working progress on a staging link at agreed points, not just a final reveal at the deadline." },
+              { t: "Plain-language updates", d: "Technical trade-offs explained in terms of what they mean for your business, not just for the code." },
+            ].map((item) => (
+              <StaggerItem key={item.t} className="card">
+                <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "1rem", color: "var(--text)", marginBottom: 8 }}>{item.t}</h3>
+                <p style={{ fontSize: "0.88rem", color: "var(--muted)", lineHeight: 1.7 }}>{item.d}</p>
+              </StaggerItem>
+            ))}
+          </StaggerGroup>
+        </div>
+      </section>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: 0, position: "relative", maxWidth: 680, margin: "0 auto" }}>
-              {/* Vertical line */}
-              <div style={{ position: "absolute", left: 23, top: 0, bottom: 0, width: 2, background: "linear-gradient(to bottom, var(--accent), rgba(79,110,247,0.1))", zIndex: 0 }} />
-
-              {steps.map((s, i) => (
-                <div key={i} style={{ display: "flex", gap: 24, paddingBottom: i < steps.length - 1 ? 40 : 0, position: "relative", zIndex: 1 }}>
-                  {/* Number circle */}
-                  <div style={{
-                    width: 48, height: 48, borderRadius: "50%",
-                    background: "var(--bg-card)",
-                    border: "2px solid var(--accent)",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    flexShrink: 0,
-                    fontFamily: "'Poppins',sans-serif",
-                    fontWeight: 700,
-                    fontSize: "0.8rem",
-                    color: "var(--accent)",
-                  }}>{s.n}</div>
-                  {/* Content */}
-                  <div style={{ paddingTop: 10 }}>
-                    <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "1rem", color: "var(--text)", marginBottom: 6 }}>{s.title}</h3>
-                    <p style={{ fontSize: "0.88rem", color: "var(--muted)", lineHeight: 1.7 }}>{s.desc}</p>
+      {/* ── CAREERS PREVIEW ──────────────────────────────────── */}
+      <section className="section" id="careers">
+        <div className="container">
+          <SectionHeading
+            label="Careers & Internships"
+            title="Learn by Building Real Software"
+            subtitle="For students, fresh graduates and developers who want practical, mentored experience — subject to current availability."
+          />
+          <StaggerGroup style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 20, marginBottom: 40 }}>
+            {internshipHighlights.map((h) => {
+              const Icon = h.icon;
+              return (
+                <StaggerItem key={h.title} className="card" style={{ textAlign: "center" }}>
+                  <div style={{ display: "flex", justifyContent: "center", marginBottom: 12, color: "var(--accent)" }}>
+                    <Icon size={26} strokeWidth={1.8} aria-hidden="true" />
                   </div>
-                </div>
-              ))}
-            </div>
+                  <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "0.95rem", color: "var(--text)", marginBottom: 6 }}>{h.title}</h3>
+                  <p style={{ fontSize: "0.83rem", color: "var(--muted)", lineHeight: 1.6 }}>{h.desc}</p>
+                </StaggerItem>
+              );
+            })}
+          </StaggerGroup>
+          <div style={{ textAlign: "center" }}>
+            <Link to="/careers" className="btn-primary" style={{ fontSize: "0.9rem" }}>
+              Explore Careers & Internships <ArrowRight size={15} aria-hidden="true" />
+            </Link>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ── ABOUT ────────────────────────────────────────────── */}
-        <section id="about" style={{ background: "var(--bg-card)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
-          <div className="container section">
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }} className="about-grid">
-              <div>
-                <span className="label">Who We Are</span>
-                <h2 className="section-title">Software Engineers & Web Designers</h2>
-                <p style={{ color: "var(--muted)", lineHeight: 1.85, fontSize: "0.95rem", marginTop: 16 }}>
-                  We're a team of software engineers and designers — a registered <strong>MSME (UDYAM-UP-59-0113622)</strong> enterprise. Based in Uttar Pradesh, we specialize in high-quality computer programming, custom web designing, and long-term software maintenance for businesses.
-                </p>
-                <p style={{ color: "var(--muted)", lineHeight: 1.85, fontSize: "0.95rem", marginTop: 16 }}>
-                  No outsourcing. No fluff. You talk directly to the people building and running your campaigns.
-                </p>
-                <Link to="/contact" className="btn-primary" style={{ marginTop: 32, display: "inline-flex" }}>
-                  Let's Talk
-                </Link>
-              </div>
-
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-                {[
-                  { n: "1+", l: "Years in Market" },
-                  { n: "100%", l: "Honesty & Transparency" },
-                  { n: "100%", l: "In-house Team" },
-                  { n: "24/7", l: "Support" },
-                ].map((s, i) => (
-                  <div key={i} style={{
-                    background: "var(--bg-card2)", border: "1px solid var(--border)",
-                    borderRadius: 12, padding: "28px 20px", textAlign: "center",
-                  }}>
-                    <div style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: "2rem", color: "var(--accent)" }}>{s.n}</div>
-                    <div style={{ fontSize: "0.85rem", color: "var(--muted)", marginTop: 4 }}>{s.l}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-          <style>{`.about-grid { @media (max-width:768px) { grid-template-columns:1fr !important; } }`}</style>
-        </section>
-
-        {/* ── PRICING ──────────────────────────────────────────── */}
-        <section className="section" id="pricing">
-          <div className="container">
-
-            <div style={{ textAlign: "center", marginBottom: 64 }}>
-              <span className="label">Pricing</span>
-              <h2 className="section-title">Simple, Transparent Pricing</h2>
-              <p className="section-sub" style={{ margin: "0 auto" }}>
-                No hidden charges. Pick the plan that fits your stage.
-              </p>
-            </div>
-
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 24, alignItems: "start" }}>
-              {plans.map((p, i) => (
-                <div
-                  key={i}
-                  style={{
-                    background: p.highlight ? "rgba(79,110,247,0.08)" : "var(--bg-card)",
-                    border: p.highlight ? "2px solid var(--accent)" : "1px solid var(--border)",
-                    borderRadius: 16,
-                    padding: 36,
-                    position: "relative",
-                    transition: "transform 0.2s",
-                  }}
-                >
-                  {p.tag && (
-                    <div style={{
-                      position: "absolute", top: -14, left: "50%", transform: "translateX(-50%)",
-                      background: "var(--accent)", color: "#fff",
-                      fontFamily: "'Poppins',sans-serif", fontWeight: 600, fontSize: "0.75rem",
-                      padding: "4px 16px", borderRadius: 50, whiteSpace: "nowrap",
-                    }}>{p.tag}</div>
-                  )}
-
-                  <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "var(--text)", marginBottom: 6 }}>{p.name}</h3>
-                  <p style={{ fontSize: "0.83rem", color: "var(--muted)", marginBottom: 20 }}>{p.desc}</p>
-
-                  <div style={{ marginBottom: 28 }}>
-                    <span style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: "2.2rem", color: "var(--text)" }}>{p.price}</span>
-                    <span style={{ color: "var(--muted)", fontSize: "0.9rem" }}>{p.period}</span>
-                  </div>
-
-                  <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 12, marginBottom: 32 }}>
-                    {p.features.map((f, fi) => (
-                      <li key={fi} style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: "0.875rem", color: "var(--muted)", lineHeight: 1.5 }}>
-                        <span style={{ color: "#34d399", flexShrink: 0, marginTop: 2 }}>✓</span>
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Link
-                    to="/contact"
-                    style={{
-                      display: "block", textAlign: "center",
-                      fontFamily: "'Poppins',sans-serif", fontWeight: 600,
-                      fontSize: "0.875rem", padding: "12px 24px", borderRadius: 8,
-                      textDecoration: "none",
-                      background: p.highlight ? "var(--accent)" : "transparent",
-                      color: p.highlight ? "#fff" : "var(--accent)",
-                      border: p.highlight ? "none" : "1px solid rgba(79,110,247,0.4)",
-                      transition: "all 0.2s",
-                    }}
-                    onMouseEnter={e => {
-                      e.currentTarget.style.opacity = "0.85";
-                      e.currentTarget.style.transform = "translateY(-1px)";
-                    }}
-                    onMouseLeave={e => {
-                      e.currentTarget.style.opacity = "1";
-                      e.currentTarget.style.transform = "translateY(0)";
-                    }}
-                  >
-                    {p.cta}
-                  </Link>
-                </div>
-              ))}
-            </div>
-
-            <p style={{ textAlign: "center", marginTop: 32, fontSize: "0.83rem", color: "var(--muted2)" }}>
-              Not sure which plan? <Link to="/contact" style={{ color: "var(--accent)", textDecoration: "none", fontWeight: 500 }}>Let's talk — it's free.</Link>
-            </p>
-          </div>
-        </section>
-
-        {/* ── INTERNSHIPS ────────────────────────────────────── */}
-        <section id="careers" className="section" style={{ background: "var(--bg)", borderTop: "1px solid var(--border)" }}>
-          <div className="container">
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }} className="careers-grid">
-              <div style={{ order: 2 }}>
-                <span className="label">Careers</span>
-                <h2 className="section-title">Join Our Team</h2>
-                <p style={{ color: "var(--muted)", lineHeight: 1.8, fontSize: "1rem", marginTop: 20 }}>
-                  Are you a college student or a fresh graduate looking for real-world experience? We're regularly hiring interns for software development, web designing, and technical support.
-                </p>
-                <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 16, marginTop: 24, marginBottom: 32 }}>
-                  {[
-                    { t: "Practical Learning", d: "Work on live projects with experienced mentors." },
-                    { t: "Official Certification", d: "Get an MSME-verified internship certificate for your college credits." },
-                    { t: "Skill Growth", d: "Learn modern tech stacks (React, Node, Cloud) in a professional setting." },
-                  ].map((item, i) => (
-                    <li key={i} style={{ display: "flex", gap: 12 }}>
-                      <span style={{ color: "#34d399", fontWeight: "bold" }}>✓</span>
-                      <div>
-                        <strong style={{ color: "var(--text)", display: "block", fontSize: "0.95rem" }}>{item.t}</strong>
-                        <span style={{ color: "var(--muted2)", fontSize: "0.85rem" }}>{item.d}</span>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-                <a href="mailto:team.brainlink@gmail.com?subject=Application for Internship - Brainlink Softwares&body=Dear Hiring Team, Brainlink Softwares,%0D%0A%0D%0AI am writing to express my interest in an internship at your esteemed firm. As a student of [Your Degree/Field], I am keen to apply my skills in [Your Skills] to real-world projects.%0D%0A%0D%0AI am highly motivated to learn from the experts at Brainlink Softwares and contribute to your technical excellence. I am available for [Number] months starting from [Date].%0D%0A%0D%0APlease find my resume attached for your review. I look forward to the possibility of discussing how I can contribute to your team.%0D%0A%0D%0ABest Regards,%0D%0A[Your Name]%0D%0A[Your Phone Number]" className="btn-secondary">
-                  Apply for Internship
-                </a>
-              </div>
-
-              <div style={{ order: 1 }}>
-                <div style={{ padding: "40px", background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 24, textAlign: "center" }}>
-                   <i className="fas fa-user-graduate" style={{ fontSize: "4rem", color: "var(--accent)", opacity: 0.2, marginBottom: 20 }}></i>
-                   <p style={{ color: "var(--muted)", fontSize: "0.95rem" }}>
-                     We are always on the lookout for passionate learners to join our waitlist for upcoming opportunities.
-                   </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <style>{`.careers-grid { @media (max-width:768px) { grid-template-columns:1fr !important; } }`}</style>
-        </section>
-
-        {/* ── CTA ──────────────────────────────────────────────── */}
-        <section style={{
-          background: "radial-gradient(ellipse at 50% 100%, rgba(79,110,247,0.15) 0%, transparent 70%), var(--bg-card)",
-          borderTop: "1px solid var(--border)",
-          padding: "100px 24px",
-          textAlign: "center",
-        }}>
-          <div className="container">
+      {/* ── FINAL CTA ────────────────────────────────────────── */}
+      <section style={{ position: "relative", overflow: "hidden", borderTop: "1px solid var(--border)", padding: "100px 24px", textAlign: "center" }}>
+        <AnimatedBackground variant="page" />
+        <div className="container" style={{ position: "relative", zIndex: 1 }}>
+          <Reveal>
             <span className="label">Ready?</span>
-            <h2 style={{
-              fontFamily: "'Poppins',sans-serif",
-              fontWeight: 800,
-              fontSize: "clamp(2rem, 5vw, 3.2rem)",
-              color: "var(--text)",
-              marginBottom: 20,
-              letterSpacing: "-0.02em",
-            }}>
-              Let's Grow Your Business
+            <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: "clamp(2rem, 5vw, 3.2rem)", color: "var(--text)", marginBottom: 20, letterSpacing: "-0.02em" }}>
+              Have an idea worth building?
             </h2>
             <p style={{ color: "var(--muted)", fontSize: "1rem", marginBottom: 40, lineHeight: 1.8, maxWidth: 480, margin: "0 auto 40px" }}>
-              Book a free 20-minute call or drop us a message on WhatsApp. No pressure, no obligation.
+              Let's turn it into a reliable, scalable digital product.
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
               <Link to="/contact" className="btn-primary" style={{ fontSize: "0.95rem", padding: "14px 32px" }}>
-                <i className="fas fa-phone-alt"></i> Book a Call
+                <Phone size={16} aria-hidden="true" /> Start a Conversation
               </Link>
-              <a
-                href="https://wa.me/918126280200?text=Hi,%20Brainlink%20Softwares"
-                className="btn-whatsapp"
-                style={{ fontSize: "0.95rem", padding: "14px 32px" }}
-              >
-                <i className="fab fa-whatsapp" style={{ color: "#fff" }}></i> Chat on WhatsApp
+              <a href={siteConfig.whatsappHref()} target="_blank" rel="noopener noreferrer" className="btn-whatsapp" style={{ fontSize: "0.95rem", padding: "14px 32px" }}>
+                <WhatsAppIcon width={17} height={17} /> Chat on WhatsApp
               </a>
             </div>
-          </div>
-        </section>
+          </Reveal>
+        </div>
+      </section>
 
-      </main>
-
-      {/* WhatsApp FAB */}
-      <a
-        href="https://wa.me/918126280200?text=Hi,%20Brainlink%20Softwares"
-        aria-label="WhatsApp"
-        style={{
-          position: "fixed", bottom: 24, right: 24, zIndex: 999,
-          width: 52, height: 52, borderRadius: "50%",
-          background: "#25D366",
-          display: "flex", alignItems: "center", justifyContent: "center",
-          fontSize: "1.5rem",
-          boxShadow: "0 4px 20px rgba(37,211,102,0.4)",
-          textDecoration: "none",
-          transition: "transform 0.2s, box-shadow 0.2s",
-        }}
-        onMouseEnter={e => { e.currentTarget.style.transform = "scale(1.1)"; }}
-        onMouseLeave={e => { e.currentTarget.style.transform = "scale(1)"; }}
-      >
-        <i className="fab fa-whatsapp" style={{ color: "#fff" }}></i>
-      </a>
-
-      <Footer />
-    </>
+      <style>{`
+        @media (max-width: 900px) {
+          .hero-grid { grid-template-columns: 1fr !important; }
+          .hero-visual-wrap { order: -1; }
+        }
+      `}</style>
+    </Layout>
   );
 }

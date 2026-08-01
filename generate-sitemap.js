@@ -9,10 +9,15 @@ const SITE_URL = "https://www.brainlink.in";
 // ✅ List only public routes (ignore common components)
 const routes = [
   { url: "/", changefreq: "daily", priority: 1.0 },
+  { url: "/services", changefreq: "monthly", priority: 0.9 },
+  { url: "/work", changefreq: "weekly", priority: 0.8 },
+  { url: "/about", changefreq: "monthly", priority: 0.7 },
+  { url: "/pricing", changefreq: "monthly", priority: 0.8 },
+  { url: "/careers", changefreq: "weekly", priority: 0.7 },
+  { url: "/blog", changefreq: "daily", priority: 0.9 },
   { url: "/contact", changefreq: "monthly", priority: 0.8 },
-  { url: "/plans", changefreq: "monthly", priority: 0.8 },
-  { url: "/pricing", changefreq: "monthly", priority: 0.7 },
-  { url: "/service", changefreq: "monthly", priority: 0.7 },
+  { url: "/privacy-policy", changefreq: "yearly", priority: 0.3 },
+  { url: "/terms", changefreq: "yearly", priority: 0.3 },
 ];
 
 (async () => {

@@ -1,0 +1,245 @@
+import {
+  Code2,
+  Globe,
+  Smartphone,
+  Rocket,
+  Layers,
+  Palette,
+  Cloud,
+  TestTube2,
+  LifeBuoy,
+  Compass,
+  Webhook,
+} from "lucide-react";
+
+/**
+ * Single source of truth for every service Brainlink Softwares offers.
+ * Used by the Services page (full detail) and the Home page (summary cards).
+ */
+export const services = [
+  {
+    id: "custom-software-development",
+    icon: Code2,
+    title: "Custom Software Development",
+    shortDesc: "Tailored software built around how your business actually operates, not a rigid template.",
+    whoFor: "Businesses with workflows that off-the-shelf software can't cleanly support — operations, inventory, booking, or internal tooling needs.",
+    problems: [
+      "Spreadsheets and manual processes that don't scale",
+      "Generic SaaS tools that force you to change how you work",
+      "Disconnected systems that don't talk to each other",
+    ],
+    deliverables: [
+      "Requirement analysis and technical architecture",
+      "A working application built to your specification",
+      "Documentation handed over with the source code",
+      "A defined support window after launch",
+    ],
+    tech: ["React", "Node.js", "PostgreSQL", "Supabase", "REST APIs"],
+    process: "We start with a discovery call to understand the workflow, propose an architecture, and build in reviewable milestones so you see progress before final delivery.",
+  },
+  {
+    id: "web-development",
+    icon: Globe,
+    title: "Website & Web Application Development",
+    shortDesc: "Fast, responsive websites and web apps engineered for performance and search visibility.",
+    whoFor: "Businesses that need a professional online presence, a customer-facing portal, or a full web application.",
+    problems: [
+      "An outdated or slow website that hurts credibility",
+      "No mobile-friendly experience",
+      "Poor search engine visibility",
+    ],
+    deliverables: [
+      "Responsive, accessible interface across devices",
+      "SEO-friendly markup and metadata",
+      "Content structure you can maintain going forward",
+      "Performance-optimized deployment",
+    ],
+    tech: ["React", "React Router", "Tailwind CSS", "Vercel"],
+    process: "Design and content structure first, then build in stages with a staging link so you can review before it goes live.",
+  },
+  {
+    id: "mobile-app-development",
+    icon: Smartphone,
+    title: "Mobile Application Development",
+    shortDesc: "Cross-platform mobile apps that share a codebase across Android and iOS.",
+    whoFor: "Businesses that need to reach customers on mobile, or extend an existing web product to native apps.",
+    problems: [
+      "No mobile presence while competitors have one",
+      "Need for offline access or device-level features (camera, notifications, location)",
+      "Budget constraints that rule out separate Android and iOS teams",
+    ],
+    deliverables: [
+      "Cross-platform app built from a shared codebase",
+      "API integration with your existing backend",
+      "App store submission support",
+    ],
+    tech: ["React Native", "Flutter", "REST APIs", "Firebase"],
+    process: "We scope the core feature set first, ship a testable build early, and iterate based on real device feedback before store submission.",
+  },
+  {
+    id: "saas-development",
+    icon: Rocket,
+    title: "SaaS Platform Development",
+    shortDesc: "Multi-tenant, subscription-ready platforms built to scale with your user base.",
+    whoFor: "Founders building a subscription product that needs accounts, billing, and role-based access from day one.",
+    problems: [
+      "Need for a multi-tenant architecture that isolates customer data safely",
+      "Subscription billing and usage-based access control",
+      "Uncertainty about which parts of the stack to build vs. buy",
+    ],
+    deliverables: [
+      "Multi-tenant application architecture",
+      "Authentication, roles and billing integration",
+      "Admin dashboard for managing customers",
+    ],
+    tech: ["React", "Node.js", "PostgreSQL", "Supabase", "Stripe-compatible billing"],
+    process: "We define the data model and tenancy strategy before writing a single feature, so the platform doesn't need re-architecting as it grows.",
+  },
+  {
+    id: "startup-mvp",
+    icon: Layers,
+    title: "Startup MVP Development",
+    shortDesc: "A focused, working first version built to validate your idea with real users.",
+    whoFor: "Early-stage founders who need to test a concept with real users before committing to a full build.",
+    problems: [
+      "Limited runway to prove product-market fit",
+      "Uncertainty about which features actually matter to users",
+      "Risk of over-building before validating demand",
+    ],
+    deliverables: [
+      "A scoped, working MVP focused on the core value proposition",
+      "A technical foundation that can be extended post-validation",
+      "Honest recommendations on what to cut for v1",
+    ],
+    tech: ["React", "Node.js", "Supabase", "Vercel"],
+    process: "We help you cut scope to what's essential, build fast, and hand over an architecture that won't need a rewrite once you raise or scale.",
+  },
+  {
+    id: "backend-api-development",
+    icon: Webhook,
+    title: "Backend & API Development",
+    shortDesc: "Reliable backend services and integrations that connect your systems together.",
+    whoFor: "Businesses that need custom backend logic, third-party integrations, or a stable API for internal or partner use.",
+    problems: [
+      "Third-party tools that don't integrate with your existing systems",
+      "No documented API for partners or internal teams to build against",
+      "Backend logic scattered across scripts and manual processes",
+    ],
+    deliverables: [
+      "RESTful API design and implementation",
+      "Third-party service and payment integrations",
+      "Database schema design and query optimization",
+    ],
+    tech: ["Node.js", "PostgreSQL", "Neon", "Supabase", "REST APIs"],
+    process: "We design the API contract first so frontend and integration work can proceed in parallel, then build and load-test the endpoints.",
+  },
+  {
+    id: "ui-ux-design",
+    icon: Palette,
+    title: "UI/UX Design",
+    shortDesc: "Interfaces designed around how real users complete their tasks, not just how things look.",
+    whoFor: "Teams that need a product designed before (or alongside) development, or an existing product that needs a usability pass.",
+    problems: [
+      "A product that works but confuses users",
+      "Inconsistent visual language across screens",
+      "No clear design system for developers to build against",
+    ],
+    deliverables: [
+      "User flow mapping and wireframes",
+      "High-fidelity UI designs and a reusable component system",
+      "Developer-ready design handoff",
+    ],
+    tech: ["Figma", "Design systems", "Accessibility auditing"],
+    process: "We map the user flow before designing a single screen, so the interface follows how people actually get things done.",
+  },
+  {
+    id: "cloud-devops",
+    icon: Cloud,
+    title: "Cloud Deployment & DevOps",
+    shortDesc: "Deployment pipelines and cloud infrastructure that keep your product online and easy to ship.",
+    whoFor: "Businesses that need their application deployed, monitored, and easy to update without manual intervention.",
+    problems: [
+      "Manual, error-prone deployment processes",
+      "No monitoring in place when something breaks in production",
+      "Infrastructure costs that are hard to predict or control",
+    ],
+    deliverables: [
+      "CI/CD pipeline setup",
+      "Cloud infrastructure configuration",
+      "Environment and secrets management",
+    ],
+    tech: ["Vercel", "Docker", "AWS", "Azure", "GitHub Actions"],
+    process: "We set up a deployment pipeline that lets you ship changes safely, with rollback in place before it's ever needed.",
+  },
+  {
+    id: "qa-testing",
+    icon: TestTube2,
+    title: "Software Testing & Quality Assurance",
+    shortDesc: "Structured testing that catches issues before your users do.",
+    whoFor: "Teams shipping frequently who need confidence that new changes don't break existing functionality.",
+    problems: [
+      "Bugs discovered in production instead of before release",
+      "No repeatable test process as the codebase grows",
+      "Manual regression testing that slows down every release",
+    ],
+    deliverables: [
+      "Test plans covering core user flows",
+      "Manual and automated testing where it adds real value",
+      "A bug report with reproduction steps and severity",
+    ],
+    tech: ["Jest", "React Testing Library", "Manual QA"],
+    process: "We test against real user flows rather than chasing 100% coverage for its own sake, prioritizing the paths that matter most.",
+  },
+  {
+    id: "maintenance-support",
+    icon: LifeBuoy,
+    title: "Maintenance & Technical Support",
+    shortDesc: "Ongoing care so your software stays secure, current and dependable after launch.",
+    whoFor: "Businesses with a live product that needs regular updates, monitoring, and a reliable point of contact for issues.",
+    problems: [
+      "No one available to fix issues after the original build is done",
+      "Dependencies and security patches falling behind",
+      "Small feature requests piling up with nowhere to go",
+    ],
+    deliverables: [
+      "Scheduled maintenance and dependency updates",
+      "Priority bug fixes within an agreed response window",
+      "A direct line to the team that built your product",
+    ],
+    tech: ["Monitoring & alerting", "Dependency audits", "Version control workflows"],
+    process: "We agree on a support scope and response time up front, so you know exactly what's covered before anything goes wrong.",
+  },
+  {
+    id: "technical-consulting",
+    icon: Compass,
+    title: "Technical Consulting",
+    shortDesc: "Honest, practical advice on architecture, technology choices and technical risk.",
+    whoFor: "Founders and teams that need an experienced second opinion before committing budget to a technical direction.",
+    problems: [
+      "Uncertainty about which technology stack fits the problem",
+      "A legacy system that's becoming hard to maintain or extend",
+      "Needing an outside technical opinion before a big decision",
+    ],
+    deliverables: [
+      "A written technical assessment or recommendation",
+      "Architecture review with practical trade-offs explained",
+      "A roadmap you can hand to any development team",
+    ],
+    tech: ["Architecture review", "Code audits", "Technology selection"],
+    process: "We review what you have, ask direct questions about your goals and constraints, and give a recommendation — even when it's 'don't build this yet.'",
+  },
+];
+
+export const getServiceById = (id) => services.find((s) => s.id === id);
+
+/** Curated 8-card summary for the Home page overview grid. */
+export const homeServices = [
+  "custom-software-development",
+  "web-development",
+  "mobile-app-development",
+  "saas-development",
+  "backend-api-development",
+  "ui-ux-design",
+  "cloud-devops",
+  "maintenance-support",
+].map((id) => getServiceById(id));
