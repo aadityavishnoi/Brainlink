@@ -21,7 +21,7 @@ if (typeof global.IntersectionObserver === 'undefined') {
 }
 
 // jsdom has no window.matchMedia, used for prefers-reduced-motion/hover
-// detection (HeroVisual) and framer-motion's useReducedMotion hook.
+// detection (HeroScene) and framer-motion's useReducedMotion hook.
 if (typeof window.matchMedia === 'undefined') {
   window.matchMedia = (query) => ({
     matches: false,

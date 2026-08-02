@@ -22,7 +22,13 @@
   --green:   #25D366;
   --green-h: #1EBE59;
   --danger:  #E0483E;
+  --danger-rgb: 224,72,62;
   --success: #16A34A;
+  --success-rgb: 22,163,74;
+  --warning: #D97706;
+  --warning-rgb: 217,119,6;
+  --neutral: #647086;
+  --neutral-rgb: 100,112,134;
 
   /* Text */
   --text:   #172033;

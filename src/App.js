@@ -20,6 +20,8 @@ const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
 const BlogList = lazy(() => import("./pages/blog/BlogList"));
 const BlogDetail = lazy(() => import("./pages/blog/BlogDetail"));
+const VerifyCertificate = lazy(() => import("./pages/VerifyCertificate"));
+const VerifyCertificateResult = lazy(() => import("./pages/VerifyCertificateResult"));
 const NotFound = lazy(() => import("./common/NotFound"));
 
 function RouteFallback() {
@@ -44,6 +46,8 @@ function AnimatedRoutes() {
             <Route path="/blog/:slug" element={<BlogDetail />} />
             <Route path="/privacy-policy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/verify-certificate" element={<VerifyCertificate />} />
+            <Route path="/verify-certificate/:certificateSlug" element={<VerifyCertificateResult />} />
 
             {/* Legacy URLs kept working via redirect, not a hard 404 */}
             <Route path="/service" element={<Navigate to="/services" replace />} />

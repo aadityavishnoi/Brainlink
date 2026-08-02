@@ -19,6 +19,7 @@ const quickLinks = [
 ];
 
 const legalLinks = [
+  { l: "Verify Certificate", h: "/verify-certificate" },
   { l: "Privacy Policy", h: "/privacy-policy" },
   { l: "Terms & Conditions", h: "/terms" },
 ];
