@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Brain } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import logo from "../assets/logo/logo.png";
 import "../index.css";
 
@@ -22,7 +22,7 @@ export default function Header() {
   const menuBtnRef = useRef(null);
 
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 10);
+    const fn = () => setScrolled(window.scrollY > 8);
     fn();
     window.addEventListener("scroll", fn, { passive: true });
     return () => window.removeEventListener("scroll", fn);
@@ -48,74 +48,56 @@ export default function Header() {
 
   const linkStyle = (active) => ({
     fontFamily: "var(--font-body)",
-    fontWeight: 600,
-    fontSize: "0.86rem",
-    color: active ? "var(--accent)" : "var(--muted)",
+    fontWeight: 500,
+    fontSize: "0.88rem",
+    color: active ? "var(--accent)" : "var(--text)",
     textDecoration: "none",
-    padding: "6px 4px",
-    transition: "color 0.2s",
+    padding: "6px 2px",
+    borderBottom: active ? "2px solid var(--accent)" : "2px solid transparent",
+    transition: "color 0.15s ease",
   });
 
   return (
     <>
       <a href="#main-content" className="skip-link">Skip to main content</a>
 
-      <div
+      <nav
+        aria-label="Primary"
         style={{
           position: "fixed",
-          top: scrolled ? 10 : 20,
+          top: 0,
           left: 0,
           right: 0,
           zIndex: 1000,
-          display: "flex",
-          justifyContent: "center",
-          padding: "0 16px",
-          transition: "top 0.3s cubic-bezier(0.22,1,0.36,1)",
-          pointerEvents: "none",
+          background: scrolled ? "var(--nav-bg-scrolled)" : "rgba(255,255,255,0.86)",
+          backdropFilter: "saturate(180%) blur(8px)",
+          WebkitBackdropFilter: "saturate(180%) blur(8px)",
+          borderBottom: "1px solid var(--border)",
+          boxShadow: scrolled ? "var(--shadow-nav)" : "none",
+          transition: "box-shadow 0.2s ease, padding 0.2s ease",
         }}
       >
-        <nav
-          aria-label="Primary"
-          className="glass-card"
+        <div
+          className="container"
           style={{
-            pointerEvents: "auto",
-            width: "100%",
-            maxWidth: scrolled ? 980 : 1080,
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            padding: scrolled ? "8px 18px" : "12px 22px",
-            transition: "max-width 0.3s cubic-bezier(0.22,1,0.36,1), padding 0.3s ease",
-            boxShadow: "var(--shadow-md)",
+            padding: scrolled ? "12px 24px" : "16px 24px",
+            transition: "padding 0.2s ease",
           }}
         >
-          <Link to="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }} data-cursor-label="Home">
-            <span style={{ position: "relative", width: 32, height: 32, display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <span
-                aria-hidden="true"
-                className="float-anim"
-                style={{
-                  position: "absolute", inset: 0, borderRadius: "50%",
-                  background: "linear-gradient(135deg, var(--accent), var(--accent2))",
-                  opacity: 0.18, animationDuration: "3.4s",
-                }}
-              />
-              <img src={logo} alt="" style={{ height: 24, width: 24, objectFit: "contain", position: "relative", zIndex: 1 }} />
-            </span>
+          <Link to="/" style={{ display: "flex", alignItems: "center", gap: 9, textDecoration: "none" }}>
+            <img src={logo} alt="" style={{ height: 26, width: 26, objectFit: "contain" }} />
             <span style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1rem", color: "var(--text)" }}>
-              Brainlink <span className="text-gradient">Softwares</span>
+              Brainlink <span style={{ color: "var(--accent)" }}>Softwares</span>
             </span>
           </Link>
 
-          <ul style={{ display: "flex", alignItems: "center", gap: 20, listStyle: "none" }} className="desktop-nav">
+          <ul style={{ display: "flex", alignItems: "center", gap: 24, listStyle: "none" }} className="desktop-nav">
             {navLinks.map((l) => (
               <li key={l.label}>
-                <Link
-                  to={l.to}
-                  style={linkStyle(pathname === l.to)}
-                  onMouseEnter={(e) => { if (pathname !== l.to) e.currentTarget.style.color = "var(--text)"; }}
-                  onMouseLeave={(e) => { if (pathname !== l.to) e.currentTarget.style.color = "var(--muted)"; }}
-                >
+                <Link to={l.to} style={linkStyle(pathname === l.to)}>
                   {l.label}
                 </Link>
               </li>
@@ -123,7 +105,7 @@ export default function Header() {
           </ul>
 
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <Link to="/contact" className="btn-primary cta-desktop-only" style={{ padding: "10px 20px", fontSize: "0.82rem" }} data-cursor-label="Go">
+            <Link to="/contact" className="btn-primary cta-desktop-only" style={{ padding: "9px 18px", fontSize: "0.85rem" }}>
               Start a Project
             </Link>
 
@@ -138,48 +120,43 @@ export default function Header() {
               {open ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
             </button>
           </div>
-        </nav>
-      </div>
-
-      {/* Mobile menu overlay */}
-      <div
-        id="mobile-menu"
-        className="glass-card mobile-nav-btn"
-        style={{
-          position: "fixed",
-          top: scrolled ? 66 : 76,
-          left: 16,
-          right: 16,
-          zIndex: 999,
-          maxHeight: open ? 500 : 0,
-          opacity: open ? 1 : 0,
-          overflow: "hidden",
-          transition: "max-height 0.35s ease, opacity 0.25s ease",
-          boxShadow: "var(--shadow-lg)",
-        }}
-      >
-        <div style={{ padding: "12px 20px 20px", display: "flex", flexDirection: "column", gap: 4 }}>
-          {navLinks.map((l) => (
-            <Link
-              key={l.label}
-              to={l.to}
-              onClick={() => setOpen(false)}
-              style={{
-                fontFamily: "var(--font-body)", fontWeight: 600, fontSize: "0.95rem",
-                color: pathname === l.to ? "var(--accent)" : "var(--text)",
-                textDecoration: "none", padding: "12px 4px", borderBottom: "1px solid var(--border)",
-              }}
-            >
-              {l.label}
-            </Link>
-          ))}
-          <Link to="/contact" onClick={() => setOpen(false)} className="btn-primary" style={{ marginTop: 12, justifyContent: "center" }}>
-            <Brain size={16} aria-hidden="true" /> Start a Project
-          </Link>
         </div>
-      </div>
 
-      <div style={{ height: 88 }} />
+        {/* Mobile menu */}
+        <div
+          id="mobile-menu"
+          className="mobile-nav-btn"
+          style={{
+            maxHeight: open ? 480 : 0,
+            overflow: "hidden",
+            transition: "max-height 0.2s ease",
+            background: "var(--mobile-menu-bg)",
+            borderTop: open ? "1px solid var(--border)" : "none",
+          }}
+        >
+          <div style={{ padding: "8px 24px 20px", display: "flex", flexDirection: "column", gap: 2 }}>
+            {navLinks.map((l) => (
+              <Link
+                key={l.label}
+                to={l.to}
+                onClick={() => setOpen(false)}
+                style={{
+                  fontFamily: "var(--font-body)", fontWeight: 500, fontSize: "0.95rem",
+                  color: pathname === l.to ? "var(--accent)" : "var(--text)",
+                  textDecoration: "none", padding: "12px 4px", borderBottom: "1px solid var(--border)",
+                }}
+              >
+                {l.label}
+              </Link>
+            ))}
+            <Link to="/contact" onClick={() => setOpen(false)} className="btn-primary" style={{ marginTop: 14, justifyContent: "center" }}>
+              Start a Project
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      <div style={{ height: 65 }} />
     </>
   );
 }

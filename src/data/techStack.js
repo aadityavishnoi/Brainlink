@@ -12,7 +12,3 @@ export const techModules = [
   { name: "Vercel", category: "Infrastructure", note: "Hosts and deploys this site and its serverless APIs." },
   { name: "GitHub", category: "Infrastructure", note: "Version control and collaborative development." },
 ];
-
-export const techCategories = ["All", ...Array.from(new Set(techModules.map((t) => t.category)))];
-
-export const techStack = techModules.map((t) => t.name);

@@ -11,10 +11,9 @@ export const portfolioProjects = [
     projectName: "Parkin10 Connect",
     industry: "Smart Mobility & Parking Technology",
     category: "Mobility Technology",
-    worldTheme: "mobility",
-    headline: "Building Smarter Connections Between Vehicles And People.",
+    headline: "Building A Smarter Vehicle Communication Ecosystem.",
     shortDescription:
-      "Brainlink Softwares contributed to Parkin10's digital mobility ecosystem, including web experiences, QR-based vehicle communication and real-time calling technology.",
+      "Brainlink Softwares contributed to the development of Parkin10's digital mobility ecosystem, including web experiences, QR-based vehicle communication and real-time calling technology.",
     problem:
       "Parkin10 needed a way for people to reach a vehicle's owner instantly and safely, without exchanging phone numbers, plus a web presence that reflected a modern mobility-tech product.",
     approach:
@@ -41,10 +40,9 @@ export const portfolioProjects = [
     projectName: "Om Pictures Digital Presence",
     industry: "Photography, Videography & Creative Media",
     category: "Creative Business",
-    worldTheme: "creative",
-    headline: "Transforming Creative Stories Into A Digital Experience.",
+    headline: "Creating A Premium Digital Presence For A Creative Studio.",
     shortDescription:
-      "Brainlink Softwares designed and developed a modern digital presence for Om Pictures to showcase photography, videography and creative studio services.",
+      "Brainlink Softwares created a modern digital experience for Om Pictures to present photography, videography and creative services through an elegant, responsive and conversion-focused website.",
     problem:
       "Om Pictures needed a responsive, professional website to present its photography and videography portfolio — including wedding photography — and make it easy for prospective clients to enquire and connect on WhatsApp.",
     approach:

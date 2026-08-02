@@ -28,7 +28,7 @@ export default function Services() {
 
       <PageHero
         label="Our Services"
-        title={<>Software Engineering, <span className="text-gradient">End to End.</span></>}
+        title={<>Software Engineering, <span style={{ color: "var(--accent)" }}>End to End.</span></>}
         subtitle="From a first working prototype to enterprise-scale systems — engineering, design and support for every stage of a product's life."
       >
         <Link to="/contact" className="btn-primary" style={{ fontSize: "0.95rem", padding: "14px 32px" }}>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Layout from "../common/Layout";
 import SEO, { organizationSchema, breadcrumbSchema } from "../components/SEO";
 import PageHero from "../components/PageHero";
-import ProjectWorldCard from "../components/ProjectWorldCard";
+import ProjectCard from "../components/ProjectCard";
 import Reveal from "../components/Reveal";
 import { verifiedProjects, portfolioCategories } from "../data/portfolio";
 
@@ -21,9 +21,9 @@ export default function Work() {
       />
 
       <PageHero
-        label="Project Worlds"
-        title="A Portal Into Every Project"
-        subtitle="Verified engagements only — no invented clients, metrics or results. Each project is its own world within the Brainlink Digital Universe."
+        label="Case Studies"
+        title="Our Work"
+        subtitle="Verified engagements only — no invented clients, metrics or results."
       />
 
       <section className="section">
@@ -58,7 +58,7 @@ export default function Work() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))", gap: 32 }}>
               {filtered.map((project) => (
                 <Reveal key={project.id} id={project.id} style={{ scrollMarginTop: 100 }}>
-                  <ProjectWorldCard project={project} detailed />
+                  <ProjectCard project={project} detailed />
                 </Reveal>
               ))}
             </div>

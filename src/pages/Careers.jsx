@@ -5,7 +5,6 @@ import SEO, { organizationSchema, breadcrumbSchema } from "../components/SEO";
 import PageHero from "../components/PageHero";
 import SectionHeading from "../components/SectionHeading";
 import FAQAccordion from "../components/FAQAccordion";
-import LearningAcademyScene from "../components/LearningAcademyScene";
 import Reveal, { StaggerGroup, StaggerItem } from "../components/Reveal";
 import { internshipHighlights, whoShouldApply, skillsValued, selectionProcess, careerFaqs } from "../data/careers";
 import { submitWeb3Form } from "../utils/web3forms";
@@ -79,19 +78,10 @@ export default function Careers() {
       />
 
       <PageHero
-        label="Brainlink Learning Academy"
+        label="Work With Brainlink Softwares"
         title="Learn By Building Real Software"
         subtitle="We regularly bring in students and early-career developers for hands-on, mentored work. Openings depend on current availability — apply and we'll follow up honestly either way."
       />
-
-      {/* Academy scene */}
-      <section className="section" style={{ paddingTop: 56, paddingBottom: 56 }}>
-        <div className="container">
-          <Reveal>
-            <LearningAcademyScene />
-          </Reveal>
-        </div>
-      </section>
 
       {/* Life at Brainlink */}
       <section className="section">

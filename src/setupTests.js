@@ -20,8 +20,8 @@ if (typeof global.IntersectionObserver === 'undefined') {
   };
 }
 
-// jsdom has no window.matchMedia, used for prefers-reduced-motion/hover
-// detection (HeroScene) and framer-motion's useReducedMotion hook.
+// jsdom has no window.matchMedia, used by framer-motion's useReducedMotion
+// hook (Reveal, PageFade).
 if (typeof window.matchMedia === 'undefined') {
   window.matchMedia = (query) => ({
     matches: false,
@@ -38,10 +38,3 @@ if (typeof window.matchMedia === 'undefined') {
 // jsdom logs a "not implemented" console error for window.scrollTo
 // (ScrollToTop runs on every route render) — stub it out for clean test output.
 window.scrollTo = () => {};
-
-// jsdom has no real canvas/WebGL backend; HeroScene's feature-detection
-// already handles a null context gracefully (falls back to the static
-// illustration) — this just keeps jsdom's "not implemented" notice quiet.
-if (typeof HTMLCanvasElement !== 'undefined') {
-  HTMLCanvasElement.prototype.getContext = () => null;
-}

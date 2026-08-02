@@ -56,7 +56,7 @@ export default function About() {
               </p>
             </Reveal>
             <Reveal delay={0.1} className="card" style={{ padding: 36 }}>
-              <EyeIcon size={26} style={{ color: "var(--accent2)", marginBottom: 16 }} aria-hidden="true" />
+              <EyeIcon size={26} style={{ color: "var(--accent)", marginBottom: 16 }} aria-hidden="true" />
               <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1.2rem", color: "var(--text)", marginBottom: 12 }}>Our Vision</h2>
               <p style={{ color: "var(--muted)", fontSize: "0.92rem", lineHeight: 1.8 }}>
                 To build a trusted technology company known for honest collaboration, strong engineering and meaningful

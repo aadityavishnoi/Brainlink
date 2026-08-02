@@ -1,30 +1,28 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Phone, Sparkles } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import Layout from "../common/Layout";
 import SEO, { organizationSchema } from "../components/SEO";
-import AnimatedBackground from "../components/AnimatedBackground";
-import FloatingClouds from "../components/FloatingClouds";
-import HeroScene from "../components/HeroScene";
-import TechMarquee from "../components/TechMarquee";
+import HeroVisual from "../components/HeroVisual";
+import { BrowserMockup, PhoneMockup } from "../components/ProductMockup";
 import SectionHeading from "../components/SectionHeading";
-import ServiceOrbit from "../components/ServiceOrbit";
-import ProjectWorldCard from "../components/ProjectWorldCard";
-import HolographicTechModule from "../components/HolographicTechModule";
-import DevelopmentJourney from "../components/DevelopmentJourney";
-import LearningAcademyScene from "../components/LearningAcademyScene";
-import DigitalPortal from "../components/DigitalPortal";
-import MagneticButton from "../components/MagneticButton";
+import ServiceCard from "../components/ServiceCard";
+import ProjectCard from "../components/ProjectCard";
+import ProcessSteps from "../components/ProcessSteps";
+import TechStack from "../components/TechStack";
 import Reveal, { StaggerGroup, StaggerItem } from "../components/Reveal";
 import { WhatsAppIcon } from "../components/icons/BrandIcons";
 import { homeServices } from "../data/services";
-import { processSteps, ideaJourneyStages } from "../data/process";
-import { techStack, techModules } from "../data/techStack";
+import { processSteps } from "../data/process";
+import { techModules } from "../data/techStack";
 import { featuredProjects } from "../data/portfolio";
-import { whyBrainlink, clientApproach } from "../data/values";
+import { whyBrainlink } from "../data/values";
 import { internshipHighlights } from "../data/careers";
 import { siteConfig } from "../data/siteConfig";
 
 export default function Index() {
+  const parkin10 = featuredProjects.find((p) => p.id === "parkin10-mobility");
+  const omPictures = featuredProjects.find((p) => p.id === "om-pictures");
+
   return (
     <Layout>
       <SEO
@@ -34,119 +32,80 @@ export default function Index() {
         jsonLd={organizationSchema}
       />
 
-      {/* ── SECTION 1 — HERO: THE DIGITAL SKY CITY ────────────── */}
-      <section
-        style={{
-          position: "relative",
-          minHeight: "92vh",
-          display: "flex",
-          alignItems: "center",
-          padding: "128px 24px 64px",
-          overflow: "hidden",
-          background: "linear-gradient(180deg, #F8FAFF 0%, #EEF5FF 60%, #F5F0FF 100%)",
-        }}
-      >
-        <AnimatedBackground variant="hero" />
-        <FloatingClouds variant="hero" />
-        <div
-          className="container hero-grid"
-          style={{ position: "relative", zIndex: 1, display: "grid", gridTemplateColumns: "1.05fr 0.95fr", gap: 48, alignItems: "center" }}
-        >
+      {/* ── 1. HERO ──────────────────────────────────────────── */}
+      <section style={{ padding: "112px 24px 80px" }}>
+        <div className="container hero-grid" style={{ display: "grid", gridTemplateColumns: "1.05fr 0.95fr", gap: 56, alignItems: "center" }}>
           <Reveal>
-            <span className="label"><Sparkles size={12} style={{ marginRight: 6 }} aria-hidden="true" />Software Engineering & Digital Product Studio</span>
+            <span className="label">Software Engineering & Digital Product Studio</span>
             <h1
               style={{
-                fontSize: "clamp(2.6rem, 6.5vw, 5.2rem)",
+                fontSize: "clamp(3.25rem, 6vw, 6rem)",
                 fontWeight: 700,
                 color: "var(--text)",
-                lineHeight: 1.08,
+                lineHeight: 1.06,
                 marginBottom: 22,
+                letterSpacing: "-0.02em",
               }}
             >
-              We Build <span className="text-gradient">Digital Worlds</span> For Real Businesses.
+              Digital Products Built For Real Business Growth.
             </h1>
-            <p style={{ fontSize: "clamp(1.02rem, 1.6vw, 1.15rem)", color: "var(--muted)", lineHeight: 1.75, marginBottom: 36, maxWidth: 540, fontWeight: 400 }}>
-              Brainlink Softwares transforms ambitious ideas into scalable software, immersive web platforms and
-              high-performance digital products.
+            <p style={{ fontSize: "1.1rem", color: "var(--muted)", lineHeight: 1.7, marginBottom: 32, maxWidth: 520 }}>
+              Brainlink Softwares helps businesses and ambitious founders build scalable software, modern websites,
+              mobile applications and digital platforms.
             </p>
-            <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginBottom: 32 }}>
-              <MagneticButton>
-                <Link to="/contact" className="btn-primary" style={{ fontSize: "0.95rem", padding: "15px 30px" }} data-cursor-label="Go">
-                  Enter The Brainlink Universe <ArrowRight size={16} aria-hidden="true" />
-                </Link>
-              </MagneticButton>
-              <MagneticButton>
-                <Link to="/work" className="btn-secondary" style={{ fontSize: "0.95rem", padding: "14px 30px" }} data-cursor-label="View">
-                  Explore Our Work
-                </Link>
-              </MagneticButton>
+            <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginBottom: 28 }}>
+              <Link to="/contact" className="btn-primary" style={{ fontSize: "0.95rem", padding: "13px 26px" }}>
+                Start A Project <ArrowRight size={16} aria-hidden="true" />
+              </Link>
+              <Link to="/work" className="btn-secondary" style={{ fontSize: "0.95rem", padding: "13px 26px" }}>
+                View Our Work
+              </Link>
             </div>
-            <p style={{ fontSize: "0.82rem", color: "var(--muted2)" }}>
-              MSME-registered studio · Direct team communication · Transparent, milestone-based delivery
+            <p style={{ fontSize: "0.85rem", color: "var(--muted2)" }}>
+              Strategy, design, development and technical support under one roof.
             </p>
           </Reveal>
 
-          <Reveal delay={0.15} className="hero-visual-wrap">
-            <HeroScene />
+          <Reveal delay={0.1} className="hero-visual-wrap">
+            <HeroVisual />
           </Reveal>
         </div>
       </section>
 
-      {/* ── TECH MARQUEE ─────────────────────────────────────── */}
-      <section style={{ padding: "28px 0 48px", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)", background: "var(--bg-card)" }}>
-        <p style={{ textAlign: "center", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--muted2)", marginBottom: 20 }}>
-          Built with the technologies we ship in production
-        </p>
-        <TechMarquee items={techStack} />
-      </section>
-
-      {/* ── SECTION 2 — IDEA PORTAL ──────────────────────────── */}
-      <section className="section">
+      {/* ── 2. SELECTED CLIENT WORK ──────────────────────────── */}
+      <section className="section" style={{ background: "var(--bg-card2)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
         <div className="container">
           <SectionHeading
-            label="The Idea Portal"
-            title="An Idea Enters. A Digital Product Emerges."
-            subtitle="Every project moves through the same gateway — from a rough idea to something real, scalable and live."
+            label="Our Work"
+            title="Selected Client Work"
+            subtitle="Two verified engagements — shown honestly, without an inflated client count."
           />
-          <div style={{ display: "flex", justifyContent: "center", marginBottom: 56 }}>
-            <DigitalPortal size={180}>
-              <Sparkles size={30} style={{ color: "var(--accent)" }} aria-hidden="true" />
-            </DigitalPortal>
-          </div>
-          <StaggerGroup style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 16 }}>
-            {ideaJourneyStages.map((stage) => {
-              const Icon = stage.icon;
-              return (
-                <StaggerItem key={stage.label} style={{ textAlign: "center" }}>
-                  <div
-                    style={{
-                      width: 56, height: 56, borderRadius: 16, margin: "0 auto 12px",
-                      background: "var(--bg-card)", border: "1px solid var(--border)",
-                      display: "flex", alignItems: "center", justifyContent: "center",
-                      color: "var(--accent)", boxShadow: "var(--shadow-sm)",
-                    }}
-                  >
-                    <Icon size={24} strokeWidth={1.8} aria-hidden="true" />
-                  </div>
-                  <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "0.92rem", color: "var(--text)", marginBottom: 4 }}>{stage.label}</h3>
-                  <p style={{ fontSize: "0.78rem", color: "var(--muted)", lineHeight: 1.55 }}>{stage.desc}</p>
-                </StaggerItem>
-              );
-            })}
+          <StaggerGroup style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 28 }}>
+            {featuredProjects.map((project) => (
+              <StaggerItem key={project.id}>
+                <ProjectCard project={project} />
+              </StaggerItem>
+            ))}
           </StaggerGroup>
         </div>
       </section>
 
-      {/* ── SECTION 3 — SERVICES UNIVERSE ────────────────────── */}
-      <section className="section" id="services" style={{ background: "var(--bg-card)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
+      {/* ── 3. SERVICES ───────────────────────────────────────── */}
+      <section className="section" id="services">
         <div className="container">
           <SectionHeading
-            label="The Services Universe"
-            title="Orbit The Core Of What We Build"
-            subtitle="Every planet is a service — hover or focus one to see what it covers, or open it for the full detail."
+            label="What We Do"
+            title="Services Built Around Your Product"
+            subtitle="From a first working prototype to a fully scaled platform."
           />
-          <ServiceOrbit services={homeServices} />
-          <div style={{ textAlign: "center", marginTop: 48 }}>
+          <StaggerGroup style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
+            {homeServices.map((s) => (
+              <StaggerItem key={s.id}>
+                <ServiceCard service={s} />
+              </StaggerItem>
+            ))}
+          </StaggerGroup>
+          <div style={{ textAlign: "center", marginTop: 40 }}>
             <Link to="/services" className="btn-secondary" style={{ fontSize: "0.9rem" }}>
               View All Services <ArrowRight size={15} aria-hidden="true" />
             </Link>
@@ -154,145 +113,140 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ── SECTION 4 — PROJECT WORLDS / TRUSTED FOR REAL PROJECTS ── */}
+      {/* ── 4. FEATURED PROJECT: PARKIN10 ────────────────────── */}
+      {parkin10 && (
+        <section className="section" style={{ background: "var(--bg-card2)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
+          <div className="container">
+            <div className="editorial-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56, alignItems: "center" }}>
+              <Reveal>
+                <span className="label">{parkin10.industry}</span>
+                <h2 className="section-title">{parkin10.headline}</h2>
+                <p style={{ color: "var(--muted)", fontSize: "1rem", lineHeight: 1.75, marginBottom: 24 }}>
+                  {parkin10.shortDescription}
+                </p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 28 }}>
+                  {parkin10.services.map((s) => (
+                    <span key={s} className="tech-pill" style={{ fontSize: "0.75rem" }}>{s}</span>
+                  ))}
+                </div>
+                <Link to={`/work#${parkin10.id}`} className="btn-secondary" style={{ fontSize: "0.9rem" }}>
+                  View Case Study <ArrowRight size={15} aria-hidden="true" />
+                </Link>
+              </Reveal>
+              <Reveal delay={0.1} style={{ position: "relative" }}>
+                <BrowserMockup accent="var(--accent)" style={{ maxWidth: 420, margin: "0 auto" }} />
+                <PhoneMockup accent="var(--accent)" style={{ position: "absolute", bottom: -20, right: "8%" }} />
+              </Reveal>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── 5. FEATURED PROJECT: OM PICTURES ─────────────────── */}
+      {omPictures && (
+        <section className="section">
+          <div className="container">
+            <div className="editorial-grid editorial-grid-reverse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56, alignItems: "center" }}>
+              <Reveal className="editorial-visual-first" style={{ position: "relative" }}>
+                <BrowserMockup accent="#B45309" style={{ maxWidth: 420, margin: "0 auto" }} />
+                <PhoneMockup accent="#B45309" style={{ position: "absolute", bottom: -20, left: "8%" }} />
+              </Reveal>
+              <Reveal delay={0.1}>
+                <span className="label">{omPictures.industry}</span>
+                <h2 className="section-title">{omPictures.headline}</h2>
+                <p style={{ color: "var(--muted)", fontSize: "1rem", lineHeight: 1.75, marginBottom: 24 }}>
+                  {omPictures.shortDescription}
+                </p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 28 }}>
+                  {omPictures.services.map((s) => (
+                    <span key={s} className="tech-pill" style={{ fontSize: "0.75rem" }}>{s}</span>
+                  ))}
+                </div>
+                <Link to={`/work#${omPictures.id}`} className="btn-secondary" style={{ fontSize: "0.9rem" }}>
+                  View Case Study <ArrowRight size={15} aria-hidden="true" />
+                </Link>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── 6. HOW WE WORK ───────────────────────────────────── */}
+      <section className="section" style={{ background: "var(--bg-card2)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
+        <div className="container">
+          <SectionHeading label="Our Process" title="How We Work" subtitle="A clear, proven process — so you always know what's happening next." />
+          <ProcessSteps steps={processSteps} />
+        </div>
+      </section>
+
+      {/* ── 7. WHY BRAINLINK SOFTWARES ───────────────────────── */}
       <section className="section">
         <div className="container">
-          <SectionHeading
-            label="Project Worlds"
-            title="Trusted For Real Digital Projects"
-            subtitle="Two verified client engagements, each its own world within the Brainlink Digital Universe. No inflated client counts — just the work itself."
-          />
-          <StaggerGroup style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 28 }}>
-            {featuredProjects.map((project) => (
-              <StaggerItem key={project.id}>
-                <ProjectWorldCard project={project} />
+          <SectionHeading label="Why Brainlink Softwares" title="What You Can Expect Working With Us" />
+          <StaggerGroup style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 40 }}>
+            {whyBrainlink.map((w) => (
+              <StaggerItem key={w.title}>
+                <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1.15rem", color: "var(--text)", marginBottom: 8 }}>{w.title}</h3>
+                <p style={{ fontSize: "0.9rem", color: "var(--muted)", lineHeight: 1.7 }}>{w.desc}</p>
               </StaggerItem>
             ))}
           </StaggerGroup>
-          <div style={{ textAlign: "center", marginTop: 40 }}>
-            <Link to="/work" className="btn-secondary" style={{ fontSize: "0.9rem" }}>
-              See Full Case Studies <ArrowRight size={15} aria-hidden="true" />
+        </div>
+      </section>
+
+      {/* ── 8. TECHNOLOGY STACK ──────────────────────────────── */}
+      <section className="section" style={{ background: "var(--bg-card2)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
+        <div className="container" style={{ maxWidth: 720 }}>
+          <SectionHeading label="Our Stack" title="Technologies We Build With" subtitle="Verified technologies we actually use in production — nothing aspirational." />
+          <TechStack modules={techModules} />
+        </div>
+      </section>
+
+      {/* ── 9. CAREERS AND INTERNSHIPS ───────────────────────── */}
+      <section className="section" id="careers">
+        <div className="container">
+          <SectionHeading
+            label="Careers & Internships"
+            title="Learn By Building Real Digital Products."
+            subtitle="For students, fresh graduates and developers who want practical, mentored experience — subject to current availability."
+          />
+          <StaggerGroup style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 20, marginBottom: 40 }}>
+            {internshipHighlights.map((h) => {
+              const Icon = h.icon;
+              return (
+                <StaggerItem key={h.title} className="card" style={{ textAlign: "center" }}>
+                  <div style={{ display: "flex", justifyContent: "center", marginBottom: 12, color: "var(--accent)" }}>
+                    <Icon size={24} strokeWidth={1.75} aria-hidden="true" />
+                  </div>
+                  <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 600, fontSize: "0.95rem", color: "var(--text)", marginBottom: 6 }}>{h.title}</h3>
+                  <p style={{ fontSize: "0.83rem", color: "var(--muted)", lineHeight: 1.6 }}>{h.desc}</p>
+                </StaggerItem>
+              );
+            })}
+          </StaggerGroup>
+          <div style={{ textAlign: "center" }}>
+            <Link to="/careers" className="btn-primary" style={{ fontSize: "0.9rem" }}>
+              Explore Opportunities <ArrowRight size={15} aria-hidden="true" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ── HOW WE APPROACH CLIENT PROJECTS (replaces testimonials) ── */}
-      <section className="section" style={{ background: "var(--surface-violet)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
+      {/* ── 10. FINAL CTA ─────────────────────────────────────── */}
+      <section style={{ padding: "96px 24px", textAlign: "center", background: "var(--accent-soft)", borderTop: "1px solid var(--border)" }}>
         <div className="container">
-          <SectionHeading label="How We Work" title="How We Approach Client Projects" subtitle="We don't publish client testimonials we can't verify. Here's what actually happens on every engagement instead." />
-          <StaggerGroup style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 20 }}>
-            {clientApproach.map((item) => {
-              const Icon = item.icon;
-              return (
-                <StaggerItem key={item.title} className="card">
-                  <Icon size={22} style={{ color: "var(--accent2)", marginBottom: 12 }} strokeWidth={1.8} aria-hidden="true" />
-                  <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 600, fontSize: "0.95rem", color: "var(--text)", marginBottom: 8 }}>{item.title}</h3>
-                  <p style={{ fontSize: "0.85rem", color: "var(--muted)", lineHeight: 1.65 }}>{item.desc}</p>
-                </StaggerItem>
-              );
-            })}
-          </StaggerGroup>
-        </div>
-      </section>
-
-      {/* ── SECTION 5 — TECHNOLOGY LAB ───────────────────────── */}
-      <section className="section">
-        <div className="container">
-          <SectionHeading label="The Technology Lab" title="Tools We Actually Build With" subtitle="Hover or focus a module for a short note on how we use it. Nothing here is aspirational — this is our real production stack." />
-          <HolographicTechModule modules={techModules} />
-        </div>
-      </section>
-
-      {/* ── SECTION 6 — HOW WE BUILD ─────────────────────────── */}
-      <section className="section" style={{ background: "var(--bg-card)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
-        <div className="container">
-          <SectionHeading label="How We Build" title="A Journey Through Every Room" subtitle="From first conversation to long-term support — a clear, proven process." />
-          <DevelopmentJourney steps={processSteps} />
-        </div>
-      </section>
-
-      {/* ── SECTION 7 — WHY BRAINLINK (control room) ─────────── */}
-      <section className="section">
-        <div className="container">
-          <SectionHeading label="Why Brainlink Softwares" title="The Control Room View" subtitle="What you can expect working with us, in plain terms — no fabricated statistics." />
-          <StaggerGroup style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
-            {whyBrainlink.map((w) => (
-              <StaggerItem
-                key={w.title}
-                className="card"
-                style={{ position: "relative", paddingTop: 32 }}
-              >
-                <span
-                  aria-hidden="true"
-                  style={{ position: "absolute", top: 16, left: 20, width: 8, height: 8, borderRadius: "50%", background: "var(--success)" }}
-                />
-                <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 600, fontSize: "1rem", color: "var(--text)", marginBottom: 8 }}>{w.title}</h3>
-                <p style={{ fontSize: "0.88rem", color: "var(--muted)", lineHeight: 1.7 }}>{w.desc}</p>
-              </StaggerItem>
-            ))}
-          </StaggerGroup>
-        </div>
-      </section>
-
-      {/* ── SECTION 8 — INTERNSHIP ACADEMY ───────────────────── */}
-      <section className="section" id="careers" style={{ background: "var(--surface-peach)", borderTop: "1px solid var(--border)" }}>
-        <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "0.9fr 1.1fr", gap: 48, alignItems: "center" }} className="academy-grid">
-            <Reveal>
-              <LearningAcademyScene />
-            </Reveal>
-            <Reveal delay={0.1}>
-              <span className="label">Brainlink Learning Academy</span>
-              <h2 className="section-title">Learn By Building Real Software</h2>
-              <p style={{ color: "var(--muted)", lineHeight: 1.8, fontSize: "1rem", marginBottom: 28 }}>
-                For students, fresh graduates and developers who want hands-on, mentored experience — subject to
-                current availability.
-              </p>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 32 }}>
-                {internshipHighlights.map((h) => (
-                  <div key={h.title} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
-                    <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--accent2)", marginTop: 7, flexShrink: 0 }} />
-                    <div>
-                      <strong style={{ color: "var(--text)", fontSize: "0.88rem", display: "block" }}>{h.title}</strong>
-                      <span style={{ color: "var(--muted)", fontSize: "0.8rem" }}>{h.desc}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <Link to="/careers" className="btn-primary" style={{ fontSize: "0.9rem" }}>
-                Explore The Academy <ArrowRight size={15} aria-hidden="true" />
-              </Link>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ── SECTION 9 — FINAL CTA PORTAL ─────────────────────── */}
-      <section style={{ position: "relative", overflow: "hidden", borderTop: "1px solid var(--border)", padding: "110px 24px", textAlign: "center", background: "linear-gradient(180deg, var(--bg) 0%, var(--surface-violet) 100%)" }}>
-        <AnimatedBackground variant="page" />
-        <FloatingClouds variant="hero" />
-        <div className="container" style={{ position: "relative", zIndex: 1 }}>
           <Reveal>
-            <DigitalPortal size={220}>
-              <span style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "0.85rem", color: "var(--accent)" }}>
-                Brainlink
-              </span>
-            </DigitalPortal>
-            <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "clamp(2rem, 5vw, 3.2rem)", color: "var(--text)", margin: "24px 0 16px" }}>
-              Ready To Build Your Digital World?
+            <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "clamp(2rem, 4.5vw, 3rem)", color: "var(--text)", marginBottom: 16 }}>
+              Have A Digital Product In Mind?
             </h2>
-            <p style={{ color: "var(--muted)", fontSize: "1rem", marginBottom: 40, lineHeight: 1.8, maxWidth: 480, margin: "0 auto 40px" }}>
-              Share your idea with Brainlink Softwares and let's transform it into a reliable, scalable digital
-              product.
+            <p style={{ color: "var(--muted)", fontSize: "1rem", marginBottom: 36, lineHeight: 1.75, maxWidth: 480, margin: "0 auto 36px" }}>
+              Let's discuss your idea and create a practical plan to design, develop and launch it.
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-              <MagneticButton>
-                <Link to="/contact" className="btn-primary" style={{ fontSize: "0.95rem", padding: "15px 32px" }} data-cursor-label="Go">
-                  <Phone size={16} aria-hidden="true" /> Start A Project
-                </Link>
-              </MagneticButton>
-              <a href={siteConfig.whatsappHref()} target="_blank" rel="noopener noreferrer" className="btn-whatsapp" style={{ fontSize: "0.95rem", padding: "15px 32px" }}>
+              <Link to="/contact" className="btn-primary" style={{ fontSize: "0.95rem", padding: "13px 28px" }}>
+                <Phone size={16} aria-hidden="true" /> Start A Project
+              </Link>
+              <a href={siteConfig.whatsappHref()} target="_blank" rel="noopener noreferrer" className="btn-whatsapp" style={{ fontSize: "0.95rem", padding: "13px 28px" }}>
                 <WhatsAppIcon width={17} height={17} /> Chat On WhatsApp
               </a>
             </div>
@@ -302,8 +256,9 @@ export default function Index() {
 
       <style>{`
         @media (max-width: 900px) {
-          .hero-grid, .academy-grid { grid-template-columns: 1fr !important; }
+          .hero-grid, .editorial-grid { grid-template-columns: 1fr !important; }
           .hero-visual-wrap { order: -1; }
+          .editorial-grid-reverse .editorial-visual-first { order: -1; }
         }
       `}</style>
     </Layout>

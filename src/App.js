@@ -5,8 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 import { AnimatePresence } from "framer-motion";
 import ScrollToTop from "./common/ScrollToTop";
 import LoadingState from "./components/LoadingState";
-import PortalPageTransition from "./components/PortalPageTransition";
-import CustomCursor from "./components/CustomCursor";
+import PageFade from "./components/PageFade";
 import "./index.css";
 
 const Index = lazy(() => import("./pages/Index"));
@@ -25,14 +24,14 @@ const VerifyCertificateResult = lazy(() => import("./pages/VerifyCertificateResu
 const NotFound = lazy(() => import("./common/NotFound"));
 
 function RouteFallback() {
-  return <LoadingState label="Loading..." minHeight="100vh" />;
+  return <LoadingState label="Loading..." minHeight="60vh" />;
 }
 
 function AnimatedRoutes() {
   const location = useLocation();
   return (
     <AnimatePresence mode="wait">
-      <PortalPageTransition key={location.pathname}>
+      <PageFade key={location.pathname}>
         <Suspense fallback={<RouteFallback />}>
           <Routes location={location}>
             <Route path="/" element={<Index />} />
@@ -57,7 +56,7 @@ function AnimatedRoutes() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
-      </PortalPageTransition>
+      </PageFade>
     </AnimatePresence>
   );
 }
@@ -67,7 +66,6 @@ export default function App() {
     <HelmetProvider>
       <Router>
         <ScrollToTop />
-        <CustomCursor />
         <AnimatedRoutes />
         <SpeedInsights />
       </Router>

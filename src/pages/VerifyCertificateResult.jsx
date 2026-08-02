@@ -201,7 +201,7 @@ export default function VerifyCertificateResult() {
             if (cert.status === "valid") {
               return (
                 <Reveal>
-                  <div className="card gradient-border" style={{ padding: "40px 36px" }}>
+                  <div className="card" style={{ padding: "40px 36px", borderTop: "3px solid var(--success)" }}>
                     <StatusBanner tone={meta.tone} icon={meta.icon} heading={meta.heading} />
 
                     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 22, marginBottom: 28 }} className="cert-field-grid">

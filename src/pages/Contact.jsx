@@ -78,8 +78,8 @@ export default function Contact() {
       />
 
       <PageHero
-        label="Communication Command Centre"
-        title={<>Let's Talk About Your <span className="text-gradient">Project</span></>}
+        label="Contact Us"
+        title={<>Let's Talk About Your <span style={{ color: "var(--accent)" }}>Project</span></>}
         subtitle="Tell us what you need and we'll come back within 24 hours with a clear plan — no jargon, no pressure."
       />
 
