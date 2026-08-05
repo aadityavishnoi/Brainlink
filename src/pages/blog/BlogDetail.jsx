@@ -10,7 +10,6 @@ import BlogCard from "../../components/blog/BlogCard";
 function slugify(text) {
   return text.toLowerCase().trim().replace(/[^\w\s-]/g, "").replace(/\s+/g, "-");
 }
-
 export default function BlogDetail() {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
