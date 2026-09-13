@@ -77,7 +77,7 @@ export default function Index() {
           <SectionHeading
             label="Our Work"
             title="Selected Client Work"
-            subtitle="A verified engagement — shown honestly, without an inflated client count."
+            subtitle="Verified engagements — shown honestly, without an inflated client count."
           />
           <StaggerGroup style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 28 }}>
             {featuredProjects.map((project) => (

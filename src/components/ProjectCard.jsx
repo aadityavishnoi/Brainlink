@@ -3,8 +3,8 @@ import { ArrowRight } from "lucide-react";
 import { BrowserMockup } from "./ProductMockup";
 
 const CATEGORY_ACCENT = {
-  "Mobility Technology": "var(--accent)",
   "Creative Business": "#B45309",
+  "Political Campaign Technology": "#15803D",
 };
 
 export default function ProjectCard({ project, detailed = false }) {
