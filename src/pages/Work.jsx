@@ -15,7 +15,7 @@ export default function Work() {
     <Layout>
       <SEO
         title="Our Work — Case Studies"
-        description="Verified client engagements from Brainlink Softwares: Parkin10 Mobility Private Limited and Om Pictures, with problem, approach and outcome for each project."
+        description="Verified client engagements from Brainlink Softwares: Om Pictures, with problem, approach and outcome for each project."
         path="/work"
         jsonLd={[organizationSchema, breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Work", path: "/work" }])]}
       />

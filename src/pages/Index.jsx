@@ -20,7 +20,6 @@ import { internshipHighlights } from "../data/careers";
 import { siteConfig } from "../data/siteConfig";
 
 export default function Index() {
-  const parkin10 = featuredProjects.find((p) => p.id === "parkin10-mobility");
   const omPictures = featuredProjects.find((p) => p.id === "om-pictures");
 
   return (
@@ -78,7 +77,7 @@ export default function Index() {
           <SectionHeading
             label="Our Work"
             title="Selected Client Work"
-            subtitle="Two verified engagements — shown honestly, without an inflated client count."
+            subtitle="A verified engagement — shown honestly, without an inflated client count."
           />
           <StaggerGroup style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 28 }}>
             {featuredProjects.map((project) => (
@@ -113,36 +112,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ── 4. FEATURED PROJECT: PARKIN10 ────────────────────── */}
-      {parkin10 && (
-        <section className="section" style={{ background: "var(--bg-card2)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
-          <div className="container">
-            <div className="editorial-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56, alignItems: "center" }}>
-              <Reveal>
-                <span className="label">{parkin10.industry}</span>
-                <h2 className="section-title">{parkin10.headline}</h2>
-                <p style={{ color: "var(--muted)", fontSize: "1rem", lineHeight: 1.75, marginBottom: 24 }}>
-                  {parkin10.shortDescription}
-                </p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 28 }}>
-                  {parkin10.services.map((s) => (
-                    <span key={s} className="tech-pill" style={{ fontSize: "0.75rem" }}>{s}</span>
-                  ))}
-                </div>
-                <Link to={`/work#${parkin10.id}`} className="btn-secondary" style={{ fontSize: "0.9rem" }}>
-                  View Case Study <ArrowRight size={15} aria-hidden="true" />
-                </Link>
-              </Reveal>
-              <Reveal delay={0.1} style={{ position: "relative" }}>
-                <BrowserMockup accent="var(--accent)" style={{ maxWidth: 420, margin: "0 auto" }} />
-                <PhoneMockup accent="var(--accent)" style={{ position: "absolute", bottom: -20, right: "8%" }} />
-              </Reveal>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* ── 5. FEATURED PROJECT: OM PICTURES ─────────────────── */}
+      {/* ── 4. FEATURED PROJECT: OM PICTURES ─────────────────── */}
       {omPictures && (
         <section className="section">
           <div className="container">
@@ -171,7 +141,7 @@ export default function Index() {
         </section>
       )}
 
-      {/* ── 6. HOW WE WORK ───────────────────────────────────── */}
+      {/* ── 5. HOW WE WORK ───────────────────────────────────── */}
       <section className="section" style={{ background: "var(--bg-card2)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
         <div className="container">
           <SectionHeading label="Our Process" title="How We Work" subtitle="A clear, proven process — so you always know what's happening next." />
@@ -179,7 +149,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ── 7. WHY BRAINLINK SOFTWARES ───────────────────────── */}
+      {/* ── 6. WHY BRAINLINK SOFTWARES ───────────────────────── */}
       <section className="section">
         <div className="container">
           <SectionHeading label="Why Brainlink Softwares" title="What You Can Expect Working With Us" />
@@ -194,7 +164,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ── 8. TECHNOLOGY STACK ──────────────────────────────── */}
+      {/* ── 7. TECHNOLOGY STACK ──────────────────────────────── */}
       <section className="section" style={{ background: "var(--bg-card2)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
         <div className="container" style={{ maxWidth: 720 }}>
           <SectionHeading label="Our Stack" title="Technologies We Build With" subtitle="Verified technologies we actually use in production — nothing aspirational." />
@@ -202,7 +172,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ── 9. CAREERS AND INTERNSHIPS ───────────────────────── */}
+      {/* ── 8. CAREERS AND INTERNSHIPS ───────────────────────── */}
       <section className="section" id="careers">
         <div className="container">
           <SectionHeading
@@ -232,7 +202,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ── 10. FINAL CTA ─────────────────────────────────────── */}
+      {/* ── 9. FINAL CTA ─────────────────────────────────────── */}
       <section style={{ padding: "96px 24px", textAlign: "center", background: "var(--accent-soft)", borderTop: "1px solid var(--border)" }}>
         <div className="container">
           <Reveal>

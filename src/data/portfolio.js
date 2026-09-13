@@ -6,35 +6,6 @@
  */
 export const portfolioProjects = [
   {
-    id: "parkin10-mobility",
-    clientName: "Parkin10 Mobility Private Limited",
-    projectName: "Parkin10 Connect",
-    industry: "Smart Mobility & Parking Technology",
-    category: "Mobility Technology",
-    headline: "Building A Smarter Vehicle Communication Ecosystem.",
-    shortDescription:
-      "Brainlink Softwares contributed to the development of Parkin10's digital mobility ecosystem, including web experiences, QR-based vehicle communication and real-time calling technology.",
-    problem:
-      "Parkin10 needed a way for people to reach a vehicle's owner instantly and safely, without exchanging phone numbers, plus a web presence that reflected a modern mobility-tech product.",
-    approach:
-      "Brainlink Softwares worked on the Parkin10 Connect web experience — a vehicle QR-based communication system that lets one person reach another through the platform rather than a shared phone number — alongside supporting web and backend integration work.",
-    outcome:
-      "A working web-calling and QR communication flow integrated into Parkin10's product, along with backend and API integration support for the wider platform.",
-    services: [
-      "Website Development",
-      "Web Application Development",
-      "QR-Based Communication System",
-      "WebRTC Calling Infrastructure",
-      "Backend & API Integration",
-      "Technical Architecture",
-    ],
-    technologies: ["React", "Node.js", "WebRTC", "PostgreSQL"],
-    projectUrl: null,
-    status: "Client Project",
-    featured: true,
-    verified: true,
-  },
-  {
     id: "om-pictures",
     clientName: "Om Pictures",
     projectName: "Om Pictures Digital Presence",
